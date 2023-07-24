@@ -2,26 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
-    }
+html {
+    overflow-y: overlay;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
+    @apply text-dark dark:text-light dark:bg-dark subpixel-antialiased transition-colors;
+}
+
+::selection {
+    color: black;
+    @apply bg-gray-300 dark:bg-gray-400;
+}
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(80, 80, 80, 0.8);
+    border-radius: 10px;
+}
+
+.toggle {
+    --size: 18px;
+
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    border-radius: 999px;
+    color: hsl(240, 100%, 95%);
+
+    transition: all 500ms;
+}
+
+.toggle:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    color: hsl(40, 100%, 50%);
+    box-shadow:
+        inset 0 0 0 var(--size),
+        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+        var(--offset-orthogonal) 0 0 var(--ray-size),
+        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+        0 var(--offset-orthogonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+            var(--ray-size),
+        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0
+            var(--ray-size),
+        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
+            var(--ray-size);
+}
+
+@layer base {
+    h1 {
+        @apply text-3xl font-bold md:text-5xl;
+    }
+
+    h2 {
+        @apply text-2xl font-bold md:text-4xl;
+    }
+
+    h3 {
+        @apply text-xl font-bold md:text-3xl;
+    }
+
+    h4 {
+        @apply text-lg font-bold md:text-xl;
+    }
+}
+
+.prose {
+    @apply text-justify;
+}
+
+.prose > p {
+    @apply indent-5;
+}
+
+.prose blockquote {
+    @apply border-dashed;
+}
+
+.prose blockquote > div {
+    @apply text-right;
+}
+
+.prose pre {
+    @apply border-2 border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-[#1D1F21];
+}
+
+.prose code {
+    @apply rounded-md border border-gray-100 bg-gray-100 px-1 py-0.5 text-gray-800 dark:border-gray-800 dark:bg-[#1D1F21] dark:text-gray-200;
+}
+
+.prose img {
+    @apply m-0 !important;
+}
+
+.prose .table-wrapper {
+    @apply overflow-x-auto;
+}
+
+.prose table {
+    @apply m-0 w-max;
 }
