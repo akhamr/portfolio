@@ -6,7 +6,7 @@ export default function ThemeSwitcher() {
 
     return (
         <input
-            name="theme toggler"
+            aria-label="themeToggler"
             type="checkbox"
             onChange={() => setTheme(isDark ? 'light' : 'dark')}
             checked={!isDark}

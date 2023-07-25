@@ -22,7 +22,7 @@ export default function MobileMenu() {
         <Menu as="div" className="h-7 w-7 md:hidden">
             {({ open }) => (
                 <>
-                    <Menu.Button name="mobile menu">
+                    <Menu.Button aria-label="mobileMenu">
                         {open ? (
                             <XMarkIcon className="h-7 w-7" />
                         ) : (
