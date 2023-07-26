@@ -28,7 +28,7 @@ export default async function Blog() {
                             className="rounded"
                             href={`/blog/${frontMatter.slug}`}
                         >
-                            <div className="group h-full rounded-md border-2 border-dashed border-gray-200 transition duration-200 ease-in-out hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+                            <div className="group rounded-md border-2 border-dashed border-gray-200 transition duration-200 ease-in-out hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                                 <div className="flex rounded-t border-b group-hover:opacity-90 dark:border-dark">
                                     <Image
                                         src={frontMatter.image}
