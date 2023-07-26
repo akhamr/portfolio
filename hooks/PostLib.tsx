@@ -79,7 +79,7 @@ export async function getAllPost() {
 
 const CustomImage = ({ alt, ...props }: ImageProps) => {
     return (
-        <div className="mb-4 mt-2 w-full text-center">
+        <div className="mb-4 mt-2 text-center">
             <Image
                 {...props}
                 width="0"
