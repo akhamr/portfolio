@@ -77,15 +77,13 @@ export async function getAllPost() {
     }, []);
 }
 
-const CustomImage = ({ alt, ...props }: ImageProps) => {
+const CustomImage = ({ alt, src }: ImageProps) => {
     return (
         <div className="mb-4 mt-2 text-center">
             <Image
-                {...props}
-                width="0"
-                height="0"
-                sizes="100vw"
-                className="h-auto w-full"
+                src={src}
+                width="540"
+                height="405"
                 alt={alt}
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
