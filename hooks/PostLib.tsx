@@ -87,6 +87,8 @@ const CustomImage = ({ alt, ...props }: ImageProps) => {
                 sizes="100vw"
                 className="h-auto w-full"
                 alt={alt}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
             />
             <p className="text-sm italic">{alt}</p>
         </div>

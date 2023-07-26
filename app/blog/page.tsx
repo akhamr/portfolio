@@ -36,6 +36,8 @@ export default async function Blog() {
                                         className="rounded-t"
                                         width="600"
                                         height="300"
+                                        placeholder="blur"
+                                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
                                     />
                                 </div>
                                 <div className="rounded-b p-2">
