@@ -82,9 +82,10 @@ const CustomImage = ({ alt, src }: ImageProps) => {
         <div className="mb-4 mt-2 text-center">
             <Image
                 src={src}
-                width="540"
-                height="405"
+                width="768"
+                height="576"
                 alt={alt}
+                className="w-full"
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
             />

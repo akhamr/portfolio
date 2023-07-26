@@ -34,8 +34,8 @@ export default async function Blog() {
                                         src={frontMatter.image}
                                         alt={frontMatter.title}
                                         className="rounded-t"
-                                        width="600"
-                                        height="300"
+                                        width="540"
+                                        height="270"
                                         placeholder="blur"
                                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII="
                                     />
