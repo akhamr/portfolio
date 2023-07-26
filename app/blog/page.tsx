@@ -34,8 +34,8 @@ export default async function Blog() {
                                         src={frontMatter.image}
                                         alt={frontMatter.title}
                                         className="rounded-t"
-                                        width="640"
-                                        height="335"
+                                        width="600"
+                                        height="300"
                                     />
                                 </div>
                                 <div className="rounded-b p-2">
