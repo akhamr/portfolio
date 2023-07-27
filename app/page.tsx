@@ -26,8 +26,9 @@ export default function Home() {
                         It&apos;s me, akha. 🤔
                     </h1>
                     <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
-                        A data enthusiast based. Love to explore anything about
-                        technology, but focused more on web technologies.
+                        A data enthusiast based in Semarang, Indonesia. Love to
+                        explore anything about web developing and data
+                        analytics.
                     </p>
                     <p className="max-w-[500px] text-center md:text-left">
                         Checkout my{' '}
