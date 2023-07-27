@@ -11,16 +11,23 @@ export default function Home() {
                     priority
                     width={300}
                     height={400}
-                    className="md:w-[400px]"
+                    className="hidden dark:block md:w-[400px]"
+                />
+                <Image
+                    alt="doodle"
+                    src="/me-light.svg"
+                    priority
+                    width={300}
+                    height={400}
+                    className="dark:hidden md:w-[400px]"
                 />
                 <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
                     <h1 className="noselect mt-1 font-doodle text-3xl md:text-4xl">
                         It&apos;s me, akha. 🤔
                     </h1>
                     <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
-                        A software <i>edgy</i>neer who love cats. Love to
-                        explore anything about technology, but focused more on
-                        web technologies.
+                        A data enthusiast based. Love to explore anything about
+                        technology, but focused more on web technologies.
                     </p>
                     <p className="max-w-[500px] text-center md:text-left">
                         Checkout my{' '}
