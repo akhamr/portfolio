@@ -6,10 +6,14 @@
 >
     <defs>
         <filter id="shadow2">
-            <feDropShadow dx="5" dy="-5" stdDeviation="0" flood-color="#555" />
-            <feDropShadow dx="-5" dy="-5" stdDeviation="0" flood-color="#555" />
-            <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="#555" />
-            <feDropShadow dx="-5" dy="5" stdDeviation="0" flood-color="#555" />
+            <feDropShadow flood-color="#505050" dx="6" dy="-6" />
+            <feDropShadow flood-color="#505050" dx="-6" dy="-6" />
+            <feDropShadow flood-color="#505050" dx="6" dy="6" />
+            <feDropShadow flood-color="#505050" dx="-6" dy="6" />
+            <feDropShadow flood-color="#505050" dx="0" dy="6" />
+            <feDropShadow flood-color="#505050" dx="0" dy="-6" />
+            <feDropShadow flood-color="#505050" dx="-6" dy="0" />
+            <feDropShadow flood-color="#505050" dx="6" dy="0" />
         </filter>
     </defs>
     <g transform="rotate(360 402.7609043121338 579.1544647216797)" style="filter:url(#shadow2);">
