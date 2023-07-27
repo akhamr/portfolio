@@ -9,7 +9,7 @@ const links = [
     },
     {
         text: 'Projects',
-        url: '/',
+        url: '/projects',
     },
     {
         text: 'About',
