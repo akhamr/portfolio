@@ -53,7 +53,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 </div>
                 <hr className="mb-2 mt-2 border-dashed border-gray-200 dark:border-gray-800" />
             </div>
-            <div className="prose dark:prose-dark max-w-full">{body}</div>
+            <div className="prose max-w-full dark:prose-dark">{body}</div>
         </section>
     );
 }
