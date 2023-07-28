@@ -27,8 +27,8 @@ export default function Home() {
                     </h1>
                     <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
                         A data enthusiast based in Semarang, Indonesia. Love to
-                        explore anything about web developing and data
-                        analytics.
+                        explore anything about data analytics and web
+                        development.
                     </p>
                     <p className="max-w-[500px] text-center md:text-left">
                         Checkout my{' '}
