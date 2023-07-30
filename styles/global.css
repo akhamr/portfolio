@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    @apply text-dark subpixel-antialiased transition-colors dark:bg-dark dark:text-light;
+    @apply text-dark subpixel-antialiased dark:bg-dark dark:text-light;
 }
 
 ::selection {
