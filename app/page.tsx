@@ -6,7 +6,7 @@ export default function Home() {
         <div className="flex h-full flex-col items-center justify-center md:flex-row md:justify-between">
             <Image
                 alt="doodle"
-                src="/me.svg"
+                src="default/me-dark.svg"
                 priority
                 width={350}
                 height={350}
@@ -14,7 +14,7 @@ export default function Home() {
             />
             <Image
                 alt="doodle"
-                src="/me-light.svg"
+                src="default/me-light.svg"
                 priority
                 width={350}
                 height={350}
