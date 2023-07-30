@@ -10,7 +10,7 @@ export default function Home() {
                     src="/me.svg"
                     priority
                     width={300}
-                    height={400}
+                    height={300}
                     className="hidden dark:block md:w-[400px]"
                 />
                 <Image
@@ -18,7 +18,7 @@ export default function Home() {
                     src="/me-light.svg"
                     priority
                     width={300}
-                    height={400}
+                    height={300}
                     className="dark:hidden md:w-[400px]"
                 />
                 <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
