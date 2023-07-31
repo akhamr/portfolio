@@ -18,7 +18,7 @@ export default function Home() {
                     <Doodle1 />
                 </div>
             </div>
-            <div className="relative dark:hidden">
+            <div className="relative mb-6 dark:hidden md:mb-0">
                 <Image
                     alt="doodle"
                     src="default/me-light.svg"
