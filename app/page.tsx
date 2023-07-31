@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function Home() {
     return (
-        <div className="flex h-full flex-col items-center justify-center md:flex-row md:justify-between">
-            <div className="relative hidden dark:block">
+        <div className="flex h-full flex-col items-center justify-center pb-6 md:flex-row md:justify-between md:pb-0">
+            <div className="relative mb-6 hidden dark:block md:mb-0">
                 <Image
                     alt="doodle"
                     src="default/me-dark.svg"
