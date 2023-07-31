@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    overflow-y: overlay;
+    /* overflow-y: overlay; */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
