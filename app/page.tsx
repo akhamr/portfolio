@@ -1,6 +1,14 @@
-import { Doodle1, Doodle2 } from '@/components/Doodle';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+
+const Doodle1 = dynamic(() => import('@/components/doodle/Doodle1'), {
+    ssr: false,
+});
+
+const Doodle2 = dynamic(() => import('@/components/doodle/Doodle2'), {
+    ssr: false,
+});
 
 export default function Home() {
     return (
