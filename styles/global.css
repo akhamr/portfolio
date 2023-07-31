@@ -6,6 +6,8 @@ html {
     overflow-y: overlay;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    min-height: -webkit-fill-available;
+    height: 100%;
 }
 
 body {
