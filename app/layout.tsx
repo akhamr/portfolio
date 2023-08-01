@@ -31,7 +31,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${doodle.variable} ${sans.variable} ${footer.variable}`}
+            className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable}`}
             suppressHydrationWarning
         >
             <body className="flex h-full flex-col justify-between">
