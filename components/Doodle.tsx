@@ -9,7 +9,6 @@ export function Doodle1() {
                 stroke="rgba(255, 213, 90, 0.6)"
                 strokeWidth={5}
                 strokeLinejoin="round"
-                strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 2, ease: [1, 0.4, 0.7, 0.9] }}
@@ -27,7 +26,6 @@ export function Doodle2() {
                 stroke="rgba(155, 155, 155, 0.6)"
                 strokeWidth={5}
                 strokeLinejoin="round"
-                strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 2, ease: [1, 0.4, 0.7, 0.9] }}
@@ -45,7 +43,6 @@ export function Doodle3() {
                 stroke="rgba(255, 213, 90, 0.6)"
                 strokeWidth={10}
                 strokeLinejoin="round"
-                strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1, ease: 'easeIn' }}
@@ -63,7 +60,6 @@ export function Doodle4() {
                 stroke="rgba(155, 155, 155, 0.6)"
                 strokeWidth={10}
                 strokeLinejoin="round"
-                strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1, ease: 'easeIn' }}
