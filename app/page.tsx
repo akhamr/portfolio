@@ -37,10 +37,10 @@ export default function Home() {
                     <span className="relative">
                         {' '}
                         akha.{' '}
-                        <div className="absolute -bottom-8 -left-4 hidden w-32 dark:block md:-bottom-10 md:w-[150px]">
+                        <div className="absolute -left-4 -top-1 hidden w-32 dark:block md:-top-1.5 md:w-[150px]">
                             <Doodle3 />
                         </div>
-                        <div className="absolute -bottom-8 -left-4 w-32 dark:hidden md:-bottom-10 md:w-[150px]">
+                        <div className="absolute -left-4 -top-1 w-32 dark:hidden md:-top-1.5 md:w-[150px]">
                             <Doodle4 />
                         </div>
                     </span>
