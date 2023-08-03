@@ -1,4 +1,4 @@
-import { Doodle1, Doodle2 } from '@/components/Doodle';
+import { Doodle1, Doodle2, Doodle3, Doodle4 } from '@/components/Doodle';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -33,7 +33,18 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
                 <h1 className="noselect mt-1 font-doodle text-3xl md:text-4xl">
-                    It&apos;s me, akha. 🤔
+                    It&apos;s me,
+                    <span className="relative">
+                        {' '}
+                        akha.{' '}
+                        <div className="absolute -bottom-8 -left-4 hidden w-32 dark:block md:-bottom-10 md:w-[150px]">
+                            <Doodle3 />
+                        </div>
+                        <div className="absolute -bottom-8 -left-4 w-32 dark:hidden md:-bottom-10 md:w-[150px]">
+                            <Doodle4 />
+                        </div>
+                    </span>
+                    🤔
                 </h1>
                 <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
                     A data enthusiast based in Semarang, Indonesia. Love to

@@ -36,3 +36,39 @@ export function Doodle2() {
         </svg>
     );
 }
+
+export function Doodle3() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 70 300 200">
+            <motion.path
+                fill="none"
+                stroke="rgba(255, 213, 90, 0.6)"
+                strokeWidth={10}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.3, ease: 'easeIn' }}
+                d="M45.694491,198.448448c99.161572,16.809223,195.098295-9.406218,183.38618-60.77186-3.619185-15.872604-23.56179-25.197133-42.573242-42.362728C154.687983,66.583822,-8.021783,81.521996,30.778808,159.011397c8.713317,17.401532,13.619593,12.930165,25.284409,27.153372"
+            />
+        </svg>
+    );
+}
+
+export function Doodle4() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 70 300 200">
+            <motion.path
+                fill="none"
+                stroke="rgba(155, 155, 155, 0.6)"
+                strokeWidth={10}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.3, ease: 'easeIn' }}
+                d="M45.694491,198.448448c99.161572,16.809223,195.098295-9.406218,183.38618-60.77186-3.619185-15.872604-23.56179-25.197133-42.573242-42.362728C154.687983,66.583822,-8.021783,81.521996,30.778808,159.011397c8.713317,17.401532,13.619593,12.930165,25.284409,27.153372"
+            />
+        </svg>
+    );
+}
