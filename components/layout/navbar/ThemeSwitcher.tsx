@@ -1,15 +1,16 @@
+'use client';
 import { useTheme } from 'next-themes';
 
 export default function ThemeSwitcher() {
     const { theme, setTheme } = useTheme();
-    const isDark = theme === 'dark';
+    const isLight = theme === 'light';
 
     return (
         <input
             aria-label="themeToggler"
             type="checkbox"
-            onChange={() => setTheme(isDark ? 'light' : 'dark')}
-            checked={!isDark}
+            onChange={() => setTheme(isLight ? 'dark' : 'light')}
+            checked={isLight}
             className="toggle"
         />
     );

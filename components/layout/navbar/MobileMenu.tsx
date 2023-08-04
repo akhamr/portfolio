@@ -1,3 +1,4 @@
+'use client';
 import { Menu, Transition } from '@headlessui/react';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
