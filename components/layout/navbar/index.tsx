@@ -42,9 +42,7 @@ export default function Navbar() {
                         })}
                     </div>
                     <div className="flex items-center space-x-3 px-3">
-                        <div className="h-[18px] w-[18px]">
-                            <ThemeSwitcher />
-                        </div>
+                        <ThemeSwitcher />
                         <MobileMenu />
                     </div>
                 </div>
