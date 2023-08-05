@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+const Blob = dynamic(() => import('@/components/Blob'), { ssr: false });
 
-const Blob = dynamic(() => import('@/components/Blob'));
+export const metadata: Metadata = {
+    title: 'About',
+    description: 'Mamam',
+};
 
 export default function About() {
     return (
