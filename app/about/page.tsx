@@ -1,7 +1,39 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+
 const Blob = dynamic(() => import('@/components/Blob'), { ssr: false });
+
+const socials = [
+    {
+        name: 'Email',
+        url: 'mailto:hi@wisesa.dev',
+    },
+    {
+        name: 'Github',
+        url: 'https://github.com/kelilipan',
+    },
+    {
+        name: 'Instagram',
+        url: 'https://instagram.com/anvaqta',
+    },
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/anvaqta/',
+    },
+    {
+        name: 'Medium',
+        url: 'https://svspicious.medium.com/',
+    },
+    {
+        name: 'Polywork',
+        url: 'https://timeline.wisesa.dev/',
+    },
+    {
+        name: 'Spotify',
+        url: 'https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai',
+    },
+];
 
 export const metadata: Metadata = {
     title: 'About',
@@ -17,9 +49,9 @@ export default function About() {
             <div className="mx-auto flex h-80 w-80 md:h-96 md:w-96">
                 <Blob />
             </div>
-            <div className="pt-4">
-                <section className="prose max-w-full dark:prose-dark">
-                    <h2 id="about">
+            <div className="prose max-w-full dark:prose-dark">
+                <section>
+                    <h2 id="about" className="mt-4">
                         <Link className="text-3xl" href="#about">
                             About
                         </Link>
@@ -109,6 +141,40 @@ export default function About() {
                             listening music
                         </Link>
                         .
+                    </p>
+                </section>
+                <section>
+                    <h2 id="contact">
+                        <Link className="text-3xl" href="#contact">
+                            Contact
+                        </Link>
+                    </h2>
+                    <p>
+                        I’m always excited to connect with everyone so please
+                        don’t hesitate to{' '}
+                        <Link className="underline" href="mailto:hi@wisesa.dev">
+                            get in touch
+                        </Link>{' '}
+                        with me by following my social media bellow:
+                    </p>
+                    <ul>
+                        {socials.map((data, idx) => (
+                            <li key={idx}>
+                                <p className="my-2 truncate">
+                                    {data.name} -{' '}
+                                    <Link className="underline" href={data.url}>
+                                        {data.url.replace('mailto:', '')}
+                                    </Link>
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                    <p>
+                        Also, you can{' '}
+                        <Link className="underline" href="/resume">
+                            read my resume here
+                        </Link>
+                        . Anyway, thanks for visiting my profile :)
                     </p>
                 </section>
             </div>
