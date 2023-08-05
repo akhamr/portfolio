@@ -12,12 +12,12 @@ export default function About() {
     return (
         <section
             id="main-content"
-            className="mx-auto flex h-full w-full max-w-3xl flex-1 flex-col"
+            className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-2"
         >
             <div className="mx-auto flex h-80 w-80 md:h-96 md:w-96">
                 <Blob />
             </div>
-            <div className="pt-6">
+            <div className="pt-4">
                 <section className="prose max-w-full dark:prose-dark">
                     <h2 id="about">
                         <Link className="text-3xl" href="#about">
