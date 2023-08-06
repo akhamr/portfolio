@@ -52,13 +52,13 @@ export default function About() {
                             About
                         </Link>
                     </h2>
-                    <p>
+                    <p className="indent-5">
                         Hello, my name is <b>Khamid Muhammad Arrazaq</b> (
                         <b>Akha</b>), an enthusiastic fresh graduate with a
                         strong passion for <i>data analytics</i> and{' '}
                         <i>full-stack development</i>.
                     </p>
-                    <p>
+                    <p className="indent-5">
                         I recently completed my studies in Mathematics at{' '}
                         <Link className="underline" href="https://uns.ac.id/">
                             Sebelas Maret University
@@ -69,14 +69,14 @@ export default function About() {
                         statistical analysis, and data visualization using tools
                         like <b>Python</b>, <b>SQL</b>, and <b>Tableau</b>.
                     </p>
-                    <p>
+                    <p className="indent-5">
                         On the other hand, my love for technology and
                         programming led me to delve into the world of full-stack
                         development. I am skilled in front-end technologies such
                         as <b>Next.js</b> and <b>TailwindCSS</b>, as well as
                         back-end technologies like <b>Laravel</b>.
                     </p>
-                    <p>
+                    <p className="indent-5">
                         During my time as a student, I had the opportunity to
                         join internship and intensive bootcamp as part of
                         Ministry of Education{' '}
@@ -104,7 +104,7 @@ export default function About() {
                         and gained proficiency in data analytics and web
                         development.
                     </p>
-                    <p>
+                    <p className="indent-5">
                         Outside of programming thingy, I love playing games and
                         listening music.
                     </p>
@@ -115,7 +115,7 @@ export default function About() {
                             Contact
                         </Link>
                     </h2>
-                    <p>
+                    <p className="indent-5">
                         I’m always excited to connect with everyone so please
                         don’t hesitate to reach out by following my social media
                         below:
