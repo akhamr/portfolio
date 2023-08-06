@@ -44,7 +44,7 @@ export default function Home() {
                             <Doodle2 />
                         </div>
                     </span>
-                    🤔
+                    &#129300;
                 </h1>
                 <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
                     A data enthusiast based in Semarang, Indonesia. Love to

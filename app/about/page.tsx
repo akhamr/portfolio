@@ -7,31 +7,27 @@ const Blob = dynamic(() => import('@/components/Blob'), { ssr: false });
 const socials = [
     {
         name: 'Email',
-        url: 'mailto:hi@wisesa.dev',
+        url: 'mailto:hello@akhamr.tech',
     },
     {
         name: 'Github',
-        url: 'https://github.com/kelilipan',
+        url: 'https://github.com/akhamr',
     },
     {
         name: 'Instagram',
-        url: 'https://instagram.com/anvaqta',
+        url: 'https://www.instagram.com/akhamr_/',
     },
     {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/anvaqta/',
+        url: 'https://www.linkedin.com/in/akhamr/',
     },
     {
         name: 'Medium',
-        url: 'https://svspicious.medium.com/',
-    },
-    {
-        name: 'Polywork',
-        url: 'https://timeline.wisesa.dev/',
+        url: 'https://akhamr.medium.com/',
     },
     {
         name: 'Spotify',
-        url: 'https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai',
+        url: 'https://open.spotify.com/user/21zvaib7nglwuveksfzrdvngi',
     },
 ];
 
@@ -57,90 +53,60 @@ export default function About() {
                         </Link>
                     </h2>
                     <p>
-                        Hello, my name is <b>Anvaqta Tangguh Wisesa</b>, you can
-                        call me <b>Wisesa</b> or <b>Esa</b> for short. If
-                        you&apos;re my school/college friend you maybe know me
-                        as <b>Vaq</b> or <b>Anvaq</b>.
+                        Hello, my name is <b>Khamid Muhammad Arrazaq</b> (
+                        <b>Akha</b>), an enthusiastic fresh graduate with a
+                        strong passion for <i>data analytics</i> and{' '}
+                        <i>full-stack development</i>.
                     </p>
                     <p>
-                        I grew up in a small village located in{' '}
-                        <Link
-                            className="underline"
-                            href="https://www.google.com/search?q=grobogan+jawa+tengah"
-                        >
-                            Grobogan, Jawa Tengah
+                        I recently completed my studies in Mathematics at{' '}
+                        <Link className="underline" href="https://uns.ac.id/">
+                            Sebelas Maret University
                         </Link>
-                        . Graduated from{' '}
-                        <Link
-                            className="underline"
-                            href="https://telkomuniversity.ac.id/"
-                        >
-                            Telkom University
-                        </Link>{' '}
-                        with a Bachelor&apos;s degree in Informatics (Computer
-                        science) and currently working as a{' '}
-                        <i>Software Engineer - Web Platform</i> (you maybe more
-                        familiar with &quot;Front-end engineer&quot;) at{' '}
-                        <Link
-                            className="underline"
-                            href="https://www.tokopedia.com"
-                        >
-                            Tokopedia
-                        </Link>
-                        . I was previously working as a Software engineer at a
-                        start-up called{' '}
-                        <Link
-                            className="underline"
-                            href="https://ketringan.com"
-                        >
-                            Ketringan Indonesia
-                        </Link>
-                        .
+                        , where I gained a solid foundation in analytical and
+                        programming abilities. Throughout my academic journey, I
+                        gained hands-on experience in data manipulation,
+                        statistical analysis, and data visualization using tools
+                        like <b>Python</b>, <b>SQL</b>, and <b>Tableau</b>.
                     </p>
                     <p>
-                        I love exploring everything related to technology. When
-                        i was in college i join many community and orgs to
-                        expand my knowledge, I&apos;m member of{' '}
-                        <Link
-                            className="underline"
-                            href="https://www.instagram.com/cciunitel/?hl=en"
-                        >
-                            CCI-Unitel
-                        </Link>
-                        , part of{' '}
-                        <Link
-                            className="underline"
-                            href="https://www.instagram.com/pramukatelu/?hl=en"
-                        >
-                            Pramuka Tel-U
-                        </Link>
-                        , and i&apos;m the (ex) lab.assistant of{' '}
-                        <Link
-                            className="underline"
-                            href="http://ailabtelkom.github.io/"
-                        >
-                            Artificial Intelligence TelU
-                        </Link>
-                        . Also, I joined many competition such as Competitive
-                        programming, UI/UX Design, and{' '}
-                        <Link
-                            className="underline"
-                            href="https://youngster.id/news/ketringan-com-juara-di-brixgoogle-cloud-hackathon/"
-                        >
-                            Hackathon
-                        </Link>
-                        .
+                        On the other hand, my love for technology and
+                        programming led me to delve into the world of full-stack
+                        development. I am skilled in front-end technologies such
+                        as <b>Next.js</b> and <b>TailwindCSS</b>, as well as
+                        back-end technologies like <b>Laravel</b>.
                     </p>
                     <p>
-                        Outside of software developing thingy, I love playing
-                        and{' '}
+                        During my time as a student, I had the opportunity to
+                        join internship and intensive bootcamp as part of
+                        Ministry of Education{' '}
                         <Link
                             className="underline"
-                            href="https://open.spotify.com/user/21xnhzh4qf74t5t4lp2fammai"
+                            href="https://kampusmerdeka.kemdikbud.go.id/"
                         >
-                            listening music
+                            program
                         </Link>
-                        .
+                        , such as junior web developer intern at{' '}
+                        <Link
+                            className="underline"
+                            href="https://www.tigaserangkai.com/"
+                        >
+                            PT. Tiga Serangkai
+                        </Link>
+                        , and data analysis participant at{' '}
+                        <Link
+                            className="underline"
+                            href="https://www.anakbangsabisa.org/generasi-gigih/"
+                        >
+                            Generasi Gigih 2.0
+                        </Link>
+                        . These experiences allowed me to expand my knowledge,
+                        and gained proficiency in data analytics and web
+                        development.
+                    </p>
+                    <p>
+                        Outside of programming thingy, I love playing games and
+                        listening music.
                     </p>
                 </section>
                 <section>
@@ -151,11 +117,8 @@ export default function About() {
                     </h2>
                     <p>
                         I’m always excited to connect with everyone so please
-                        don’t hesitate to{' '}
-                        <Link className="underline" href="mailto:hi@wisesa.dev">
-                            get in touch
-                        </Link>{' '}
-                        with me by following my social media bellow:
+                        don’t hesitate to reach out by following my social media
+                        below:
                     </p>
                     <ul>
                         {socials.map((data, idx) => (
@@ -171,10 +134,10 @@ export default function About() {
                     </ul>
                     <p>
                         Also, you can{' '}
-                        <Link className="underline" href="/resume">
+                        <Link className="underline" href="/resume.pdf">
                             read my resume here
                         </Link>
-                        . Anyway, thanks for visiting my profile :)
+                        . Anyway, thanks for visiting my profile &#128591;
                     </p>
                 </section>
             </div>
