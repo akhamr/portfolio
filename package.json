@@ -32,6 +32,7 @@
     "devDependencies": {
         "@headlessui/react": "^1.7.15",
         "@heroicons/react": "^2.0.18",
+        "@tailwindcss/line-clamp": "^0.4.4",
         "@tailwindcss/typography": "^0.5.9",
         "dayjs": "^1.11.9",
         "framer-motion": "^10.15.0",

@@ -84,9 +84,6 @@ body {
     h5 {
         @apply text-base font-bold lg:text-lg;
     }
-    h5 {
-        @apply text-base font-bold;
-    }
 }
 
 .prose {

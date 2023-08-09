@@ -20,46 +20,50 @@ export default async function Blog() {
             <p className="mt-2">
                 Some blabber and stuff i didn&apos;t mean to made.
             </p>
-            <div className="grid grid-cols-1 gap-6 py-4 md:grid-cols-2">
-                {filteredBlogPosts.map((frontMatter, i) => {
-                    return (
-                        <Link
-                            key={i}
-                            className="rounded"
-                            href={`/blog/${frontMatter.slug}`}
-                        >
-                            <div className="group rounded-md border-2 border-dashed border-gray-200 transition duration-200 ease-in-out hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
-                                <div className="rounded-t border-b group-hover:opacity-90 dark:border-dark">
-                                    <Image
-                                        src={frontMatter.image}
-                                        alt={frontMatter.title}
-                                        className="rounded-t"
-                                        width="540"
-                                        height="270"
-                                        placeholder="blur"
-                                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
-                                    />
-                                </div>
-                                <div className="rounded-b p-2">
-                                    <h4 className="leading-snug">
-                                        {frontMatter.title}
-                                    </h4>
-                                    <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
-                                        {day(frontMatter.date).format(
-                                            'MMMM DD, YYYY'
-                                        )}
-                                        {` • ${frontMatter.readingTime.text}`}
-                                        {` • ${frontMatter.readingTime.words} word(s)`}
+            {filteredBlogPosts.length > 0 ? (
+                <div className="grid grid-cols-1 gap-6 py-4 md:grid-cols-2">
+                    {filteredBlogPosts.map((frontMatter, i) => {
+                        return (
+                            <>
+                                <Link
+                                    key={i}
+                                    className="rounded"
+                                    href={`/blog/${frontMatter.slug}`}
+                                >
+                                    <div className="rounded-md border-2 border-dashed border-gray-200 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+                                        <Image
+                                            src={frontMatter.image}
+                                            alt={frontMatter.title}
+                                            className="rounded-t hover:opacity-90"
+                                            width="540"
+                                            height="270"
+                                            placeholder="blur"
+                                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
+                                        />
+                                        <div className="rounded-b p-2">
+                                            <h4 className="line-clamp-1 leading-snug">
+                                                {frontMatter.title}
+                                            </h4>
+                                            <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                                                {day(frontMatter.date).format(
+                                                    'MMMM DD, YYYY'
+                                                )}
+                                                {` • ${frontMatter.readingTime.text}`}
+                                                {` • ${frontMatter.readingTime.words} word(s)`}
+                                            </div>
+                                            <p className="line-clamp-2 text-sm md:text-base">
+                                                {frontMatter.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p className="text-sm md:text-base">
-                                        {frontMatter.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
+                                </Link>
+                            </>
+                        );
+                    })}
+                </div>
+            ) : (
+                <p className="pt-4">No blog post.</p>
+            )}
         </>
     );
 }
