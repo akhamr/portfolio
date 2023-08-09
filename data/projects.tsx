@@ -5,6 +5,7 @@ type ProjectType = {
     image: string | any;
     technology?: {
         name: string;
+        color?: string | any;
         url?: string;
     }[];
     source?: string;
@@ -13,14 +14,17 @@ type ProjectType = {
 
 const js = {
     name: "javascript",
+    color: "bg-yellow-300 dark:bg-yellow-800",
 };
 
 const react = {
     name: "react",
+    color: "bg-blue-300 dark:bg-blue-800",
 };
 
 const nextjs = {
     name: "nextjs",
+    color: "bg-yellow-300 dark:bg-yellow-800",
     url: "https://nextjs.org/",
 };
 

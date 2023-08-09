@@ -8,21 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 const day = require("dayjs");
 
-const colorMap: Record<any, string> = {
-    react: "bg-blue-300 dark:bg-blue-800",
-    "next.js": "bg-yellow-300 dark:bg-yellow-800",
-    nextjs: "bg-yellow-300 dark:bg-yellow-800",
-    javascript: "bg-yellow-300 dark:bg-yellow-800",
-    typescript: "bg-blue-300 dark:bg-blue-800",
-    php: "bg-purple-300 dark:bg-purple-800",
-    laravel: "bg-yellow-300 dark:bg-yellow-800",
-    express: "bg-green-300 dark:bg-green-800",
-    "express.js": "bg-green-300 dark:bg-green-800",
-    expressjs: "bg-green-300 dark:bg-green-800",
-    line: "bg-green-300 dark:bg-green-800",
-    python: "bg-blue-300 dark:bg-blue-800",
-};
-
 export const metadata: Metadata = {
     title: "Projects",
     description: "Some collection of my past works.",
@@ -88,12 +73,8 @@ export default async function Blog() {
                                                 (tech, idx) => (
                                                     <div
                                                         className={`${
-                                                            colorMap[
-                                                                tech.name.toLowerCase()
-                                                            ]
-                                                                ? colorMap[
-                                                                      tech.name.toLowerCase()
-                                                                  ]
+                                                            tech.color
+                                                                ? tech.color
                                                                 : "bg-gray-300 dark:bg-gray-700"
                                                         } rounded-sm px-1 pt-0.5 text-[11px] font-bold uppercase md:text-xs`}
                                                         key={idx}
