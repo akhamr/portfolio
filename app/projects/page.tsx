@@ -55,7 +55,7 @@ export default async function Blog() {
                                     placeholder="blur"
                                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                                 />
-                                <div className="flex max-w-xl flex-col justify-between p-4 md:p-6">
+                                <div className="flex max-w-xl flex-col justify-between p-4 md:p-6 sm:w-1/2">
                                     <div>
                                         <h1 className="line-clamp-2 font-extrabold hover:underline">
                                             {project.url !== undefined ||
