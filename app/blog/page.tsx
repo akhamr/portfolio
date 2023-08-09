@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
-import { getAllPost } from '@/hooks/PostLib';
-import Image from 'next/image';
-import Link from 'next/link';
-const day = require('dayjs');
+import type { Metadata } from "next";
+import { getAllPost } from "@/hooks/PostLib";
+import Image from "next/image";
+import Link from "next/link";
+const day = require("dayjs");
 
 export const metadata: Metadata = {
-    title: 'Blog',
-    description: 'Mamam',
+    title: "Blog",
+    description: "Some blabber and stuff i didn't mean to made.",
 };
 
 export default async function Blog() {
@@ -46,7 +46,7 @@ export default async function Blog() {
                                             </h4>
                                             <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
                                                 {day(frontMatter.date).format(
-                                                    'MMMM DD, YYYY'
+                                                    "MMMM DD, YYYY"
                                                 )}
                                                 {` • ${frontMatter.readingTime.text}`}
                                                 {` • ${frontMatter.readingTime.words} word(s)`}

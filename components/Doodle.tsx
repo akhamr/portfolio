@@ -1,5 +1,5 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
 // Stroke line-cap round bugged
 
@@ -28,7 +28,7 @@ export function Doodle2() {
                 strokeLinejoin="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 d="M48.535114,143.47264c18.455469.593002,35.008148-7.229923,48.255066-4.30849c48.916668,10.787924,92.379222,8.169057,137.009906,4.30849"
             />
         </svg>

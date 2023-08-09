@@ -1,31 +1,31 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 import {
     ArrowSmallRightIcon,
     CodeBracketIcon,
-} from '@heroicons/react/24/solid';
-import projects from '@/data/projects';
-import Image from 'next/image';
-import Link from 'next/link';
-const day = require('dayjs');
+} from "@heroicons/react/24/solid";
+import projects from "@/data/projects";
+import Image from "next/image";
+import Link from "next/link";
+const day = require("dayjs");
 
 const colorMap: Record<any, string> = {
-    react: 'bg-blue-300 dark:bg-blue-800',
-    'next.js': 'bg-yellow-300 dark:bg-yellow-800',
-    nextjs: 'bg-yellow-300 dark:bg-yellow-800',
-    javascript: 'bg-yellow-300 dark:bg-yellow-800',
-    typescript: 'bg-blue-300 dark:bg-blue-800',
-    php: 'bg-purple-300 dark:bg-purple-800',
-    laravel: 'bg-yellow-300 dark:bg-yellow-800',
-    express: 'bg-green-300 dark:bg-green-800',
-    'express.js': 'bg-green-300 dark:bg-green-800',
-    expressjs: 'bg-green-300 dark:bg-green-800',
-    line: 'bg-green-300 dark:bg-green-800',
-    python: 'bg-blue-300 dark:bg-blue-800',
+    react: "bg-blue-300 dark:bg-blue-800",
+    "next.js": "bg-yellow-300 dark:bg-yellow-800",
+    nextjs: "bg-yellow-300 dark:bg-yellow-800",
+    javascript: "bg-yellow-300 dark:bg-yellow-800",
+    typescript: "bg-blue-300 dark:bg-blue-800",
+    php: "bg-purple-300 dark:bg-purple-800",
+    laravel: "bg-yellow-300 dark:bg-yellow-800",
+    express: "bg-green-300 dark:bg-green-800",
+    "express.js": "bg-green-300 dark:bg-green-800",
+    expressjs: "bg-green-300 dark:bg-green-800",
+    line: "bg-green-300 dark:bg-green-800",
+    python: "bg-blue-300 dark:bg-blue-800",
 };
 
 export const metadata: Metadata = {
-    title: 'Projects',
-    description: 'Mamam',
+    title: "Projects",
+    description: "Some collection of my past works.",
 };
 
 export default async function Blog() {
@@ -65,7 +65,7 @@ export default async function Blog() {
                                                         project.url
                                                             ? project.url
                                                             : project.source ||
-                                                              '#'
+                                                              "#"
                                                     }
                                                 >
                                                     {project.title}
@@ -75,9 +75,9 @@ export default async function Blog() {
                                             )}
                                         </h1>
                                         <p className="py-2 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
-                                            Created at{' '}
+                                            Created at{" "}
                                             {day(project.createdAt).format(
-                                                'MMMM YYYY'
+                                                "MMMM YYYY"
                                             )}
                                         </p>
                                         <p className="line-clamp-3 text-justify text-sm md:text-base">
@@ -94,7 +94,7 @@ export default async function Blog() {
                                                                 ? colorMap[
                                                                       tech.name.toLowerCase()
                                                                   ]
-                                                                : 'bg-gray-300 dark:bg-gray-700'
+                                                                : "bg-gray-300 dark:bg-gray-700"
                                                         } rounded-sm px-1 pt-0.5 text-[11px] font-semibold uppercase md:text-xs`}
                                                         key={idx}
                                                     >

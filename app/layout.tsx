@@ -1,22 +1,22 @@
-import '@/styles/global.css';
-import type { Metadata } from 'next';
-import { doodle, sans, footer } from '@/styles/fonts';
-import Navbar from '@/components/layout/navbar';
-import Footer from '@/components/layout/Footer';
-import Providers from '@/components/layout/Provider';
+import "@/styles/global.css";
+import type { Metadata } from "next";
+import { doodle, sans, footer } from "@/styles/fonts";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/Footer";
+import Providers from "@/components/layout/Provider";
 
 export const metadata: Metadata = {
     title: {
-        template: '%s · Akhamr.tech',
+        template: "%s · Akhamr.tech",
         default: "It's me, akha!",
     },
     description:
-        'Trying my best to build a portfolio website with just curiosity and lot of stress.',
+        "Trying my best to build a portfolio website with just curiosity and lot of stress.",
     openGraph: {
-        type: 'website',
+        type: "website",
         images: [
             {
-                url: 'default/og.png',
+                url: "default/og.png",
                 width: 300,
             },
         ],

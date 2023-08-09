@@ -1,7 +1,7 @@
-import type { Metadata, ResolvingMetadata } from 'next';
-import { getFiles, getPostBySlug } from '@/hooks/PostLib';
-import Link from 'next/link';
-const day = require('dayjs');
+import type { Metadata, ResolvingMetadata } from "next";
+import { getFiles, getPostBySlug } from "@/hooks/PostLib";
+import Link from "next/link";
+const day = require("dayjs");
 
 type Props = {
     params: { id: string };
@@ -43,8 +43,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     <p>
                         <Link href="/about" className="font-semibold">
                             Akha
-                        </Link>{' '}
-                        / {day(frontmatter.date).format('MMMM DD, YYYY')}
+                        </Link>{" "}
+                        / {day(frontmatter.date).format("MMMM DD, YYYY")}
                     </p>
                     <p className="ml-auto">
                         {`${frontmatter.readingTime.text}`}
@@ -61,7 +61,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
     const posts = await getFiles();
     return posts.map((post) => {
-        const slug = post.replace(/\.mdx/, '');
+        const slug = post.replace(/\.mdx/, "");
         return {
             slug: slug,
         };

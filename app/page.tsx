@@ -1,6 +1,6 @@
-import { Doodle1, Doodle2 } from '@/components/Doodle';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Doodle1, Doodle2 } from "@/components/Doodle";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -35,8 +35,8 @@ export default function Home() {
                 <h1 className="noselect mt-1 font-doodle text-3xl md:text-4xl">
                     It&apos;s me,
                     <span className="relative">
-                        {' '}
-                        akha.{' '}
+                        {" "}
+                        akha.{" "}
                         <div className="absolute -left-2.5 top-4 hidden w-[6.5rem] stroke-[#ffd55a]/60 dark:block md:top-5 md:w-[7.5rem]">
                             <Doodle2 />
                         </div>
@@ -51,14 +51,14 @@ export default function Home() {
                     explore anything about data analytics and web development.
                 </p>
                 <p className="max-w-[500px] text-center md:text-left">
-                    Checkout my{' '}
+                    Checkout my{" "}
                     <Link
                         className="relative z-10 font-semibold underline"
                         href="/projects"
                     >
                         past works
-                    </Link>{' '}
-                    or learn more{' '}
+                    </Link>{" "}
+                    or learn more{" "}
                     <Link
                         href="/about"
                         className="relative z-10 font-semibold underline"

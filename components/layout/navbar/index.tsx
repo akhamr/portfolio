@@ -1,19 +1,19 @@
-import Link from 'next/link';
-import MobileMenu from './MobileMenu';
-import ThemeSwitcher from './ThemeSwitcher';
+import Link from "next/link";
+import MobileMenu from "./MobileMenu";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const links = [
     {
-        text: 'Blog',
-        url: '/blog',
+        text: "Blog",
+        url: "/blog",
     },
     {
-        text: 'Projects',
-        url: '/projects',
+        text: "Projects",
+        url: "/projects",
     },
     {
-        text: 'About',
-        url: '/about',
+        text: "About",
+        url: "/about",
     },
 ];
 

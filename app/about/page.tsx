@@ -1,39 +1,39 @@
-import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
-const Blob = dynamic(() => import('@/components/Blob'), { ssr: false });
+const Blob = dynamic(() => import("@/components/Blob"), { ssr: false });
 
 const socials = [
     {
-        name: 'Email',
-        url: 'mailto:hello@akhamr.tech',
+        name: "Email",
+        url: "mailto:hello@akhamr.tech",
     },
     {
-        name: 'Github',
-        url: 'https://github.com/akhamr',
+        name: "Github",
+        url: "https://github.com/akhamr",
     },
     {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/akhamr_/',
+        name: "Instagram",
+        url: "https://www.instagram.com/akhamr_/",
     },
     {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/akhamr/',
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/akhamr/",
     },
     {
-        name: 'Medium',
-        url: 'https://akhamr.medium.com/',
+        name: "Medium",
+        url: "https://akhamr.medium.com/",
     },
     {
-        name: 'Spotify',
-        url: 'https://open.spotify.com/user/21zvaib7nglwuveksfzrdvngi',
+        name: "Spotify",
+        url: "https://open.spotify.com/user/21zvaib7nglwuveksfzrdvngi",
     },
 ];
 
 export const metadata: Metadata = {
-    title: 'About',
-    description: 'Mamam',
+    title: "About",
+    description: "Hello everyone, my name is Akha.",
 };
 
 export default function About() {
@@ -55,11 +55,11 @@ export default function About() {
                     <p>
                         Hello, my name is <b>Khamid Muhammad Arrazaq</b> (
                         <b>Akha</b>), an enthusiastic fresh graduate with a
-                        strong passion for <i>data analytics</i> and{' '}
+                        strong passion for <i>data analytics</i> and{" "}
                         <i>full-stack development</i>.
                     </p>
                     <p>
-                        I recently completed my studies in Mathematics at{' '}
+                        I recently completed my studies in Mathematics at{" "}
                         <Link className="underline" href="https://uns.ac.id/">
                             Sebelas Maret University
                         </Link>
@@ -79,21 +79,21 @@ export default function About() {
                     <p>
                         During my time as a student, I had the opportunity to
                         join internship and intensive bootcamp as part of
-                        Ministry of Education{' '}
+                        Ministry of Education{" "}
                         <Link
                             className="underline"
                             href="https://kampusmerdeka.kemdikbud.go.id/"
                         >
                             program
                         </Link>
-                        , such as junior web developer intern at{' '}
+                        , such as junior web developer intern at{" "}
                         <Link
                             className="underline"
                             href="https://www.tigaserangkai.com/"
                         >
                             PT. Tiga Serangkai
                         </Link>
-                        , and data analysis participant at{' '}
+                        , and data analysis participant at{" "}
                         <Link
                             className="underline"
                             href="https://www.anakbangsabisa.org/generasi-gigih/"
@@ -124,16 +124,16 @@ export default function About() {
                         {socials.map((data, idx) => (
                             <li key={idx}>
                                 <p className="my-2 truncate">
-                                    {data.name} -{' '}
+                                    {data.name} -{" "}
                                     <Link className="underline" href={data.url}>
-                                        {data.url.replace('mailto:', '')}
+                                        {data.url.replace("mailto:", "")}
                                     </Link>
                                 </p>
                             </li>
                         ))}
                     </ul>
                     <p>
-                        Also, you can{' '}
+                        Also, you can{" "}
                         <Link className="underline" href="/resume.pdf">
                             read my resume here
                         </Link>

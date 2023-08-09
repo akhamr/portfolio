@@ -1,20 +1,20 @@
-'use client';
-import { Menu, Transition } from '@headlessui/react';
-import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import Link from 'next/link';
+"use client";
+import { Menu, Transition } from "@headlessui/react";
+import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const links = [
     {
-        text: 'Blog',
-        url: '/blog',
+        text: "Blog",
+        url: "/blog",
     },
     {
-        text: 'Projects',
-        url: '/projects',
+        text: "Projects",
+        url: "/projects",
     },
     {
-        text: 'About',
-        url: '/about',
+        text: "About",
+        url: "/about",
     },
 ];
 
