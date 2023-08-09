@@ -80,7 +80,7 @@ export default async function Blog() {
                                                 'MMMM YYYY'
                                             )}
                                         </p>
-                                        <p className="line-clamp-3 pt-1 text-justify text-sm md:text-base">
+                                        <p className="line-clamp-3 text-justify text-sm md:text-base">
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap space-x-2 pt-3">
@@ -95,7 +95,7 @@ export default async function Blog() {
                                                                       tech.name.toLowerCase()
                                                                   ]
                                                                 : 'bg-gray-300 dark:bg-gray-700'
-                                                        } rounded-sm px-1 text-xs font-bold uppercase`}
+                                                        } rounded-sm px-1 pt-0.5 text-xs font-bold uppercase`}
                                                         key={idx}
                                                     >
                                                         {tech.url ? (
