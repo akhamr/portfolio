@@ -73,9 +73,8 @@ export default async function Blog() {
                                                 (tech, idx) => (
                                                     <div
                                                         className={`${
-                                                            tech.color
-                                                                ? tech.color
-                                                                : "bg-gray-300 dark:bg-gray-700"
+                                                            tech.color ||
+                                                            "bg-gray-300 dark:bg-gray-700"
                                                         } rounded-sm px-1 pt-0.5 text-[11px] font-bold uppercase md:text-xs`}
                                                         key={idx}
                                                     >

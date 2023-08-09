@@ -100,7 +100,7 @@ const CustomQuote = ({ author, quote, books }: QuoteProps) => {
             <p className="m-0 p-0">{quote}</p>
             <div>
                 {` — ${author}`}
-                {books ? `, ${books}` : null}
+                {books && `, ${books}`}
             </div>
         </blockquote>
     );

@@ -5,7 +5,7 @@ type ProjectType = {
     image: string | any;
     technology?: {
         name: string;
-        color?: string | any;
+        color?: string;
         url?: string;
     }[];
     source?: string;
