@@ -95,7 +95,7 @@ export default async function Blog() {
                                                                       tech.name.toLowerCase()
                                                                   ]
                                                                 : 'bg-gray-300 dark:bg-gray-700'
-                                                        } rounded-sm px-1 pt-0.5 text-xs font-bold uppercase`}
+                                                        } rounded-sm px-1 pt-0.5 text-[11px] font-semibold uppercase md:text-xs`}
                                                         key={idx}
                                                     >
                                                         {tech.url ? (
@@ -113,14 +113,14 @@ export default async function Blog() {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="mt-4 flex space-x-4 text-lg font-bold">
+                                    <div className="mt-4 flex space-x-4 font-bold md:text-lg">
                                         {project.url && (
                                             <>
                                                 <Link
                                                     className="inline-flex hover:underline"
                                                     href={project.url}
                                                 >
-                                                    <ArrowSmallRightIcon className="w-5" />
+                                                    <ArrowSmallRightIcon className="w-4 md:w-5" />
                                                     <p className="pl-2">
                                                         Visit Project
                                                     </p>
@@ -133,7 +133,7 @@ export default async function Blog() {
                                                     className="inline-flex hover:underline"
                                                     href={project.source}
                                                 >
-                                                    <CodeBracketIcon className="w-5" />
+                                                    <CodeBracketIcon className="w-4 md:w-5" />
                                                     <p className="pl-2">
                                                         Source Code
                                                     </p>
