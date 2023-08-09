@@ -43,19 +43,19 @@ export default async function Blog() {
                     {filteredProject.map((project, i) => {
                         return (
                             <div
-                                className="flex flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:flex-row"
+                                className="flex flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:h-[312px] md:flex-row"
                                 key={i}
                             >
                                 <Image
-                                    className="rounded"
-                                    width="540"
-                                    height="304"
+                                    className="rounded md:w-1/2"
+                                    width="555"
+                                    height="312"
                                     src={project.image}
                                     alt={project.title}
                                     placeholder="blur"
                                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                                 />
-                                <div className="flex max-w-xl flex-col justify-between p-4 md:p-6 sm:w-1/2">
+                                <div className="flex max-w-[555px] flex-col justify-between p-4 md:w-1/2 md:p-6">
                                     <div>
                                         <h1 className="line-clamp-2 font-extrabold hover:underline">
                                             {project.url !== undefined ||
@@ -74,13 +74,13 @@ export default async function Blog() {
                                                 project.title
                                             )}
                                         </h1>
-                                        <p className="py-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                                        <p className="py-2 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
                                             Created at{' '}
                                             {day(project.createdAt).format(
                                                 'MMMM YYYY'
                                             )}
                                         </p>
-                                        <p className="line-clamp-3 pt-2 text-justify text-sm md:text-base">
+                                        <p className="line-clamp-3 pt-1 text-justify text-sm md:text-base">
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap space-x-2 pt-3">
@@ -95,7 +95,7 @@ export default async function Blog() {
                                                                       tech.name.toLowerCase()
                                                                   ]
                                                                 : 'bg-gray-300 dark:bg-gray-700'
-                                                        } rounded-sm px-1 py-0.5 text-xs font-bold uppercase`}
+                                                        } rounded-sm px-1 text-xs font-bold uppercase`}
                                                         key={idx}
                                                     >
                                                         {tech.url ? (
