@@ -29,17 +29,15 @@ export default function Navbar() {
                 </Link>
                 <div className="flex">
                     <div className="hidden md:flex">
-                        {links.map((link, i) => {
-                            return (
-                                <Link
-                                    key={i}
-                                    href={link.url}
-                                    className="rounded px-5 py-3 text-center text-sm font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
-                                >
-                                    {link.text}
-                                </Link>
-                            );
-                        })}
+                        {links.map((link, i) => (
+                            <Link
+                                key={i}
+                                href={link.url}
+                                className="rounded px-5 py-3 text-center text-sm font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
+                            >
+                                {link.text}
+                            </Link>
+                        ))}
                     </div>
                     <div className="flex items-center space-x-3 px-3">
                         <ThemeSwitcher />
