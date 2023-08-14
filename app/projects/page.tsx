@@ -73,7 +73,7 @@ export default async function Blog() {
                                                     className={`${
                                                         tech.color ||
                                                         "bg-gray-300 dark:bg-gray-700"
-                                                    } rounded-sm px-1 pt-0.5 text-[11px] font-bold uppercase md:text-xs`}
+                                                    } rounded-sm px-1 pt-0.5 text-[11px] font-semibold uppercase md:text-xs`}
                                                     key={idx}
                                                 >
                                                     {tech.url ? (

@@ -14,8 +14,26 @@ type ProjectType = {
 
 const nextjs = {
     name: "nextjs",
-    color: "bg-yellow-300 dark:bg-yellow-800",
+    color: "bg-slate-400 dark:bg-slate-700",
     url: "https://nextjs.org/",
+};
+
+const mdx = {
+    name: "mdx",
+    color: "bg-[#fcb32c]",
+    url: "https://mdxjs.com/",
+};
+
+const tw = {
+    name: "tailwindcss",
+    color: "bg-[#38bdf8]",
+    url: "https://tailwindcss.com/",
+};
+
+const ts = {
+    name: "typescript",
+    color: "bg-[#3178c6]",
+    url: "https://www.typescriptlang.org/",
 };
 
 const project: ProjectType[] = [
@@ -25,12 +43,7 @@ const project: ProjectType[] = [
         description:
             "My WIP portfolio website. Built by me and only myself as part of my passion for webdev.",
         createdAt: "2023-08-10",
-        technology: [
-            nextjs,
-            { name: "tailwindcss" },
-            { name: "mdx" },
-            { name: "typescript" },
-        ],
+        technology: [nextjs, tw, mdx, ts],
         url: "https://akhamr.tech/",
         source: "https://github.com/akhamr/sinau-web",
     },
