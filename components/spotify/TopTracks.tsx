@@ -19,22 +19,21 @@ export default function TopTracks({ tracks }: TopTracksProps) {
                 <Link
                     key={"tracks-" + idx}
                     href={songUrl || "#"}
-                    style={{ textDecoration: "none" }}
+                    className="font-normal no-underline"
                 >
                     <div className="flex h-[100px] items-center gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
-                        <strong className="ml-1 whitespace-nowrap">
-                            #{idx + 1}
-                        </strong>
+                        <strong>#{idx + 1}</strong>
                         <Image
                             className="rounded-md"
                             src={cover || NO_COVER}
                             alt={title}
                             height={80}
                             width={80}
+                            style={{ width: 80, height: 80 }}
                         />
-                        <div className="flex flex-col justify-center gap-1">
+                        <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
                             <h5 className="m-0 line-clamp-1">{title}</h5>
-                            <p className="m-0 line-clamp-1 text-sm md:text-base">
+                            <p className="m-0 line-clamp-1 text-sm dark:text-gray-300 md:text-base">
                                 {artist}
                             </p>
                         </div>
@@ -50,9 +49,7 @@ export default function TopTracks({ tracks }: TopTracksProps) {
                     className="h-[100px] rounded-md border-2 border-dashed border-gray-200 p-2 dark:border-gray-800"
                 >
                     <div className="flex animate-pulse items-center gap-3">
-                        <strong className="ml-1 whitespace-nowrap">
-                            #{i + 1}
-                        </strong>
+                        <strong>#{i + 1}</strong>
                         <div className="h-[80px] w-[80px] rounded-md bg-zinc-300 dark:bg-zinc-700"></div>
                         <div className="flex flex-col justify-center gap-3">
                             <div className="h-6 w-40 rounded bg-zinc-300 dark:bg-zinc-700 md:w-64"></div>

@@ -22,7 +22,7 @@ export default function NowPlaying({
         (isPlaying != null && (
             <Link
                 href={songUrl || "#playlist"}
-                style={{ textDecoration: "none" }}
+                className="font-normal no-underline"
             >
                 <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                     <Image
@@ -33,8 +33,9 @@ export default function NowPlaying({
                         }
                         height={80}
                         width={80}
+                        style={{ width: 80, height: 80 }}
                     />
-                    <div className="flex flex-col justify-center gap-1">
+                    <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
                         {isPlaying ? (
                             <>
                                 <h5 className="m-0 line-clamp-1">{title}</h5>
