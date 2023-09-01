@@ -18,9 +18,9 @@ export default function NowPlaying({
     songUrl,
     title,
 }: NowPlayingProps) {
-    return (
-        <Link href={songUrl || "#"} style={{ textDecoration: "none" }}>
-            <div className="relative flex gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+    return isPlaying ? (
+        <Link href={songUrl || "#playlist"} style={{ textDecoration: "none" }}>
+            <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                 <Image
                     className="rounded-md"
                     src={(isPlaying && albumImageUrl) || NO_COVER}
@@ -28,13 +28,11 @@ export default function NowPlaying({
                     height={80}
                     width={80}
                 />
-                <div className="z-10 flex flex-col justify-center gap-1">
+                <div className="flex flex-col justify-center gap-1">
                     {isPlaying ? (
                         <>
-                            <h5 className="m-0 line-clamp-1 font-bold">
-                                {title}
-                            </h5>
-                            <p className="m-0 line-clamp-1 text-sm font-normal md:text-base">
+                            <h5 className="m-0 line-clamp-1">{title}</h5>
+                            <p className="m-0 line-clamp-1 text-sm md:text-base">
                                 {artist}
                             </p>
                         </>
@@ -44,5 +42,15 @@ export default function NowPlaying({
                 </div>
             </div>
         </Link>
+    ) : (
+        <div className="h-[100px] rounded-md border-2 border-dashed border-gray-200 p-2 dark:border-gray-800">
+            <div className="flex animate-pulse items-center gap-3">
+                <div className="h-[80px] w-[80px] rounded-md bg-zinc-300 dark:bg-zinc-700"></div>
+                <div className="flex flex-col justify-center gap-3">
+                    <div className="h-6 w-40 rounded bg-zinc-300 dark:bg-zinc-700 md:w-64"></div>
+                    <div className="h-5 w-28 rounded bg-zinc-300 dark:bg-zinc-700 md:w-48"></div>
+                </div>
+            </div>
+        </div>
     );
 }

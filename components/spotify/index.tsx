@@ -22,15 +22,16 @@ export default function Spotify() {
 
     return (
         <section>
-            <h2 id="now-playing">
-                <Link className="text-3xl" href="#now-playing">
-                    Now Playing
+            <h2 id="playlist">
+                <Link className="text-3xl" href="#playlist">
+                    Playlist
                 </Link>
             </h2>
-            <p> See what I&apos;m currently listening on spotify</p>
+            <p> See what I&apos;m currently listening on Spotify</p>
             <NowPlaying {...nowPlaying} />
             <p>
-                Top 5 Songs I&apos;m currently listening to over the past month
+                Most streamed songs of mine in the past 4 weeks. Here&apos;s my
+                5 top tracks on Spotify update daily.
             </p>
             <TopTracks tracks={topTracks.tracks} />
         </section>
