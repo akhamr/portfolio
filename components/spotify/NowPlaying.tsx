@@ -21,7 +21,7 @@ export default function NowPlaying({
     return (
         (isPlaying != null && (
             <Link
-                href={songUrl || "#playlist"}
+                href={(isPlaying == true && songUrl) || "#playlist"}
                 className="font-normal no-underline"
             >
                 <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
