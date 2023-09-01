@@ -20,7 +20,7 @@ export default function NowPlaying({
 }: NowPlayingProps) {
     return (
         <Link href={songUrl || "#"} style={{ textDecoration: "none" }}>
-            <div className="relative flex gap-2 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+            <div className="relative flex rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                 <Image
                     className="rounded-md"
                     src={albumImageUrl || NO_COVER}
@@ -28,7 +28,7 @@ export default function NowPlaying({
                     height={80}
                     width={80}
                 />
-                <div className="z-10 flex flex-col justify-center gap-1">
+                <div className="z-10 flex flex-col justify-center gap-1 ml-2">
                     {isPlaying ? (
                         <>
                             <h5 className="m-0 line-clamp-1 font-bold">
