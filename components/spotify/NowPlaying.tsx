@@ -23,8 +23,8 @@ export default function NowPlaying({
             <div className="relative flex gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                 <Image
                     className="rounded-md"
-                    src={albumImageUrl || NO_COVER}
-                    alt={title || "Not listening to anything"}
+                    src={(isPlaying && albumImageUrl) || NO_COVER}
+                    alt={(isPlaying && title) || "Not listening to anything"}
                     height={80}
                     width={80}
                 />
