@@ -34,7 +34,7 @@ export default function TopTracks({ tracks }: TopTracksProps) {
                                 width={80}
                             />
                         </div>
-                        <div className="flex flex-col justify-center gap-1 ml-2">
+                        <div className="flex flex-col justify-center gap-1 ml-1">
                             <h5 className="m-0 line-clamp-1 font-bold">
                                 {title}
                             </h5>
