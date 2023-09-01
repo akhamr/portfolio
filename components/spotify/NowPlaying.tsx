@@ -27,20 +27,24 @@ export default function NowPlaying({
                 <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                     <Image
                         className="rounded-md"
-                        src={albumImageUrl || NO_COVER}
-                        alt={title || "Not listening to anything"}
+                        src={(isPlaying && albumImageUrl) || NO_COVER}
+                        alt={
+                            (isPlaying && title) || "Not listening to anything"
+                        }
                         height={80}
                         width={80}
                     />
                     <div className="flex flex-col justify-center gap-1">
-                        {(
+                        {isPlaying ? (
                             <>
                                 <h5 className="m-0 line-clamp-1">{title}</h5>
                                 <p className="m-0 line-clamp-1 text-sm md:text-base">
                                     {artist}
                                 </p>
                             </>
-                        ) || "Not listening to anything"}
+                        ) : (
+                            "Not listening to anything"
+                        )}
                     </div>
                 </div>
             </Link>
