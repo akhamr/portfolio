@@ -6,7 +6,7 @@ import TopTracks from "./TopTracks";
 
 export default function Spotify() {
     const [nowPlaying, setNowPlaying] = useState<NowPlayingProps>({
-        isPlaying: false,
+        isPlaying: null,
     });
 
     const [topTracks, setTopTracks] = useState({ tracks: [] });
