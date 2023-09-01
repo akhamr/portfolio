@@ -1,3 +1,4 @@
+import Spotify from "@/components/spotify";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -109,6 +110,7 @@ export default function About() {
                         listening music.
                     </p>
                 </section>
+                <Spotify />
                 <section>
                     <h2 id="contact">
                         <Link className="text-3xl" href="#contact">
