@@ -28,15 +28,15 @@ export default function NowPlaying({
                     height={80}
                     width={80}
                 />
-                <div className="z-10 flex flex-col justify-center">
+                <div className="z-10 flex flex-col justify-center gap-1">
                     {isPlaying ? (
                         <>
                             <h5 className="m-0 line-clamp-1 font-bold">
                                 {title}
                             </h5>
-                            <h6 className="m-0 line-clamp-1 font-normal">
+                            <p className="m-0 line-clamp-1 text-sm font-normal md:text-base">
                                 {artist}
-                            </h6>
+                            </p>
                         </>
                     ) : (
                         "Not listening to anything"

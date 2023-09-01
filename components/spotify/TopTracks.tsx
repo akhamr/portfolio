@@ -34,13 +34,13 @@ export default function TopTracks({ tracks }: TopTracksProps) {
                                 width={80}
                             />
                         </div>
-                        <div className="flex flex-col justify-center">
+                        <div className="flex flex-col justify-center gap-1">
                             <h5 className="m-0 line-clamp-1 font-bold">
                                 {title}
                             </h5>
-                            <h6 className="m-0 line-clamp-1 font-normal">
+                            <p className="m-0 line-clamp-1 text-sm font-normal md:text-base">
                                 {artist}
-                            </h6>
+                            </p>
                         </div>
                     </div>
                 </Link>
