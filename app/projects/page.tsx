@@ -7,7 +7,6 @@ import projects from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 const day = require("dayjs");
-import Section from "@/components/layout/Section";
 
 export const metadata: Metadata = {
     title: "Projects",
@@ -19,7 +18,7 @@ export default async function Blog() {
         (a, b) => Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
     );
     return (
-        <Section id="projects-content">
+        <section id="projects-content">
             <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">
                 Projects
             </h1>
@@ -127,6 +126,6 @@ export default async function Blog() {
             ) : (
                 <p>No project.</p>
             )}
-        </Section>
+        </section>
     );
 }

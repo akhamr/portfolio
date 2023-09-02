@@ -2,7 +2,6 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { getFiles, getPostBySlug } from "@/hooks/PostLib";
 import Link from "next/link";
 const day = require("dayjs");
-import Section from "@/components/layout/Section";
 
 export async function generateMetadata({
     params,
@@ -24,7 +23,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     const { body, frontmatter } = await getPostBySlug(params.slug);
 
     return (
-        <Section
+        <section
             id="post-content"
             className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-4 md:pt-11"
         >
@@ -50,7 +49,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 <hr className="mb-2 mt-2 border-dashed border-gray-200 dark:border-gray-800" />
             </div>
             <div className="prose max-w-full dark:prose-dark">{body}</div>
-        </Section>
+        </section>
     );
 }
 

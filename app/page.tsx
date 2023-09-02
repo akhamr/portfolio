@@ -1,11 +1,10 @@
 import { Doodle1, Doodle2 } from "@/components/Doodle";
-import Section from "@/components/layout/Section";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
     return (
-        <Section
+        <section
             id="main-content"
             className="flex h-full flex-col items-center justify-center pb-6 md:flex-row md:justify-between md:pb-0"
         >
@@ -72,6 +71,6 @@ export default function Home() {
                     .
                 </p>
             </div>
-        </Section>
+        </section>
     );
 }
