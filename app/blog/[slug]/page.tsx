@@ -3,11 +3,6 @@ import { getFiles, getPostBySlug } from "@/hooks/PostLib";
 import Link from "next/link";
 const day = require("dayjs");
 
-type Props = {
-    params: { id: string };
-    searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export async function generateMetadata({
     params,
 }: {

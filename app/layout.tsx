@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     },
 };
 
-// Motion page bugged
+// Motion page bugged 10.16.2
 
 export default function RootLayout({
     children,
