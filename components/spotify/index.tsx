@@ -12,16 +12,12 @@ export default function Spotify() {
     const [topTracks, setTopTracks] = useState({ tracks: [] });
 
     useEffect(() => {
-        fetch("/api/now-playing", { next: { revalidate: 30 } }).then(
-            async (res) => {
-                setNowPlaying(await res.json());
-            }
-        );
-        fetch("/api/top-tracks", { next: { revalidate: 28800 } }).then(
-            async (res) => {
-                setTopTracks(await res.json());
-            }
-        );
+        fetch("/api/now-playing").then(async (res) => {
+            setNowPlaying(await res.json());
+        });
+        fetch("/api/top-tracks").then(async (res) => {
+            setTopTracks(await res.json());
+        });
     }, []);
 
     return (
@@ -31,11 +27,11 @@ export default function Spotify() {
                     Playlist
                 </Link>
             </h2>
-            <p> This is what I&apos;m currently listening on Spotify.</p>
+            <p> See what I&apos;m currently listening on Spotify</p>
             <NowPlaying {...nowPlaying} />
             <p>
                 Most streamed songs of mine in the past 4 weeks. Here&apos;s my
-                5 top tracks on Spotify, updated daily.
+                5 top tracks on Spotify update daily.
             </p>
             <TopTracks tracks={topTracks.tracks} />
         </section>
