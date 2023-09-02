@@ -39,10 +39,7 @@ export default function RootLayout({
             <body className="flex h-full flex-col justify-between">
                 <Providers>
                     <Navbar />
-                    <main
-                        id="main-content"
-                        className="mx-auto max-w-[85%] flex-1"
-                    >
+                    <main className="mx-auto max-w-[85%] flex-1">
                         {children}
                     </main>
                     <Footer />

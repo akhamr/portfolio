@@ -29,7 +29,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
     return (
         <section
-            id="main-content"
+            id="post-content"
             className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-4 md:pt-11"
         >
             <div className="flex flex-col">

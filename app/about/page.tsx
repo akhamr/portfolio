@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <section
-            id="main-content"
+            id="about-content"
             className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-2"
         >
             <div className="mx-auto flex h-80 w-80 md:h-96 md:w-96">

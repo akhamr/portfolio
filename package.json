@@ -34,7 +34,7 @@
         "@heroicons/react": "^2.0.18",
         "@tailwindcss/typography": "^0.5.9",
         "dayjs": "^1.11.9",
-        "framer-motion": "^10.15.0",
+        "framer-motion": "10.16.2",
         "gray-matter": "^4.0.3",
         "reading-time": "^1.5.0",
         "rehype-autolink-headings": "^6.1.1",

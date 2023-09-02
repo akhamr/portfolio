@@ -27,11 +27,11 @@ export default function Spotify() {
                     Playlist
                 </Link>
             </h2>
-            <p> See what I&apos;m currently listening on Spotify</p>
+            <p> This is what I&apos;m currently listening on Spotify.</p>
             <NowPlaying {...nowPlaying} />
             <p>
                 Most streamed songs of mine in the past 4 weeks. Here&apos;s my
-                5 top tracks on Spotify update daily.
+                5 top tracks on Spotify, updated daily.
             </p>
             <TopTracks tracks={topTracks.tracks} />
         </section>

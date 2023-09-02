@@ -15,7 +15,7 @@ export default async function Blog() {
         (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
     );
     return (
-        <>
+        <section id="blog-content">
             <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">Blog</h1>
             <p className="mt-2">
                 Some blabber and stuff i didn&apos;t mean to made.
@@ -60,6 +60,6 @@ export default async function Blog() {
             ) : (
                 <p className="pt-4">No blog post.</p>
             )}
-        </>
+        </section>
     );
 }
