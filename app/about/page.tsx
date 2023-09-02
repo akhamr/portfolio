@@ -2,6 +2,7 @@ import Spotify from "@/components/spotify";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Section from "@/components/Section";
 
 const Blob = dynamic(() => import("@/components/Blob"), { ssr: false });
 
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <section
+        <Section
             id="about-content"
             className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-2"
         >
@@ -143,6 +144,6 @@ export default function About() {
                     </p>
                 </section>
             </div>
-        </section>
+        </Section>
     );
 }
