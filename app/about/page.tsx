@@ -2,7 +2,7 @@ import Spotify from "@/components/spotify";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Transition from "@/components/layout/Transition";
+import Section from "@/components/layout/Section";
 
 const Blob = dynamic(() => import("@/components/Blob"), { ssr: false });
 
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <Transition
+        <Section
             id="about-content"
             className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-2"
         >
@@ -144,6 +144,6 @@ export default function About() {
                     </p>
                 </section>
             </div>
-        </Transition>
+        </Section>
     );
 }
