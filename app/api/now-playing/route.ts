@@ -22,14 +22,14 @@ export async function GET() {
     const albumImageUrl = song.item.album.images[0].url;
     const songUrl = song.item.external_urls.spotify;
 
-    return NextResponse.json(
-        {
+    return new Response(
+        JSON.stringify({
             albumImageUrl,
             artist,
             isPlaying,
             songUrl,
             title,
-        },
+        }),
         {
             status: 200,
             headers: {

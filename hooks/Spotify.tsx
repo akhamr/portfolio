@@ -2,17 +2,12 @@ const client_id = process.env.SPOTIFY_CLIENT_ID as string;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET as string;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN as string;
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+const basic = btoa(`${client_id}:${client_secret}`);
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
-const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
-const TOP_TRACKS_DEFAULT_PARAMS = {
-    time_range: "short_term",
-    limit: "5",
-    offset: "0",
-};
+const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5&offset=0`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
-const getAccessToken = async () => {
+async function getAccessToken() {
     const response = await fetch(TOKEN_ENDPOINT, {
         method: "POST",
         headers: {
@@ -25,9 +20,9 @@ const getAccessToken = async () => {
         }),
     });
     return response.json();
-};
+}
 
-export const getNowPlaying = async () => {
+export async function getNowPlaying() {
     const { access_token } = await getAccessToken();
 
     return fetch(NOW_PLAYING_ENDPOINT, {
@@ -35,16 +30,14 @@ export const getNowPlaying = async () => {
             Authorization: `Bearer ${access_token}`,
         },
     });
-};
+}
 
-export const getTopTracks = async () => {
+export async function getTopTracks() {
     const { access_token } = await getAccessToken();
-    const queryParams = new URLSearchParams(
-        TOP_TRACKS_DEFAULT_PARAMS
-    ).toString();
-    return fetch(TOP_TRACKS_ENDPOINT + "?" + queryParams, {
+
+    return fetch(TOP_TRACKS_ENDPOINT, {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
     });
-};
+}
