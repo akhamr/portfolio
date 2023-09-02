@@ -11,7 +11,7 @@ export default function Section({ children, ...rest }: Props) {
             <motion.section
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 0 }}
+                exit={{ opacity: 0 }}
                 transition={{
                     ease: "easeInOut",
                     duration: 0.5,
