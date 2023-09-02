@@ -3,7 +3,7 @@ import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
 
 type Props = HTMLMotionProps<"section">;
 
-export default function Section({ children, ...rest }: Props) {
+export default function Transition({ children, ...rest }: Props) {
     return (
         <AnimatePresence mode="wait">
             <motion.section
