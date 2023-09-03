@@ -37,6 +37,7 @@
         "dayjs": "^1.11.9",
         "framer-motion": "10.16.2",
         "gray-matter": "^4.0.3",
+        "react-sketch-canvas": "^6.2.0",
         "reading-time": "^1.5.0",
         "rehype-autolink-headings": "^6.1.1",
         "rehype-slug": "^5.1.0",

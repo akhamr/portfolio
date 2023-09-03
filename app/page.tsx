@@ -1,13 +1,15 @@
 import { Doodle1, Doodle2 } from "@/components/Doodle";
 import Image from "next/image";
 import Link from "next/link";
+import Canvas from "@/components/Canvas";
 
 export default function Home() {
     return (
         <section
             id="main-content"
-            className="flex h-full flex-col items-center justify-center pb-6 md:flex-row md:justify-between md:pb-0"
+            className="flex h-full cursor-pencil flex-col items-center justify-center pb-6 dark:cursor-pencil-dark md:flex-row md:justify-between md:pb-0"
         >
+            <Canvas />
             <div className="relative mb-6 hidden dark:block md:mb-0">
                 <Image
                     alt="doodle"
@@ -17,7 +19,7 @@ export default function Home() {
                     height={350}
                     className="md:w-[400px]"
                 />
-                <div className="absolute inset-x-0 bottom-0 z-10 stroke-[#ffd55a]/60">
+                <div className="absolute inset-x-0 bottom-0 stroke-[#ffd55a]/60">
                     <Doodle1 />
                 </div>
             </div>
@@ -30,7 +32,7 @@ export default function Home() {
                     height={350}
                     className="md:w-[400px]"
                 />
-                <div className="absolute inset-x-0 bottom-0 z-10 stroke-[#9b9b9b]/60">
+                <div className="absolute inset-x-0 bottom-0 stroke-[#9b9b9b]/60">
                     <Doodle1 />
                 </div>
             </div>
@@ -49,11 +51,11 @@ export default function Home() {
                     </span>
                     &#129300;
                 </h1>
-                <p className="noselect text-md max-w-[500px] text-center md:text-left md:text-lg">
+                <p className="text-md max-w-[500px] text-center md:text-left md:text-lg">
                     A data enthusiast based in Semarang, Indonesia. Love to
                     explore anything about data analytics and web development.
                 </p>
-                <p className="max-w-[500px] text-center md:text-left">
+                <p className="text-md max-w-[500px] text-center md:text-left md:text-lg">
                     Checkout my{" "}
                     <Link
                         className="relative z-10 font-semibold underline"

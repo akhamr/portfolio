@@ -36,7 +36,7 @@ export default function RootLayout({
             className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable}`}
             suppressHydrationWarning
         >
-            <body className="flex h-full flex-col justify-between">
+            <body className="flex h-full select-none flex-col justify-between">
                 <Providers>
                     <Navbar />
                     <main className="mx-auto max-w-[85%] flex-1">

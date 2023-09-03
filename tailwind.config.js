@@ -84,6 +84,10 @@ module.exports = {
                     },
                 },
             }),
+            cursor: {
+                pencil: "url(/default/pencil.svg) 0 24, auto",
+                "pencil-dark": "url(/default/pencil-dark.svg) 0 24, auto",
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],
