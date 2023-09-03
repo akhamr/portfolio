@@ -8,7 +8,6 @@ export async function GET() {
         return NextResponse.json(
             { isPlaying: false },
             {
-                status: 200,
                 headers: {
                     "content-type": "application/json",
                     "cache-control":
@@ -24,7 +23,6 @@ export async function GET() {
         return NextResponse.json(
             { isPlaying: false },
             {
-                status: 200,
                 headers: {
                     "content-type": "application/json",
                     "cache-control":
