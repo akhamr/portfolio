@@ -11,7 +11,7 @@ export default function TopTracks() {
 
     return !isLoading ? (
         <div className="flex flex-col gap-3">
-            {data.map((track: any, idx: number) => (
+            {data?.map((track: any, idx: number) => (
                 <Link
                     key={"tracks-" + idx}
                     href={track.songUrl || "#"}

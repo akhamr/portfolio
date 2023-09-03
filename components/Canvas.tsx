@@ -39,7 +39,7 @@ export default function Canvas() {
                 strokeWidth={5}
                 strokeColor={color}
             />
-            <div className="fixed right-4 top-[10%] z-50 flex items-center rounded-full bg-neutral-100 p-2 dark:bg-stone-800 md:top-[unset]">
+            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-neutral-100 p-2 dark:bg-stone-800 md:left-[unset] md:right-4 md:top-[unset]">
                 <div className="flex flex-col space-y-2">
                     {colorList.map((data, key) => (
                         <button
