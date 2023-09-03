@@ -1,44 +1,37 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
 
 const NO_COVER = "/default/no-cover.png";
 
-export type NowPlayingProps = {
-    albumImageUrl?: string;
-    artist?: string;
-    isPlaying: boolean | null;
-    songUrl?: string;
-    title?: string;
-};
+export default function NowPlaying() {
+    const fetcher = (url: string) => fetch(url).then((r) => r.json());
+    const { data, isLoading } = useSWR("/api/now-playing", fetcher);
 
-export default function NowPlaying({
-    albumImageUrl,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
-}: NowPlayingProps) {
     return (
-        (isPlaying != null && (
+        (!isLoading && (
             <Link
-                href={(isPlaying && songUrl) || "#playlist"}
+                href={(data.isPlaying && data.songUrl) || "#playlist"}
                 className="font-normal no-underline"
             >
                 <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
                     <Image
                         className="rounded-md"
-                        src={(isPlaying && albumImageUrl) || NO_COVER}
-                        alt={(isPlaying && title) || "Not playing"}
+                        src={(data.isPlaying && data.albumImageUrl) || NO_COVER}
+                        alt={(data.isPlaying && data.title) || "Not playing"}
                         height={80}
                         width={80}
                         style={{ width: 80, height: 80 }}
                     />
                     <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
-                        {(isPlaying && (
+                        {(data.isPlaying && (
                             <>
-                                <h5 className="m-0 line-clamp-1">{title}</h5>
+                                <h5 className="m-0 line-clamp-1">
+                                    {data.title}
+                                </h5>
                                 <p className="m-0 line-clamp-1 text-sm md:text-base">
-                                    {artist}
+                                    {data.artist}
                                 </p>
                             </>
                         )) || (

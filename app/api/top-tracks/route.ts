@@ -1,8 +1,9 @@
 import { getTopTracks } from "@/hooks/Spotify";
+import { NextResponse } from "next/server";
 
 export async function GET() {
-    const response = await getTopTracks();
-    const { items } = await response.json();
+    const res = await getTopTracks();
+    const { items } = await res.json();
 
     const tracks = items.map((track: any) => ({
         artist: track.artists.map((_artist: any) => _artist.name).join(", "),
@@ -11,12 +12,5 @@ export async function GET() {
         title: track.name,
     }));
 
-    return new Response(JSON.stringify({ tracks }), {
-        status: 200,
-        headers: {
-            "content-type": "application/json",
-            "cache-control":
-                "public, s-maxage=86400, stale-while-revalidate=43200",
-        },
-    });
+    return NextResponse.json(tracks);
 }

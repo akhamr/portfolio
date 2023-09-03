@@ -19,6 +19,7 @@ async function getAccessToken() {
             refresh_token,
         }),
     });
+
     return response.json();
 }
 

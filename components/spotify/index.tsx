@@ -1,25 +1,8 @@
-"use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import NowPlaying, { NowPlayingProps } from "./NowPlaying";
+import NowPlaying from "./NowPlaying";
 import TopTracks from "./TopTracks";
 
 export default function Spotify() {
-    const [nowPlaying, setNowPlaying] = useState<NowPlayingProps>({
-        isPlaying: null,
-    });
-
-    const [topTracks, setTopTracks] = useState({ tracks: [] });
-
-    useEffect(() => {
-        fetch("/api/now-playing").then(async (res) => {
-            setNowPlaying(await res.json());
-        });
-        fetch("/api/top-tracks").then(async (res) => {
-            setTopTracks(await res.json());
-        });
-    }, []);
-
     return (
         <section>
             <h2 id="playlist">
@@ -28,12 +11,12 @@ export default function Spotify() {
                 </Link>
             </h2>
             <p> This is what I&apos;m currently listening on Spotify.</p>
-            <NowPlaying {...nowPlaying} />
+            <NowPlaying />
             <p>
                 Most streamed songs of mine in the past 4 weeks. Here&apos;s my
                 5 top tracks on Spotify, updated daily.
             </p>
-            <TopTracks tracks={topTracks.tracks} />
+            <TopTracks />
         </section>
     );
 }
