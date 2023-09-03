@@ -12,12 +12,5 @@ export async function GET() {
         title: track.name,
     }));
 
-    return NextResponse.json(tracks, {
-        status: 200,
-        headers: {
-            "content-type": "application/json",
-            "cache-control":
-                "public, s-maxage=86400, stale-while-revalidate=43200",
-        },
-    });
+    return NextResponse.json(tracks);
 }
