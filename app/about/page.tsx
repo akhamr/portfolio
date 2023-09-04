@@ -135,9 +135,9 @@ export default function About() {
                         ))}
                     </ul>
                     <p>
-                        Also, you can{" "}
+                        Also, you can read my resume{" "}
                         <Link className="underline" href="/resume.pdf">
-                            read my resume here
+                            here
                         </Link>
                         . Anyway, thanks for visiting my profile &#128591;
                     </p>
