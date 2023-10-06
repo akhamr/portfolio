@@ -3,12 +3,6 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 import { CheckCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { useState, useRef, useCallback } from "react";
 
-interface ControlProps {
-    clearCanvas: () => void;
-    color: string;
-    setColor: (color: string) => void;
-}
-
 const colorList = [
     "rgba(255, 213, 90, 0.7)",
     "rgba(90, 255, 213, 0.7)",

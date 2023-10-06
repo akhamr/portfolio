@@ -1,22 +1,8 @@
-<?xml version="1.0" standalone="no"?>
 <svg
     viewBox="-350 -150 1500 1500"
     xmlns="http://www.w3.org/2000/svg"
-    style="width: 390px; height: 390px; justify-content: center; align-self: center; transform: scale(1, 1);"
 >
-    <defs>
-        <filter id="shadow2">
-            <feDropShadow flood-color="#505050" dx="6" dy="-6" />
-            <feDropShadow flood-color="#505050" dx="-6" dy="-6" />
-            <feDropShadow flood-color="#505050" dx="6" dy="6" />
-            <feDropShadow flood-color="#505050" dx="-6" dy="6" />
-            <feDropShadow flood-color="#505050" dx="0" dy="6" />
-            <feDropShadow flood-color="#505050" dx="0" dy="-6" />
-            <feDropShadow flood-color="#505050" dx="-6" dy="0" />
-            <feDropShadow flood-color="#505050" dx="6" dy="0" />
-        </filter>
-    </defs>
-    <g transform="rotate(360 402.7609043121338 579.1544647216797)" style="filter:url(#shadow2);">
+    <g transform="rotate(360 402.7609043121338 579.1544647216797)">
         <g
             id="body_Polo_and_Sweater"
             data-name="body/Polo and Sweater"
