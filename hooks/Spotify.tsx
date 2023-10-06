@@ -3,9 +3,9 @@ const client_secret = process.env.SPOTIFY_CLIENT_SECRET as string;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN as string;
 
 const basic = btoa(`${client_id}:${client_secret}`);
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5&offset=0`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 async function getAccessToken() {
     const response = await fetch(TOKEN_ENDPOINT, {
@@ -30,7 +30,7 @@ export async function getNowPlaying() {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
-        next: { revalidate: 30 },
+        next: { revalidate: 60 },
     });
 }
 
