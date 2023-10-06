@@ -2,7 +2,15 @@
     viewBox="-350 -150 1500 1500"
     xmlns="http://www.w3.org/2000/svg"
 >
-    <g transform="rotate(360 402.7609043121338 579.1544647216797)">
+    <defs>
+        <filter id="shadow2">
+            <feDropShadow flood-color="#d0d0d0" dx="10" dy="10" />
+            <feDropShadow flood-color="#d0d0d0" dx="-10" dy="10" />
+            <feDropShadow flood-color="#d0d0d0" dx="10" dy="-10" />
+            <feDropShadow flood-color="#d0d0d0" dx="-10" dy="-10" />
+        </filter>
+    </defs>
+    <g transform="rotate(360 402.7609043121338 579.1544647216797)" style="filter:url(#shadow2);">
         <g
             id="body_Polo_and_Sweater"
             data-name="body/Polo and Sweater"
