@@ -16,7 +16,7 @@ async function getAccessToken() {
         },
         body: new URLSearchParams({
             grant_type: "refresh_token",
-            refresh_token,
+            refresh_token: refresh_token,
         }),
     });
 
@@ -30,7 +30,7 @@ export async function getNowPlaying() {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
-        next: { revalidate: 60 },
+        next: { revalidate: 30 },
     });
 }
 
