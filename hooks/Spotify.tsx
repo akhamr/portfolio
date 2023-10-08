@@ -1,6 +1,6 @@
-const client_id = process.env.SPOTIFY_CLIENT_ID as string;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET as string;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN as string;
+const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID as string;
+const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET as string;
+const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN as string;
 
 const basic = btoa(`${client_id}:${client_secret}`);
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
@@ -16,7 +16,7 @@ async function getAccessToken() {
         },
         body: new URLSearchParams({
             grant_type: "refresh_token",
-            refresh_token: refresh_token,
+            refresh_token,
         }),
     });
 
