@@ -1,9 +1,12 @@
 import { getTopTracks } from "@/hooks/Spotify";
-import { NextResponse } from "next/server";
 
 export async function GET() {
     const res = await getTopTracks();
     const { items } = await res.json();
+
+    if (items === null) {
+        return Response.json(null);
+    }
 
     const tracks = items.map((track: any) => ({
         artist: track.artists.map((_artist: any) => _artist.name).join(", "),
@@ -12,5 +15,5 @@ export async function GET() {
         title: track.name,
     }));
 
-    return NextResponse.json(tracks);
+    return Response.json(tracks);
 }

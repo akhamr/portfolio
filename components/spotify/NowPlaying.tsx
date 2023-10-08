@@ -41,7 +41,7 @@ export default function NowPlaying() {
                         )}
                     </div>
                 </div>
-                {data?.isPlaying == true && <Lottie animationData={ripple} />}
+                {data?.isPlaying === true && <Lottie animationData={ripple} />}
             </div>
         </Link>
     ) : (

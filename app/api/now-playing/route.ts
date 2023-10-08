@@ -1,17 +1,16 @@
-import { NextResponse } from "next/server";
 import { getNowPlaying } from "@/hooks/Spotify";
 
 export async function GET() {
     const res = await getNowPlaying();
 
     if (res.status === 204 || res.status > 400) {
-        return NextResponse.json({ isPlaying: false });
+        return Response.json({ isPlaying: false });
     }
 
     const song = await res.json();
 
     if (song.item === null) {
-        return NextResponse.json({ isPlaying: false });
+        return Response.json({ isPlaying: false });
     }
 
     const isPlaying = song.is_playing;
@@ -22,7 +21,7 @@ export async function GET() {
     const albumImageUrl = song.item.album.images[0].url;
     const songUrl = song.item.external_urls.spotify;
 
-    return NextResponse.json({
+    return Response.json({
         albumImageUrl,
         artist,
         isPlaying,
