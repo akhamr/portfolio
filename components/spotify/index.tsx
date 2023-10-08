@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import NowPlaying from "./NowPlaying";
 import TopTracks from "./TopTracks";

@@ -121,3 +121,7 @@ body {
 .prose table {
     @apply m-0 w-max;
 }
+
+.ripple path {
+    @apply fill-gray-300 dark:fill-gray-700;
+}

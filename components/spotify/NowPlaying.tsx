@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
+import Lottie from "lottie-react";
+import ripple from "@/public/default/ripple.json";
 
 const NO_COVER = "/default/no-cover.png";
 
@@ -14,27 +16,32 @@ export default function NowPlaying() {
             href={data?.isPlaying ? data?.songUrl : "#playlist"}
             className="font-normal no-underline"
         >
-            <div className="flex h-[100px] gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
-                <Image
-                    className="rounded-md"
-                    src={data?.isPlaying ? data?.albumImageUrl : NO_COVER}
-                    alt={data?.isPlaying ? data?.title : "Not playing"}
-                    height={80}
-                    width={80}
-                    style={{ width: 80, height: 80 }}
-                />
-                <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
-                    {data?.isPlaying ? (
-                        <>
-                            <h5 className="m-0 line-clamp-1">{data?.title}</h5>
-                            <p className="m-0 line-clamp-1 text-sm md:text-base">
-                                {data?.artist}
-                            </p>
-                        </>
-                    ) : (
-                        <h5 className="m-0">Not listening to anything</h5>
-                    )}
+            <div className="flex h-[100px] justify-between gap-3 rounded-md border-2 border-dashed border-gray-200 p-2 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+                <div className="flex gap-3">
+                    <Image
+                        className="rounded-md"
+                        src={data?.isPlaying ? data?.albumImageUrl : NO_COVER}
+                        alt={data?.isPlaying ? data?.title : "Not playing"}
+                        height={80}
+                        width={80}
+                        style={{ width: 80, height: 80 }}
+                    />
+                    <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
+                        {data?.isPlaying ? (
+                            <>
+                                <h5 className="m-0 line-clamp-1">
+                                    {data?.title}
+                                </h5>
+                                <p className="m-0 line-clamp-1 text-sm md:text-base">
+                                    {data?.artist}
+                                </p>
+                            </>
+                        ) : (
+                            <h5 className="m-0">Not listening to anything</h5>
+                        )}
+                    </div>
                 </div>
+                {data?.isPlaying == true && <Lottie animationData={ripple} />}
             </div>
         </Link>
     ) : (
