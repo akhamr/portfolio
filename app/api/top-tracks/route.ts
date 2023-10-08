@@ -2,6 +2,11 @@ import { getTopTracks } from "@/hooks/Spotify";
 
 export async function GET() {
     const res = await getTopTracks();
+
+    if (res.status === 204 || res.status > 400) {
+        return Response.json(null);
+    }
+
     const { items } = await res.json();
 
     if (items === null) {
