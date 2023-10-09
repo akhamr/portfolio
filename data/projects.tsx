@@ -14,25 +14,25 @@ type ProjectType = {
 
 const nextjs = {
     name: "nextjs",
-    color: "bg-slate-400 dark:bg-slate-700",
+    color: "bg-slate-300 dark:bg-slate-600",
     url: "https://nextjs.org/",
 };
 
 const mdx = {
     name: "mdx",
-    color: "bg-[#fcb32c]",
+    color: "bg-amber-300 dark:bg-amber-600",
     url: "https://mdxjs.com/",
 };
 
 const tw = {
     name: "tailwindcss",
-    color: "bg-[#38bdf8]",
+    color: "bg-sky-300 dark:bg-sky-600",
     url: "https://tailwindcss.com/",
 };
 
 const ts = {
     name: "typescript",
-    color: "bg-[#3178c6]",
+    color: "bg-indigo-300 dark:bg-indigo-600",
     url: "https://www.typescriptlang.org/",
 };
 

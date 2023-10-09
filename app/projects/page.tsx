@@ -41,7 +41,7 @@ export default async function Blog() {
                             />
                             <div className="flex max-w-[555px] flex-col justify-between p-4 md:w-1/2 md:p-6">
                                 <div>
-                                    <h1 className="line-clamp-2 font-extrabold hover:underline">
+                                    <h1 className="line-clamp-2 font-doodle hover:underline">
                                         {project.url !== undefined ||
                                         project.source !== undefined ? (
                                             <Link
@@ -73,7 +73,7 @@ export default async function Blog() {
                                                     className={`${
                                                         tech.color ||
                                                         "bg-gray-300 dark:bg-gray-700"
-                                                    } rounded-sm px-1 pt-0.5 text-[11px] font-semibold uppercase md:text-xs`}
+                                                    } rounded-sm px-1 py-0.5 text-[11px] font-semibold uppercase md:text-xs`}
                                                     key={idx}
                                                 >
                                                     {tech.url ? (
