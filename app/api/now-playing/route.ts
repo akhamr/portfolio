@@ -3,7 +3,7 @@ import { getNowPlaying } from "@/hooks/Spotify";
 export async function GET() {
     const res = await getNowPlaying();
 
-    if (res.status > 400) {
+    if (res.status >= 400) {
         return Response.json({ isPlaying: false });
     }
 

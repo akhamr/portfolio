@@ -3,7 +3,7 @@ import { getTopTracks } from "@/hooks/Spotify";
 export async function GET() {
     const res = await getTopTracks();
 
-    if (res.status > 400) {
+    if (res.status >= 400) {
         return Response.json(null);
     }
 
