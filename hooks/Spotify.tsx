@@ -16,7 +16,7 @@ async function getAccessToken() {
         },
         body: new URLSearchParams({
             grant_type: "refresh_token",
-            refresh_token,
+            refresh_token: refresh_token,
         }),
     });
 
