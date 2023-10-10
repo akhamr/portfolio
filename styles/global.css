@@ -123,5 +123,5 @@ body {
 }
 
 .ripple path {
-    @apply fill-gray-300 dark:fill-gray-700;
+    @apply fill-neutral-400 dark:fill-neutral-500;
 }

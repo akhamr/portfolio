@@ -5,7 +5,7 @@ export const revalidate = 30;
 export async function GET() {
     const res = await getNowPlaying();
 
-    if (res.status >= 400) {
+    if (res.status == 204 || res.status > 400) {
         return Response.json({ isPlaying: false });
     }
 

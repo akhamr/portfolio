@@ -4,11 +4,6 @@ export const revalidate = 28800;
 
 export async function GET() {
     const res = await getTopTracks();
-
-    if (res.status >= 400) {
-        return Response.json(null);
-    }
-
     const { items } = await res.json();
 
     const tracks = items.map((track: any) => ({
