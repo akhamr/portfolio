@@ -21,6 +21,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
+## Credits
+
+Thanks to my inspiration during building this project
+
+- [wisesa.dev](https://www.wisesa.dev/)
+- [leerob.io](https://leerob.io/)
+
 ## License
 
 Licensed under [BSD-2-Clause License, Copyright :copyright: 2023 Khamid Arrazaq](./LICENSE)
