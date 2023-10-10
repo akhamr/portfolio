@@ -1,4 +1,7 @@
 <p align="center">
+  <img src="/public/preview.png" alt='preview'>
+</p>
+<p align="center">
   Source code of my <a href='https://akhamr.tech'>personal website™</a>. Made using next.js and tailwind-css.
 </p>
 
