@@ -1,5 +1,7 @@
 import { getTopTracks } from "@/hooks/Spotify";
 
+export const revalidate = 28800;
+
 export async function GET() {
     const res = await getTopTracks();
 

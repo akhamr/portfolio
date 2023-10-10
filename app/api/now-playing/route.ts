@@ -1,5 +1,7 @@
 import { getNowPlaying } from "@/hooks/Spotify";
 
+export const revalidate = 30;
+
 export async function GET() {
     const res = await getNowPlaying();
 
