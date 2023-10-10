@@ -1,5 +1,22 @@
-It's still WIP so not much to show. But you can fork or even star it so you know i spend a lot of my time develop this site.
+# akhamr.tech
 
-### OR
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
-You can develop it yourself? just run `npm i` and `npm run dev` and you're ready to go.
+## Running Locally
+
+This application requires Node.js v16.14+.
+
+```bash
+git clone https://github.com/akhamr/sinau-web.git
+cd sinau-web
+npm i
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## License
+
+Licensed under [MIT License, Copyright (c) 2021 Wisesa](./LICENSE)
