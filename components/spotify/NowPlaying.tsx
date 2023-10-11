@@ -26,7 +26,7 @@ export default function NowPlaying() {
                         width={80}
                         style={{ width: 80, height: 80 }}
                     />
-                    <div className="flex flex-col justify-center gap-1 text-[#202020] dark:text-gray-300">
+                    <div className="flex flex-col justify-center gap-1 text-left text-[#202020] dark:text-gray-300">
                         {data?.isPlaying ? (
                             <>
                                 <h5 className="m-0 line-clamp-1">
