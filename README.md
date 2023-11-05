@@ -10,7 +10,7 @@
 This application requires Node.js v16.14+.
 
 ```bash
-git clone https://github.com/akhamr/sinau-web.git
+git clone https://github.com/akhamr/portfolio.git
 cd sinau-web
 npm i
 npm run dev
