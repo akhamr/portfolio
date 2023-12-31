@@ -39,7 +39,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <div className="flex items-center space-x-3 pl-5">
+                    <div className="flex items-center space-x-3 pl-5 pr-2.5">
                         <ThemeSwitcher />
                         <MobileMenu />
                     </div>
