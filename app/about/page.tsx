@@ -16,11 +16,11 @@ const socials = [
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com/akhamr_",
+        url: "https://instagram.com/akhamr_",
     },
     {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/akhamr/",
+        url: "https://linkedin.com/in/akhamr/",
     },
     {
         name: "Medium",

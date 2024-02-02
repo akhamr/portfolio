@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Thanks to my inspiration during building this project
 
-- [wisesa.dev](https://www.wisesa.dev/)
+- [wisesa.dev](https://wisesa.dev/)
 - [leerob.io](https://leerob.io/)
 
 ## License
