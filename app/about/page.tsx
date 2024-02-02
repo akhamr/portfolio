@@ -61,7 +61,11 @@ export default function About() {
                     </p>
                     <p>
                         I recently completed my studies in Mathematics at{" "}
-                        <Link className="underline" href="https://uns.ac.id/">
+                        <Link
+                            target="_blank"
+                            className="underline"
+                            href="https://uns.ac.id/"
+                        >
                             Sebelas Maret University
                         </Link>
                         , where I gained a solid foundation in analytical and
@@ -82,6 +86,7 @@ export default function About() {
                         join internship and intensive bootcamp as part of
                         Ministry of Education{" "}
                         <Link
+                            target="_blank"
                             className="underline"
                             href="https://kampusmerdeka.kemdikbud.go.id/"
                         >
@@ -89,6 +94,7 @@ export default function About() {
                         </Link>
                         , such as junior web developer intern at{" "}
                         <Link
+                            target="_blank"
                             className="underline"
                             href="https://www.tigaserangkai.com/"
                         >
@@ -96,6 +102,7 @@ export default function About() {
                         </Link>
                         , and data analysis participant at{" "}
                         <Link
+                            target="_blank"
                             className="underline"
                             href="https://www.anakbangsabisa.org/generasi-gigih/"
                         >
@@ -127,7 +134,11 @@ export default function About() {
                             <li key={idx}>
                                 <p className="my-2 truncate">
                                     {data.name} -{" "}
-                                    <Link className="underline" href={data.url}>
+                                    <Link
+                                        target="_blank"
+                                        className="underline"
+                                        href={data.url}
+                                    >
                                         {data.url.replace("mailto:", "")}
                                     </Link>
                                 </p>
@@ -136,7 +147,11 @@ export default function About() {
                     </ul>
                     <p>
                         Also, you can read my resume{" "}
-                        <Link className="underline" href="/resume.pdf">
+                        <Link
+                            target="_blank"
+                            className="underline"
+                            href="https://drive.google.com/file/d/1ryazSm1C7C9xy4n7cX_pp-V7G0Kw9G9u/view?usp=sharing"
+                        >
                             here
                         </Link>
                         . Anyway, thanks for visiting my profile &#128591;

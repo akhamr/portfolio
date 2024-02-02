@@ -27,7 +27,7 @@ export default async function Blog() {
                 <div className="flex flex-col space-y-6 py-4">
                     {filteredProject.map((project, i) => (
                         <div
-                            className="flex flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:h-[312px] md:flex-row"
+                            className="flex flex-col rounded-md border-2 border-dashed border-gray-200 md:h-[312px] md:flex-row dark:border-gray-800"
                             key={i}
                         >
                             <Image
@@ -41,23 +41,10 @@ export default async function Blog() {
                             />
                             <div className="flex max-w-[555px] flex-col justify-between p-4 md:w-1/2 md:p-6">
                                 <div>
-                                    <h1 className="line-clamp-2 font-doodle hover:underline">
-                                        {project.url !== undefined ||
-                                        project.source !== undefined ? (
-                                            <Link
-                                                href={
-                                                    project.url
-                                                        ? project.url
-                                                        : project.source || "#"
-                                                }
-                                            >
-                                                {project.title}
-                                            </Link>
-                                        ) : (
-                                            project.title
-                                        )}
+                                    <h1 className="line-clamp-2 font-doodle">
+                                        {project.title}
                                     </h1>
-                                    <p className="py-2 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                                    <p className="py-2 text-xs text-gray-700 md:text-sm dark:text-gray-300">
                                         Created at{" "}
                                         {day(project.createdAt).format(
                                             "MMMM YYYY"
@@ -78,8 +65,8 @@ export default async function Blog() {
                                                 >
                                                     {tech.url ? (
                                                         <Link
+                                                            target="_blank"
                                                             href={tech.url}
-                                                            className="hover:underline"
                                                         >
                                                             {tech.name}
                                                         </Link>
@@ -95,6 +82,7 @@ export default async function Blog() {
                                     {project.url && (
                                         <>
                                             <Link
+                                                target="_blank"
                                                 className="inline-flex hover:underline"
                                                 href={project.url}
                                             >
@@ -108,6 +96,7 @@ export default async function Blog() {
                                     {project.source && (
                                         <>
                                             <Link
+                                                target="_blank"
                                                 className="inline-flex hover:underline"
                                                 href={project.source}
                                             >
