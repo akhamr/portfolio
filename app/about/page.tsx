@@ -150,7 +150,7 @@ export default function About() {
                         <Link
                             target="_blank"
                             className="underline"
-                            href="https://drive.google.com/file/d/1ryazSm1C7C9xy4n7cX_pp-V7G0Kw9G9u/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1j57WTKkaJFEucTQEhl7qb5ZH2zPcwsT9/view?usp=sharing"
                         >
                             here
                         </Link>
