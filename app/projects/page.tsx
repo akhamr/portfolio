@@ -54,26 +54,28 @@ export default async function Blog() {
                                         {project.description}
                                     </p>
                                     <div className="flex flex-wrap space-x-2 pt-3">
-                                        {project.menology?.map((tech, idx) => (
-                                            <div
-                                                className={`${
-                                                    tech.color ||
-                                                    "bg-gray-300 dark:bg-gray-700"
-                                                } rounded-sm px-1 py-0.5 text-[11px] font-semibold uppercase md:text-xs`}
-                                                key={idx}
-                                            >
-                                                {tech.url ? (
-                                                    <Link
-                                                        target="_blank"
-                                                        href={tech.url}
-                                                    >
-                                                        {tech.name}
-                                                    </Link>
-                                                ) : (
-                                                    tech.name
-                                                )}
-                                            </div>
-                                        ))}
+                                        {project.technology?.map(
+                                            (tech, idx) => (
+                                                <div
+                                                    className={`${
+                                                        tech.color ||
+                                                        "bg-gray-300 dark:bg-gray-700"
+                                                    } rounded-sm px-1 py-0.5 text-[11px] font-semibold uppercase md:text-xs`}
+                                                    key={idx}
+                                                >
+                                                    {tech.url ? (
+                                                        <Link
+                                                            target="_blank"
+                                                            href={tech.url}
+                                                        >
+                                                            {tech.name}
+                                                        </Link>
+                                                    ) : (
+                                                        tech.name
+                                                    )}
+                                                </div>
+                                            )
+                                        )}
                                     </div>
                                 </div>
                                 <div className="mt-4 flex space-x-4 font-bold md:text-lg">
