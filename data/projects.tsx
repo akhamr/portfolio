@@ -38,13 +38,13 @@ const ts = {
 
 const project: ProjectType[] = [
     {
-        title: "Akhamr.tech",
+        title: "Akhamr.me",
         image: "/projects/akhamr.webp",
         description:
             "My WIP portfolio website. Built by me and only myself as part of my passion for webdev.",
         createdAt: "2023-08-10",
         technology: [nextjs, tw, mdx, ts],
-        url: "https://akhamr.tech/",
+        url: "https://akhamr.me/",
         source: "https://github.com/akhamr/sinau-web",
     },
 ];

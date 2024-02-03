@@ -2,7 +2,7 @@
   <img src="/public/preview.png" alt='preview'>
 </p>
 <p align="center">
-  Source code of my <a href='https://akhamr.tech'>personal website™</a>. Made using next.js and tailwind-css.
+  Source code of my <a href='https://akhamr.me'>personal website™</a>. Made using next.js and tailwind-css.
 </p>
 
 ## Running Locally
@@ -20,16 +20,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Deployment**: [Vercel](https://vercel.com)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+-   **Framework**: [Next.js](https://nextjs.org/)
+-   **Deployment**: [Vercel](https://vercel.com)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
 ## Credits
 
 Thanks to my inspiration during building this project
 
-- [wisesa.dev](https://wisesa.dev/)
-- [leerob.io](https://leerob.io/)
+-   [wisesa.dev](https://wisesa.dev/)
+-   [leerob.io](https://leerob.io/)
 
 ## License
 

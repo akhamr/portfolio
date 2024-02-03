@@ -7,7 +7,7 @@ import Providers from "@/components/layout/Provider";
 
 export const metadata: Metadata = {
     title: {
-        template: "%s · Akhamr.tech",
+        template: "%s · Akhamr.me",
         default: "It's me, akha!",
     },
     description:

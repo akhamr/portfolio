@@ -8,7 +8,7 @@ const Blob = dynamic(() => import("@/components/Blob"), { ssr: false });
 const socials = [
     {
         name: "Email",
-        url: "mailto:hello@akhamr.tech",
+        url: "mailto:hello@akhamr.me",
     },
     {
         name: "Github",

@@ -25,7 +25,7 @@ export default function Navbar() {
                     href="/"
                     className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
                 >
-                    Akhamr.tech
+                    Akhamr.me
                 </Link>
                 <div className="flex">
                     <div className="hidden space-x-3 md:flex">
