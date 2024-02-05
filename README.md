@@ -11,7 +11,7 @@ This application requires Node.js v16.14+.
 
 ```bash
 git clone https://github.com/akhamr/portfolio.git
-cd sinau-web
+cd portfolio
 npm i
 npm run dev
 ```

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllPost } from "@/lib/hooks/use-post-lib";
+import { getAllPost } from "@/lib/hooks/use-postlib";
 import Image from "next/image";
 import Link from "next/link";
 const day = require("dayjs");

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getFiles, getPostBySlug } from "@/lib/hooks/use-post-lib";
+import { getFiles, getPostBySlug } from "@/lib/hooks/use-postlib";
 import Link from "next/link";
 const day = require("dayjs");
 
