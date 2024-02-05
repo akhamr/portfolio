@@ -6,9 +6,10 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "fix": "next lint",
-        "format": "prettier --log-level warn --write \"./**/*.{js,jsx,ts,tsx,css,mdx,json}\" ",
-        "lint": "npm run format && npm run fix "
+        "preview": "next build && next start",
+        "lint": "next lint --fix",
+        "format": "prettier --write \"{app,lib,components}/**/*.{ts,tsx,mdx}\" --cache",
+        "fix": "npm run format && npm run lint"
     },
     "dependencies": {
         "@types/node": "^20",
