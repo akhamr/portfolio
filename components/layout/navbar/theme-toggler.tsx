@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 
-export default function ThemeSwitcher() {
+export default function ThemeToggler() {
     const { theme, setTheme } = useTheme();
     const isLight = theme === "light";
 

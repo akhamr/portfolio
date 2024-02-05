@@ -1,6 +1,6 @@
 import Link from "next/link";
-import NowPlaying from "./NowPlaying";
-import TopTracks from "./TopTracks";
+import NowPlaying from "./now-playing";
+import TopTracks from "./top-tracks";
 
 export default function Spotify() {
     return (

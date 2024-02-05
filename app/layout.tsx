@@ -2,8 +2,8 @@ import "@/styles/global.css";
 import type { Metadata } from "next";
 import { doodle, sans, footer } from "@/styles/fonts";
 import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/Footer";
-import Providers from "@/components/layout/Provider";
+import Footer from "@/components/layout/footer";
+import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
     title: {

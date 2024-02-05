@@ -1,7 +1,7 @@
-import { Doodle1, Doodle2 } from "@/components/Doodle";
+import { Doodle1, Doodle2 } from "@/components/doodle";
 import Image from "next/image";
 import Link from "next/link";
-import Canvas from "@/components/Canvas";
+import Canvas from "@/components/canvas";
 
 export default function Home() {
     return (

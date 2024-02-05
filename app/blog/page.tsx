@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllPost } from "@/hooks/PostLib";
+import { getAllPost } from "@/lib/hooks/use-post-lib";
 import Image from "next/image";
 import Link from "next/link";
 const day = require("dayjs");
@@ -42,7 +42,7 @@ export default async function Blog() {
                                     <h4 className="line-clamp-1 leading-snug">
                                         {frontMatter.title}
                                     </h4>
-                                    <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                                    <div className="my-1 text-xs text-gray-700 md:text-sm dark:text-gray-300">
                                         {day(frontMatter.date).format(
                                             "MMMM DD, YYYY"
                                         )}

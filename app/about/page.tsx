@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const Blob = dynamic(() => import("@/components/Blob"), { ssr: false });
+const Blob = dynamic(() => import("@/components/blob"), { ssr: false });
 
 const socials = [
     {

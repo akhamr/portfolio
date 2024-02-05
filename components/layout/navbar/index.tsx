@@ -1,6 +1,6 @@
 import Link from "next/link";
-import MobileMenu from "./MobileMenu";
-import ThemeSwitcher from "./ThemeSwitcher";
+import MobileMenu from "./mobile-menu";
+import ThemeToggler from "./theme-toggler";
 
 const links = [
     {
@@ -40,7 +40,7 @@ export default function Navbar() {
                         ))}
                     </div>
                     <div className="flex items-center space-x-3 pl-5 pr-2.5">
-                        <ThemeSwitcher />
+                        <ThemeToggler />
                         <MobileMenu />
                     </div>
                 </div>

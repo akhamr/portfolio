@@ -1,4 +1,4 @@
-import { getTopTracks } from "@/hooks/Spotify";
+import { getTopTracks } from "@/lib/hooks/use-spotify";
 
 export const revalidate = 28800;
 

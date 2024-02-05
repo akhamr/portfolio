@@ -1,4 +1,4 @@
-import { getNowPlaying } from "@/hooks/Spotify";
+import { getNowPlaying } from "@/lib/hooks/use-spotify";
 
 export const revalidate = 30;
 
