@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         default: "It's me, akha!",
     },
     description:
-        "My [WIP] personal blog and portfolio website built with curiosity and lot of stress.",
+        "My personal blog and portfolio website built with curiosity and lot of stress.",
 };
 
 // Motion page bugged 10.16.2
