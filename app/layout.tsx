@@ -6,7 +6,7 @@ import Footer from "@/components/layout/footer";
 import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
-    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
+    metadataBase: new URL(`https://akhamr.me`),
     title: {
         template: "%s · Akhamr.me",
         default: "It's me, akha!",
