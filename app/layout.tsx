@@ -6,18 +6,18 @@ import Footer from "@/components/layout/footer";
 import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
+    metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
     title: {
         template: "%s · Akhamr.me",
         default: "It's me, akha!",
     },
     description:
-        "Trying my best to build a portfolio website with just curiosity and lot of stress.",
+        "My [WIP] personal blog and portfolio website built with curiosity and lot of stress.",
     openGraph: {
         type: "website",
         images: [
             {
-                url: "default/og.png",
-                width: 300,
+                url: `https://${process.env.VERCEL_URL}/default/og.png`,
             },
         ],
     },
