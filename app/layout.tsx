@@ -13,14 +13,6 @@ export const metadata: Metadata = {
     },
     description:
         "My [WIP] personal blog and portfolio website built with curiosity and lot of stress.",
-    openGraph: {
-        type: "website",
-        images: [
-            {
-                url: `https://${process.env.VERCEL_URL}/default/og.png`,
-            },
-        ],
-    },
 };
 
 // Motion page bugged 10.16.2
