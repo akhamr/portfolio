@@ -31,7 +31,7 @@ export default function RootLayout({
             <body className="flex h-full select-none flex-col">
                 <Providers>
                     <Navbar />
-                    <main className="mx-auto max-w-[75%] flex-1">
+                    <main className="mx-auto max-w-[85%] flex-1">
                         {children}
                     </main>
                     <Footer />
