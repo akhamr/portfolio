@@ -27,24 +27,26 @@ export default async function Blog() {
                 <div className="flex flex-col space-y-6 py-4">
                     {filteredProject.map((project, i) => (
                         <div
-                            className="flex flex-col rounded-md border-2 border-dashed border-gray-200 md:h-[312px] md:flex-row dark:border-gray-800"
+                            className="flex max-w-screen-lg flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:flex-row"
                             key={i}
                         >
                             <Image
                                 className="rounded md:w-1/2"
                                 width="555"
-                                height="312"
+                                height="292"
                                 src={project.image}
                                 alt={project.title}
                                 placeholder="blur"
                                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                             />
-                            <div className="flex max-w-[555px] flex-col justify-between p-4 md:w-1/2 md:p-6">
+                            <div className="flex flex-col justify-between p-4 md:p-6">
                                 <div>
-                                    <h1 className="line-clamp-2 font-doodle">
+                                    <h1
+                                        className={`${project.font} line-clamp-2`}
+                                    >
                                         {project.title}
                                     </h1>
-                                    <p className="py-2 text-xs text-gray-700 md:text-sm dark:text-gray-300">
+                                    <p className="py-2 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
                                         Created at{" "}
                                         {day(project.createdAt).format(
                                             "MMMM YYYY"
@@ -53,7 +55,7 @@ export default async function Blog() {
                                     <p className="line-clamp-3 text-justify text-sm md:text-base">
                                         {project.description}
                                     </p>
-                                    <div className="flex flex-wrap space-x-2 pt-3">
+                                    <div className="flex space-x-2 pt-3">
                                         {project.technology?.map(
                                             (tech, idx) => (
                                                 <div

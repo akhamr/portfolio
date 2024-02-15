@@ -13,6 +13,7 @@ module.exports = {
                 sans: ["var(--font-nunito)", "sans-serif"],
                 doodle: ["var(--font-doodle)", "cursive"],
                 footer: ["var(--font-footer)", "cursive"],
+                della: ["var(--font-della)", "cursive"],
             },
             colors: {
                 dark: "#1c1917",

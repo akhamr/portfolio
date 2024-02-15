@@ -42,7 +42,7 @@ export default async function Blog() {
                                     <h4 className="line-clamp-1 leading-snug">
                                         {frontMatter.title}
                                     </h4>
-                                    <div className="my-1 text-xs text-gray-700 md:text-sm dark:text-gray-300">
+                                    <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
                                         {day(frontMatter.date).format(
                                             "MMMM DD, YYYY"
                                         )}

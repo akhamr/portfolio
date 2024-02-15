@@ -1,6 +1,6 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
-import { doodle, sans, footer } from "@/styles/fonts";
+import { doodle, sans, footer, della } from "@/styles/fonts";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Providers from "@/components/providers";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         default: "It's me, akha!",
     },
     description:
-        "My personal blog and portfolio website built with curiosity and lot of stress.",
+        "My personal blog and portfolio website built with passion and a lot of stress.",
 };
 
 // Motion page bugged 10.16.2
@@ -25,13 +25,13 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable}`}
+            className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable} ${della.variable}`}
             suppressHydrationWarning
         >
-            <body className="flex h-full select-none flex-col justify-between">
+            <body className="flex h-full select-none flex-col">
                 <Providers>
                     <Navbar />
-                    <main className="mx-auto max-w-[85%] flex-1">
+                    <main className="mx-auto max-w-[75%] flex-1">
                         {children}
                     </main>
                     <Footer />
