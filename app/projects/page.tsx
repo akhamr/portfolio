@@ -52,7 +52,7 @@ export default async function Blog() {
                                             "MMMM YYYY"
                                         )}
                                     </p>
-                                    <p className="line-clamp-3 text-justify text-sm md:text-base">
+                                    <p className="line-clamp-3 text-sm md:text-base">
                                         {project.description}
                                     </p>
                                     <div className="flex space-x-2 pt-3">
