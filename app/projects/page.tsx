@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import {
-    ArrowSmallRightIcon,
-    CodeBracketIcon,
-} from "@heroicons/react/24/solid";
+import { IconArrow, IconCode } from "@/components/icons";
 import projects from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,10 +82,10 @@ export default async function Blog() {
                                         <>
                                             <Link
                                                 target="_blank"
-                                                className="inline-flex hover:underline"
+                                                className="inline-flex items-center hover:underline"
                                                 href={project.url}
                                             >
-                                                <ArrowSmallRightIcon className="w-4 md:w-5" />
+                                                <IconArrow className="md:size-5" />
                                                 <p className="pl-2">
                                                     Visit Project
                                                 </p>
@@ -99,10 +96,10 @@ export default async function Blog() {
                                         <>
                                             <Link
                                                 target="_blank"
-                                                className="inline-flex hover:underline"
+                                                className="inline-flex items-center hover:underline"
                                                 href={project.source}
                                             >
-                                                <CodeBracketIcon className="w-4 md:w-5" />
+                                                <IconCode className="md:size-5" />
                                                 <p className="pl-2">
                                                     Source Code
                                                 </p>

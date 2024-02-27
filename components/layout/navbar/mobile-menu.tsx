@@ -1,6 +1,6 @@
 "use client";
 import { Menu, Transition } from "@headlessui/react";
-import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { IconBars, IconX } from "@/components/icons";
 import Link from "next/link";
 
 const links = [
@@ -20,14 +20,14 @@ const links = [
 
 export default function MobileMenu() {
     return (
-        <Menu as="div" className="h-7 w-7 md:hidden">
+        <Menu as="div" className="size-7 md:hidden">
             {({ open }) => (
                 <>
                     <Menu.Button aria-label="mobileMenu">
                         {open ? (
-                            <XMarkIcon className="h-7 w-7" />
+                            <IconX className="size-7" />
                         ) : (
-                            <Bars3BottomRightIcon className="h-7 w-7" />
+                            <IconBars className="size-7" />
                         )}
                     </Menu.Button>
                     <Transition

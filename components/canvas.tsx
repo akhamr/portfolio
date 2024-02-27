@@ -1,6 +1,6 @@
 "use client";
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import { CheckCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { IconCheck, IconTrash } from "@/components/icons";
 import { useState, useRef, useCallback } from "react";
 
 const colorList = [
@@ -33,7 +33,7 @@ export default function Canvas() {
                 strokeWidth={5}
                 strokeColor={color}
             />
-            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-neutral-100 p-2 md:left-[unset] md:right-4 md:top-[unset] dark:bg-stone-800">
+            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-neutral-100 p-2 dark:bg-stone-800 md:left-[unset] md:right-4 md:top-[unset]">
                 <div className="flex flex-col space-y-2">
                     {colorList.map((data, key) => (
                         <button
@@ -44,7 +44,7 @@ export default function Canvas() {
                             aria-label="Change brush color"
                         >
                             {data === color && (
-                                <CheckCircleIcon className="mx-auto h-5 w-5" />
+                                <IconCheck className="mx-auto h-5 w-5" />
                             )}
                         </button>
                     ))}
@@ -53,7 +53,7 @@ export default function Canvas() {
                         className="h-7 w-7 rounded-full bg-neutral-200 dark:bg-stone-700"
                         aria-label="Clear doodle"
                     >
-                        <TrashIcon className="mx-auto h-5 w-4" />
+                        <IconTrash className="mx-auto h-5 w-4" />
                     </button>
                 </div>
             </div>
