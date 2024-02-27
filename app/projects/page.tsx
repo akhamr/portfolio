@@ -32,14 +32,14 @@ export default async function Blog() {
                         >
                             <Image
                                 className="rounded"
-                                width="458"
-                                height="240"
+                                width="489"
+                                height="256"
                                 src={project.image}
                                 alt={project.title}
                                 placeholder="blur"
                                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                             />
-                            <div className="flex max-w-lg flex-col justify-between p-4 md:p-6">
+                            <div className="flex max-w-md flex-col justify-between p-4 md:p-6">
                                 <div>
                                     <h1
                                         className={`${project.font} line-clamp-2`}
