@@ -23,9 +23,9 @@ export default function Navbar() {
             <div className="mx-auto flex max-w-[85%] items-center justify-between py-2">
                 <Link
                     href="/"
-                    className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
+                    className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out md:hover:bg-zinc-300 dark:md:hover:bg-zinc-700"
                 >
-                    Akhamr.me
+                    Akhamr!
                 </Link>
                 <div className="flex">
                     <div className="hidden space-x-3 md:flex">

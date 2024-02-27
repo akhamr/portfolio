@@ -8,7 +8,7 @@ import Providers from "@/components/providers";
 export const metadata: Metadata = {
     metadataBase: new URL(`https://akhamr.me`),
     title: {
-        template: "%s · Akhamr.me",
+        template: "%s · Akhamr!",
         default: "It's me, akha!",
     },
     description:

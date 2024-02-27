@@ -51,7 +51,7 @@ const spt = {
 
 const project: ProjectType[] = [
     {
-        title: "Akhamr.me",
+        title: "Akhamr!",
         image: "/projects/akhamr.webp",
         description:
             "My personal blog and portfolio website built with Spotify API and a lot of stress...",
