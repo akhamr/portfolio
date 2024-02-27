@@ -56,14 +56,14 @@ export default function Home() {
                     anything about data analytics, and web development.
                 </p>
                 <p className="text-md max-w-[500px] text-center md:text-left md:text-lg">
-                    Checkout my{" "}
+                    {"Checkout my "}
                     <Link
                         className="relative z-10 font-semibold underline"
                         href="/projects"
                     >
                         past works
-                    </Link>{" "}
-                    or learn more{" "}
+                    </Link>
+                    {", or learn more "}
                     <Link
                         href="/about"
                         className="relative z-10 font-semibold underline"

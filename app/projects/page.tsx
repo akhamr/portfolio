@@ -24,22 +24,22 @@ export default async function Blog() {
             </h1>
             <p className="mt-2">Some collection of my past works.</p>
             {filteredProject.length > 0 ? (
-                <div className="flex flex-col space-y-6 py-4">
+                <div className="space-y-6 py-4">
                     {filteredProject.map((project, i) => (
                         <div
-                            className="flex max-w-screen-lg flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:flex-row"
+                            className="flex flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:flex-row"
                             key={i}
                         >
                             <Image
-                                className="rounded md:w-1/2"
-                                width="555"
-                                height="292"
+                                className="rounded"
+                                width="458"
+                                height="240"
                                 src={project.image}
                                 alt={project.title}
                                 placeholder="blur"
                                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                             />
-                            <div className="flex flex-col justify-between p-4 md:p-6">
+                            <div className="flex max-w-lg flex-col justify-between p-4 md:p-6">
                                 <div>
                                     <h1
                                         className={`${project.font} line-clamp-2`}
@@ -52,7 +52,7 @@ export default async function Blog() {
                                             "MMMM YYYY"
                                         )}
                                     </p>
-                                    <p className="line-clamp-3 text-sm md:text-base">
+                                    <p className="line-clamp-2 text-sm md:text-base">
                                         {project.description}
                                     </p>
                                     <div className="flex space-x-2 pt-3">
