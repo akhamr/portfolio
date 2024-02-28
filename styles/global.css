@@ -98,20 +98,20 @@ body {
     @apply border-dashed;
 }
 
+.prose img {
+    @apply m-0 !important;
+}
+
 .prose blockquote > div {
     @apply text-right;
 }
 
-.prose pre {
+/* .prose pre {
     @apply border-2 border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-[#1D1F21];
 }
 
 .prose code {
     @apply rounded-md border border-gray-100 bg-gray-100 px-1 py-0.5 text-gray-800 dark:border-gray-800 dark:bg-[#1D1F21] dark:text-gray-200;
-}
-
-.prose img {
-    @apply m-0 !important;
 }
 
 .prose .table-wrapper {
@@ -120,7 +120,7 @@ body {
 
 .prose table {
     @apply m-0 w-max;
-}
+} */
 
 .ripple path {
     @apply fill-neutral-400 dark:fill-neutral-500;

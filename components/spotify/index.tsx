@@ -4,12 +4,10 @@ import TopTracks from "./top-tracks";
 
 export default function Spotify() {
     return (
-        <section>
-            <h2 id="playlist">
-                <Link className="text-3xl" href="#playlist">
-                    Playlist
-                </Link>
-            </h2>
+        <section className="py-4">
+            <h1 id="playlist" className="my-4">
+                <Link href="#playlist">Playlist</Link>
+            </h1>
             <p> This is what I&apos;m currently listening on Spotify.</p>
             <NowPlaying />
             <p>

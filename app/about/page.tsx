@@ -39,20 +39,15 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <section
-            id="about-content"
-            className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-2"
-        >
-            <div className="mx-auto flex h-80 w-80 md:h-96 md:w-96">
+        <section id="about-content" className="mx-auto mb-6 max-w-3xl">
+            <div className="mx-auto mt-2 h-80 w-80 md:h-96 md:w-96">
                 <Blob />
             </div>
-            <div className="prose max-w-full dark:prose-dark">
+            <div className="prose dark:prose-dark">
                 <section>
-                    <h2 id="about" className="mt-4">
-                        <Link className="text-3xl" href="#about">
-                            About
-                        </Link>
-                    </h2>
+                    <h1 id="about" className="my-4">
+                        <Link href="#about">About</Link>
+                    </h1>
                     <p>
                         Hello, my name is <b>Khamid Muhammad Arrazaq</b> (
                         <b>Akha</b>), an enthusiastic fresh graduate with a
@@ -119,11 +114,9 @@ export default function About() {
                 </section>
                 <Spotify />
                 <section>
-                    <h2 id="contact">
-                        <Link className="text-3xl" href="#contact">
-                            Contact
-                        </Link>
-                    </h2>
+                    <h1 id="contact" className="my-4">
+                        <Link href="#contact">Contact</Link>
+                    </h1>
                     <p>
                         I’m always excited to connect with everyone so please
                         don’t hesitate to reach out by following my social media
@@ -150,7 +143,7 @@ export default function About() {
                         <Link
                             target="_blank"
                             className="underline"
-                            href="https://drive.google.com/file/d/1j57WTKkaJFEucTQEhl7qb5ZH2zPcwsT9/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1j57WTKkaJFEucTQEhl7qb5Zh1zPcwsT9/view?usp=sharing"
                         >
                             here
                         </Link>
