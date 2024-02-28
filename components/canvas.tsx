@@ -33,7 +33,7 @@ export default function Canvas() {
                 strokeWidth={5}
                 strokeColor={color}
             />
-            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-neutral-100 p-2 dark:bg-stone-800 md:left-[unset] md:right-4 md:top-[unset]">
+            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-zinc-100 p-2 dark:bg-zinc-800 md:left-[unset] md:right-4 md:top-[unset]">
                 <div className="flex flex-col space-y-2">
                     {colorList.map((data, key) => (
                         <button
@@ -50,7 +50,7 @@ export default function Canvas() {
                     ))}
                     <button
                         onClick={handleClear}
-                        className="h-7 w-7 rounded-full bg-neutral-200 dark:bg-stone-700"
+                        className="h-7 w-7 rounded-full bg-zinc-200 dark:bg-zinc-700"
                         aria-label="Clear doodle"
                     >
                         <IconTrash className="mx-auto h-5 w-4" />

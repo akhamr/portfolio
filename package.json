@@ -12,6 +12,7 @@
         "fix": "npm run format && npm run lint"
     },
     "dependencies": {
+        "@types/mapbox__rehype-prism": "^0.8.3",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
@@ -36,6 +37,7 @@
     },
     "devDependencies": {
         "@headlessui/react": "^1.7.15",
+        "@mapbox/rehype-prism": "^0.9.0",
         "@tailwindcss/typography": "^0.5.9",
         "dayjs": "^1.11.9",
         "framer-motion": "10.16.2",
@@ -44,7 +46,6 @@
         "react-sketch-canvas": "^6.2.0",
         "reading-time": "^1.5.0",
         "rehype-autolink-headings": "^6.1.1",
-        "rehype-slug": "^5.1.0",
-        "remark-gfm": "^3.0.1"
+        "rehype-slug": "^5.1.0"
     }
 }

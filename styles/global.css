@@ -4,21 +4,20 @@
 
 html {
     scrollbar-gutter: stable both-edges;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
-    @apply text-dark subpixel-antialiased dark:bg-dark dark:text-light;
+    @apply text-dark subpixel-antialiased dark:bg-zinc-950 dark:text-light;
 }
 
 ::selection {
     color: black;
-    @apply bg-gray-300 dark:bg-gray-400;
+    @apply bg-zinc-300 dark:bg-zinc-400;
 }
 
 *::-webkit-scrollbar {
-    height: 10px;
+    height: 0px;
     width: 5px;
 }
 
@@ -86,6 +85,8 @@ body {
     }
 }
 
+/* Blog and About */
+
 .prose {
     @apply text-justify;
 }
@@ -106,21 +107,76 @@ body {
     @apply text-right;
 }
 
-/* .prose pre {
-    @apply border-2 border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-[#1D1F21];
+/* Syntax Highlighter */
+
+.prose pre {
+    @apply border-2 border-dashed border-gray-200 bg-zinc-100 dark:border-gray-700/50  dark:bg-zinc-800;
 }
 
 .prose code {
-    @apply rounded-md border border-gray-100 bg-gray-100 px-1 py-0.5 text-gray-800 dark:border-gray-800 dark:bg-[#1D1F21] dark:text-gray-200;
+    @apply rounded border-gray-100 bg-zinc-100 px-1 py-0.5 text-dark dark:bg-zinc-800 dark:text-light;
 }
 
-.prose .table-wrapper {
-    @apply overflow-x-auto;
+.prose pre > code {
+    @apply p-0;
 }
 
-.prose table {
-    @apply m-0 w-max;
-} */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    @apply text-gray-700 dark:text-gray-500;
+}
+
+.token.punctuation {
+    @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    @apply text-green-500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    @apply text-purple-500;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    @apply text-yellow-500;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    @apply text-blue-500;
+}
+
+.token.function,
+.token.class-name {
+    @apply text-pink-500;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    @apply text-yellow-500;
+}
+
+/* Ripple Animation */
 
 .ripple path {
     @apply fill-neutral-400 dark:fill-neutral-500;

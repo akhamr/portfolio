@@ -43,18 +43,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     {` • ${frontmatter.readingTime.words} word(s)`}
                 </p>
             </div>
-            <hr className="my-4 border-dashed border-gray-300 dark:border-gray-700" />
+            <hr className="my-4 border-t-2 border-dashed border-gray-300 dark:border-gray-700" />
             <div className="prose max-w-full dark:prose-dark">{body}</div>
         </section>
     );
 }
 
-// export async function generateStaticParams() {
-//     const posts = await getFiles();
-//     return posts.map((post) => {
-//         const slug = post.replace(/\.mdx/, "");
-//         return {
-//             slug: slug,
-//         };
-//     });
-// }
+export async function generateStaticParams() {
+    const posts = await getFiles();
+    return posts.map((post) => {
+        const slug = post.replace(/\.mdx/, "");
+        return {
+            slug: slug,
+        };
+    });
+}

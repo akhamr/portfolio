@@ -19,11 +19,11 @@ const links = [
 
 export default function Navbar() {
     return (
-        <nav className="sticky top-0 z-50 w-full border-b-2 border-dashed border-gray-200 bg-white dark:border-gray-800 dark:bg-dark">
+        <nav className="sticky top-0 z-50 w-full border-b-2 border-dashed border-gray-200 bg-white dark:border-gray-800 dark:bg-zinc-950">
             <div className="mx-auto flex max-w-[85%] items-center justify-between py-2">
                 <Link
                     href="/"
-                    className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out md:hover:bg-zinc-300 dark:md:hover:bg-zinc-700"
+                    className="rounded px-2.5 py-1.5 font-doodle text-xl font-semibold transition duration-200 ease-in-out md:hover:bg-zinc-100 dark:md:hover:bg-zinc-800"
                 >
                     Akhamr!
                 </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
                             <Link
                                 key={i}
                                 href={link.url}
-                                className="rounded px-3 py-2.5 text-sm font-semibold transition duration-200 ease-in-out hover:bg-zinc-300 dark:hover:bg-zinc-700"
+                                className="rounded px-3 py-2.5 text-sm font-semibold transition duration-200 ease-in-out hover:bg-zinc-100 dark:hover:bg-zinc-800"
                             >
                                 {link.text}
                             </Link>

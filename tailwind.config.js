@@ -2,10 +2,10 @@
 module.exports = {
     darkMode: "class",
     content: [
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./data/**/*.{js,ts,jsx,tsx,mdx}",
-        "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{jsx,tsx,mdx}",
+        "./components/**/*.{jsx,tsx,mdx}",
+        "./data/**/*.{jsx,tsx,mdx}",
+        "./lib/**/*.{jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
@@ -33,7 +33,7 @@ module.exports = {
                             },
                             scrollMarginTop: "84px",
                             "@media (min-width: 768px)": {
-                                scrollMarginTop: "40px",
+                                scrollMarginTop: "36px",
                             },
                         },
                         strong: { fontWeight: "bold" },

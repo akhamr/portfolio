@@ -6,7 +6,7 @@ import Image, { ImageProps } from "next/image";
 import { compileMDX } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkGfm from "remark-gfm";
+import rehypePrism from "@mapbox/rehype-prism";
 const root = process.cwd();
 
 interface QuoteProps {
@@ -30,8 +30,9 @@ export async function getPostBySlug(slug: string) {
         source: content,
         options: {
             mdxOptions: {
-                remarkPlugins: [remarkGfm],
+                remarkPlugins: [],
                 rehypePlugins: [
+                    rehypePrism,
                     rehypeSlug,
                     [rehypeAutolinkHeadings, { behavior: "wrap" }],
                 ],
@@ -77,19 +78,16 @@ export async function getAllPost() {
     }, []);
 }
 
-const CustomImage = ({ alt, src }: ImageProps) => {
+const CustomImage = ({ alt, ...props }: ImageProps) => {
     return (
-        <div className="mb-4 mt-2 text-center">
+        <div className="flex flex-col items-center py-2">
             <Image
-                src={src}
-                width="768"
-                height="576"
                 alt={alt}
-                className="w-full"
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
+                {...props}
             />
-            <p className="text-sm italic">{alt}</p>
+            <p className="m-0 pt-4 italic">{alt}</p>
         </div>
     );
 };
