@@ -25,29 +25,25 @@ export default async function Post({ params }: { params: { slug: string } }) {
     return (
         <section
             id="post-content"
-            className="mx-auto mb-6 flex h-full w-full max-w-3xl flex-1 flex-col pt-4 md:pt-11"
+            className="mx-auto mb-6 h-full max-w-3xl pt-4 md:pt-11"
         >
-            <div className="flex flex-col">
-                <h1 className="mt-3 text-4xl hover:underline md:text-6xl">
-                    <Link href={`/blog/${frontmatter.slug}`}>
-                        {frontmatter.title}
-                    </Link>
-                </h1>
-                <p className="mt-2">{frontmatter.description}</p>
-                <div className="mt-4 flex items-center text-sm">
-                    <p>
-                        <Link href="/about" className="font-semibold">
-                            Akha
-                        </Link>{" "}
-                        / {day(frontmatter.date).format("MMMM DD, YYYY")}
-                    </p>
-                    <p className="ml-auto">
-                        {`${frontmatter.readingTime.text}`}
-                        {` • ${frontmatter.readingTime.words} word(s)`}
-                    </p>
-                </div>
-                <hr className="mb-2 mt-2 border-dashed border-gray-200 dark:border-gray-800" />
+            <h1 className="mt-3 text-pretty text-4xl md:text-6xl">
+                {frontmatter.title}
+            </h1>
+            <p className="my-4">{frontmatter.description}</p>
+            <div className="flex items-center text-sm">
+                <p>
+                    <Link href="/about" className="font-semibold">
+                        Akha
+                    </Link>{" "}
+                    / {day(frontmatter.date).format("MMMM DD, YYYY")}
+                </p>
+                <p className="ml-auto">
+                    {`${frontmatter.readingTime.text}`}
+                    {` • ${frontmatter.readingTime.words} word(s)`}
+                </p>
             </div>
+            <hr className="my-4 border-dashed border-gray-300 dark:border-gray-700" />
             <div className="prose max-w-full dark:prose-dark">{body}</div>
         </section>
     );

@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
-                <h1 className="noselect mt-1 font-doodle text-3xl md:text-4xl">
+                <h1 className="mt-1 font-doodle text-3xl md:text-4xl">
                     It&apos;s me,
                     <span className="relative">
                         {" "}

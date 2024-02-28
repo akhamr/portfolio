@@ -25,10 +25,10 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`h-full ${doodle.variable} ${sans.variable} ${footer.variable} ${della.variable}`}
+            className={`${doodle.variable} ${sans.variable} ${footer.variable} ${della.variable}`}
             suppressHydrationWarning
         >
-            <body className="flex h-full select-none flex-col">
+            <body className="flex h-dvh select-none flex-col">
                 <Providers>
                     <Navbar />
                     <main className="mx-auto max-w-[85%] flex-1">

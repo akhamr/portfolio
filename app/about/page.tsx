@@ -39,11 +39,11 @@ export const metadata: Metadata = {
 
 export default function About() {
     return (
-        <section id="about-content" className="mx-auto mb-6 max-w-3xl">
+        <section id="about-content" className="mb-6 max-w-3xl">
             <div className="mx-auto mt-2 h-80 w-80 md:h-96 md:w-96">
                 <Blob />
             </div>
-            <div className="prose dark:prose-dark">
+            <div className="prose max-w-full dark:prose-dark">
                 <section>
                     <h1 id="about" className="my-4">
                         <Link href="#about">About</Link>
