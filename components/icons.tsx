@@ -67,13 +67,13 @@ function IconBars({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             className={cn("size-4", className)}
             {...props}
         >
             <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
             />
         </svg>

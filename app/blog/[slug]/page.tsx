@@ -53,12 +53,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
     );
 }
 
-export async function generateStaticParams() {
-    const posts = await getFiles();
-    return posts.map((post) => {
-        const slug = post.replace(/\.mdx/, "");
-        return {
-            slug: slug,
-        };
-    });
-}
+// export async function generateStaticParams() {
+//     const posts = await getFiles();
+//     return posts.map((post) => {
+//         const slug = post.replace(/\.mdx/, "");
+//         return {
+//             slug: slug,
+//         };
+//     });
+// }

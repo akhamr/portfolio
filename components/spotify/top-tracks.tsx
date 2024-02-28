@@ -33,7 +33,7 @@ export default function TopTracks() {
                                   <h5 className="m-0 line-clamp-1">
                                       {track.title}
                                   </h5>
-                                  <p className="m-0 line-clamp-1 text-sm md:text-base dark:text-gray-300">
+                                  <p className="m-0 line-clamp-1 text-sm dark:text-gray-300 md:text-base">
                                       {track.artist}
                                   </p>
                               </div>
@@ -49,8 +49,8 @@ export default function TopTracks() {
                               <strong>#{i + 1}</strong>
                               <div className="h-[80px] w-[80px] rounded-md bg-zinc-300 dark:bg-zinc-700"></div>
                               <div className="flex flex-col justify-center gap-3">
-                                  <div className="h-6 w-40 rounded bg-zinc-300 md:w-64 dark:bg-zinc-700"></div>
-                                  <div className="h-5 w-28 rounded bg-zinc-300 md:w-48 dark:bg-zinc-700"></div>
+                                  <div className="h-6 w-40 rounded bg-zinc-300 dark:bg-zinc-700 md:w-64"></div>
+                                  <div className="h-5 w-28 rounded bg-zinc-300 dark:bg-zinc-700 md:w-48"></div>
                               </div>
                           </div>
                       </div>
