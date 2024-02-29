@@ -28,7 +28,7 @@ export default function RootLayout({
             className={`${doodle.variable} ${sans.variable} ${footer.variable} ${della.variable}`}
             suppressHydrationWarning
         >
-            <body className="flex h-dvh flex-col">
+            <body className="flex h-dvh select-none flex-col">
                 <Providers>
                     <Navbar />
                     <main className="mx-auto max-w-[85%] flex-1">

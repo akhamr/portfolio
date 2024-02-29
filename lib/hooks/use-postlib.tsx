@@ -4,9 +4,11 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import Image, { ImageProps } from "next/image";
 import { compileMDX } from "next-mdx-remote/rsc";
+import codeTitle from "remark-code-title";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "@mapbox/rehype-prism";
+import { Pre } from "@/components/mdx-components";
 const root = process.cwd();
 
 interface QuoteProps {
@@ -30,7 +32,7 @@ export async function getPostBySlug(slug: string) {
         source: content,
         options: {
             mdxOptions: {
-                remarkPlugins: [],
+                remarkPlugins: [codeTitle],
                 rehypePlugins: [
                     rehypePrism,
                     rehypeSlug,
@@ -78,8 +80,9 @@ export async function getAllPost() {
     }, []);
 }
 
-const CustomImage = ({ alt, ...props }: ImageProps) => {
-    return (
+const MdxComponent = {
+    pre: Pre,
+    Img: ({ alt, ...props }: ImageProps) => (
         <div className="flex flex-col items-center py-2">
             <Image
                 alt={alt}
@@ -89,11 +92,8 @@ const CustomImage = ({ alt, ...props }: ImageProps) => {
             />
             <p className="m-0 pt-4 italic">{alt}</p>
         </div>
-    );
-};
-
-const CustomQuote = ({ author, quote, books }: QuoteProps) => {
-    return (
+    ),
+    Quote: ({ author, quote, books }: QuoteProps) => (
         <blockquote>
             <p className="m-0 p-0">{quote}</p>
             <div>
@@ -101,10 +101,5 @@ const CustomQuote = ({ author, quote, books }: QuoteProps) => {
                 {books && `, ${books}`}
             </div>
         </blockquote>
-    );
-};
-
-const MdxComponent = {
-    Img: CustomImage,
-    Quote: CustomQuote,
+    ),
 };

@@ -87,12 +87,8 @@ body {
 
 /* Blog and About */
 
-.prose {
+.prose p {
     @apply text-justify;
-}
-
-.prose > p {
-    @apply indent-5;
 }
 
 .prose blockquote {
@@ -125,11 +121,11 @@ body {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    @apply text-gray-700 dark:text-gray-500;
+    @apply italic text-gray-400 dark:text-gray-500;
 }
 
 .token.punctuation {
-    @apply text-gray-700 dark:text-gray-300;
+    @apply text-gray-400 dark:text-gray-500;
 }
 
 .token.property,
@@ -139,7 +135,7 @@ body {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    @apply text-green-500;
+    @apply text-green-600 dark:text-green-400;
 }
 
 .token.selector,
@@ -148,7 +144,7 @@ body {
 .token.char,
 .token.builtin,
 .token.inserted {
-    @apply text-purple-500;
+    @apply text-purple-600 dark:text-purple-400;
 }
 
 .token.operator,
@@ -156,24 +152,32 @@ body {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    @apply text-yellow-500;
+    @apply text-yellow-600 dark:text-yellow-400;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    @apply text-blue-500;
+    @apply text-blue-600 dark:text-blue-400;
 }
 
 .token.function,
 .token.class-name {
-    @apply text-pink-500;
+    @apply text-red-600 dark:text-red-400;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-    @apply text-yellow-500;
+    @apply text-yellow-600 dark:text-yellow-400;
+}
+
+div[data-remark-code-title] {
+    @apply rounded-t border-2 border-b-0 border-dashed border-gray-200 bg-zinc-300/80 p-4 text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-zinc-700/80 dark:text-gray-200;
+}
+
+div[data-remark-code-title] + div > pre {
+    @apply mt-0 rounded-t-none border-t-0;
 }
 
 /* Ripple Animation */
