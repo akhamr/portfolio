@@ -17,7 +17,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-    height: 5px;
+    height: 0px;
     width: 5px;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .prose pre > code {
-    @apply p-0;
+    @apply p-0 text-xs md:text-sm;
 }
 
 .token.comment,
@@ -192,7 +192,7 @@ div[data-remark-code-title] + div > pre {
 
 /* Gist */
 
-.gist-file {
+/* .gist-file {
     @apply border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
 }
 
@@ -218,4 +218,4 @@ div[data-remark-code-title] + div > pre {
 
 .blob-interaction-bar {
     @apply hidden;
-}
+} */
