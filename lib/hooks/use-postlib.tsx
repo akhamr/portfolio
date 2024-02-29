@@ -8,7 +8,7 @@ import codeTitle from "remark-code-title";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "@mapbox/rehype-prism";
-import { Pre } from "@/components/mdx-components";
+import { Pre, Gist } from "@/components/mdx-components";
 const root = process.cwd();
 
 interface QuoteProps {
@@ -82,6 +82,7 @@ export async function getAllPost() {
 
 const MdxComponent = {
     pre: Pre,
+    Gist,
     Img: ({ alt, ...props }: ImageProps) => (
         <div className="flex flex-col items-center py-2">
             <Image

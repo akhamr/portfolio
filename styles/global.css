@@ -17,7 +17,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-    height: 0px;
+    height: 5px;
     width: 5px;
 }
 
@@ -86,6 +86,10 @@ body {
 }
 
 /* Blog and About */
+
+.prose h2 {
+    @apply mt-4;
+}
 
 .prose p {
     @apply text-justify;
@@ -184,4 +188,34 @@ div[data-remark-code-title] + div > pre {
 
 .ripple path {
     @apply fill-neutral-400 dark:fill-neutral-500;
+}
+
+/* Gist */
+
+.gist-file {
+    @apply border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
+}
+
+.gist .markdown-body table td {
+    @apply border-gray-200 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
+}
+
+.gist .markdown-body table th {
+    @apply border-gray-200 bg-zinc-300/80 text-dark dark:border-gray-700 dark:bg-zinc-700/80 dark:text-light !important;
+}
+
+.gist .markdown-body table tr {
+    @apply bg-zinc-100 text-dark dark:bg-zinc-800 dark:text-light !important;
+}
+
+.gist .file {
+    @apply m-0;
+}
+
+.csv-data {
+    @apply max-h-64;
+}
+
+.blob-interaction-bar {
+    @apply hidden;
 }

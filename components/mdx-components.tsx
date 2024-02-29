@@ -2,6 +2,11 @@
 import { useState, useRef, ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 import { IconCopied, IconCopy } from "@/components/icons";
+import ReactEmbedGist from "react-embed-gist";
+
+export function Gist({ gist }: { gist: `${string}/${string}` }) {
+    return <ReactEmbedGist gist={gist} />;
+}
 
 export function Pre({ children, className, ...props }: ComponentProps<"pre">) {
     const textInput = useRef<HTMLDivElement>(null);
