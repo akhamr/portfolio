@@ -1,7 +1,15 @@
 "use client";
 import { useState, useRef, ComponentProps } from "react";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import { IconCopied, IconCopy } from "@/components/icons";
+const ReactEmbedGist = dynamic(() => import("react-embed-gist"), {
+    ssr: false,
+});
+
+export function Gist({ id }: { id: `${string}/${string}` }) {
+    return <ReactEmbedGist gist={id} titleClass="hidden" />;
+}
 
 export function Pre({ children, className, ...props }: ComponentProps<"pre">) {
     const textInput = useRef<HTMLDivElement>(null);

@@ -192,30 +192,44 @@ div[data-remark-code-title] + div > pre {
 
 /* Gist */
 
-/* .gist-file {
+.gist-file {
     @apply border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
 }
 
-.gist .markdown-body table td {
-    @apply border-gray-200 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
+.gist .markdown-body table {
+    @apply min-w-full;
 }
 
+.gist .markdown-body table thead,
 .gist .markdown-body table th {
-    @apply border-gray-200 bg-zinc-300/80 text-dark dark:border-gray-700 dark:bg-zinc-700/80 dark:text-light !important;
+    @apply border-gray-200 bg-zinc-200 text-dark dark:border-gray-700 dark:bg-zinc-800/95 dark:text-light !important;
 }
 
-.gist .markdown-body table tr {
-    @apply bg-zinc-100 text-dark dark:bg-zinc-800 dark:text-light !important;
+.gist .markdown-body table td:first-child {
+    @apply bg-zinc-50 dark:bg-zinc-900 !important;
+}
+
+.gist .markdown-body table td {
+    @apply pointer-events-none border-gray-200 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
+}
+
+.gist-meta {
+    @apply bg-zinc-300/80 text-gray-600 dark:bg-zinc-600 dark:text-gray-300 !important;
+}
+
+.gist-meta a {
+    @apply text-dark dark:text-light !important;
+}
+
+.gist-data {
+    @apply border-0 !important;
 }
 
 .gist .file {
-    @apply m-0;
+    @apply m-0 overflow-hidden;
 }
 
-.csv-data {
-    @apply max-h-64;
-}
-
-.blob-interaction-bar {
+.blob-interaction-bar,
+.gist .markdown-body table tbody > *:nth-child(n + 11) {
     @apply hidden;
-} */
+}
