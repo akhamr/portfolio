@@ -2,20 +2,13 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import Image, { ImageProps } from "next/image";
 import { compileMDX } from "next-mdx-remote/rsc";
 import codeTitle from "remark-code-title";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "@mapbox/rehype-prism";
-import { Pre, Gist } from "@/components/mdx-components";
+import { Pre, Gist, Img, Quote } from "@/components/mdx-components";
 const root = process.cwd();
-
-interface QuoteProps {
-    author: string;
-    quote: string;
-    books?: string;
-}
 
 const articlesPath = path.join(root, "data/blog");
 
@@ -81,26 +74,8 @@ export async function getAllPost() {
 }
 
 const MdxComponent = {
-    Gist,
     pre: Pre,
-    Img: ({ alt, ...props }: ImageProps) => (
-        <div className="flex flex-col items-center py-2">
-            <Image
-                alt={alt}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
-                {...props}
-            />
-            <p className="m-0 pt-4 italic">{alt}</p>
-        </div>
-    ),
-    Quote: ({ author, quote, books }: QuoteProps) => (
-        <blockquote>
-            <p className="m-0 p-0">{quote}</p>
-            <div>
-                {` — ${author}`}
-                {books && `, ${books}`}
-            </div>
-        </blockquote>
-    ),
+    Img,
+    Gist,
+    Quote,
 };

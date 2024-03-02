@@ -80,6 +80,7 @@ body {
     h4 {
         @apply text-lg font-bold lg:text-xl;
     }
+
     h5 {
         @apply text-base font-bold lg:text-lg;
     }
@@ -88,7 +89,7 @@ body {
 /* Blog and About */
 
 .prose h2 {
-    @apply mt-4;
+    @apply mb-5 mt-8;
 }
 
 .prose p {
