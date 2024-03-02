@@ -202,7 +202,7 @@ div[data-remark-code-title] + div > pre {
 
 .gist .markdown-body table thead,
 .gist .markdown-body table th {
-    @apply border-gray-200 bg-zinc-200 text-dark dark:border-gray-700 dark:bg-zinc-800/95 dark:text-light !important;
+    @apply border-gray-300 bg-zinc-200 text-dark dark:border-gray-700 dark:bg-zinc-800/95 dark:text-light !important;
 }
 
 .gist .markdown-body table td:first-child {
@@ -210,7 +210,7 @@ div[data-remark-code-title] + div > pre {
 }
 
 .gist .markdown-body table td {
-    @apply pointer-events-none border-gray-200 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
+    @apply pointer-events-none border-gray-300 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
 }
 
 .gist-meta {

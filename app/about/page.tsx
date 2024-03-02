@@ -23,10 +23,6 @@ const socials = [
         url: "https://linkedin.com/in/akhamr/",
     },
     {
-        name: "Medium",
-        url: "https://akhamr.medium.com/",
-    },
-    {
         name: "Spotify",
         url: "https://open.spotify.com/user/21zvaib7nglwuveksfzrdvngi",
     },
