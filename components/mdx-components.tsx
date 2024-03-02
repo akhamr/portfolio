@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, ComponentProps, Suspense } from "react";
+import { useState, useRef, ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import { IconCopied, IconCopy } from "@/components/icons";
@@ -14,17 +14,19 @@ interface QuoteProps {
     books?: string;
 }
 
+// Hanya untuk tabel dengan ukuran 10 baris dan 1 keterangan
+
 export function Gist({ id, alt }: { id: `${string}/${string}`; alt: string }) {
     return (
         <div className="flex flex-col">
-            <ReactEmbedGist
-                gist={id}
-                titleClass="hidden"
-                loadingFallback={
-                    <div className="h-[302px] animate-pulse rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 dark:border-gray-800 dark:bg-zinc-800"></div>
-                }
-            />
-            <p className="m-0 self-center text-sm italic">{alt}</p>
+            <div className="h-[292px]">
+                <ReactEmbedGist
+                    gist={id}
+                    titleClass="hidden"
+                    loadingClass="h-full animate-pulse rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-transparent dark:border-gray-800 dark:bg-zinc-800"
+                />
+            </div>
+            <p className="m-0 self-center pt-4 text-sm italic">{alt}</p>
         </div>
     );
 }
@@ -52,6 +54,16 @@ export function Quote({ author, quote, books }: QuoteProps) {
                 {books && `, ${books}`}
             </div>
         </blockquote>
+    );
+}
+
+export function Hr() {
+    return (
+        <div className="flex h-2 items-center justify-center">
+            <p className="m-0 pb-0.5 pl-4 text-4xl leading-none tracking-[16px]">
+                ·····
+            </p>
+        </div>
     );
 }
 

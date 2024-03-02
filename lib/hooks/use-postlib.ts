@@ -7,7 +7,7 @@ import codeTitle from "remark-code-title";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "@mapbox/rehype-prism";
-import { Pre, Gist, Img, Quote } from "@/components/mdx-components";
+import { Pre, Gist, Img, Quote, Hr } from "@/components/mdx-components";
 const root = process.cwd();
 
 const articlesPath = path.join(root, "data/blog");
@@ -74,6 +74,7 @@ export async function getAllPost() {
 }
 
 const MdxComponent = {
+    hr: Hr,
     pre: Pre,
     Img,
     Gist,
