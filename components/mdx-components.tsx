@@ -60,9 +60,7 @@ export function Quote({ author, quote, books }: QuoteProps) {
 export function Hr() {
     return (
         <div className="flex h-2 items-center justify-center">
-            <p className="m-0 pb-0.5 pl-4 text-4xl leading-none tracking-[16px]">
-                ·····
-            </p>
+            <span className="pb-0.5 pl-4 text-4xl tracking-[16px]">·····</span>
         </div>
     );
 }
