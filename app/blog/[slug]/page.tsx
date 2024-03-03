@@ -1,3 +1,5 @@
+import "katex/dist/katex.min.css";
+
 import type { Metadata } from "next";
 import { getFiles, getPostBySlug } from "@/lib/hooks/use-postlib";
 import Link from "next/link";
@@ -8,7 +10,7 @@ export async function generateMetadata({
 }: {
     params: { slug: string };
 }): Promise<Metadata> {
-    const { frontmatter } = await getPostBySlug(params?.slug);
+    const { frontmatter } = await getPostBySlug(params.slug);
 
     return {
         title: `${frontmatter.title}`,
@@ -35,12 +37,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 <p>
                     <Link href="/about" className="font-semibold">
                         Akha
-                    </Link>{" "}
-                    / {day(frontmatter.date).format("MMMM DD, YYYY")}
+                    </Link>
+                    {" / "}
+                    {day(frontmatter.date).format("MMM DD, YYYY")}
                 </p>
                 <p className="ml-auto">
-                    {`${frontmatter.readingTime.text}`}
-                    {` • ${frontmatter.readingTime.words} word(s)`}
+                    {`${frontmatter.readingTime.text} • ${frontmatter.readingTime.words} word(s)`}
                 </p>
             </div>
             <hr className="my-4 border-t-2 border-dashed border-gray-300 dark:border-gray-700" />

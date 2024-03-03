@@ -1,8 +1,8 @@
 ---
-title: "SGD-SVR: A Simplified How-To Guide."
-date: "2024-03-01"
+title: "SGD-SVR: Your (ir)regular predictive model."
+date: "2024-03-03"
 image: "/blog/sgd-svr/og.jpg"
-description: "Brace yourself, it's gonna be a long post..."
+description: "A fascinating attempt to optimize our popular regression algorithm..."
 ---
 
 <Img
@@ -12,51 +12,91 @@ description: "Brace yourself, it's gonna be a long post..."
     alt="Photo by Enayet Raheem on Unsplash"
 />
 
-&emsp;&emsp; Etiam blandit varius pharetra. In commodo sagittis mollis. In cursus maximus tempor. Vivamus nec sollicitudin nunc, mattis rhoncus erat. Donec pharetra, est sed posuere pharetra, justo mi laoreet turpis, eu pellentesque eros justo ac arcu. Mauris ut dolor hendrerit, semper neque suscipit, rutrum purus. Donec mollis mauris eu tortor aliquam.
+&emsp;&emsp;**_Support Vector Regression_** (**SVR**) is one of the most frequently used regression models in machine learning. SVR is highly regarded for its versatility in handling datasets of various sizes and shapes, encompassing both linear and non-linear relationships between variables. This adaptability is particularly beneficial in real-world scenarios where data can exhibit complex patterns that defy simple linear modeling. SVR's flexibility arises from its ability to utilize different kernel functions, enabling it to capture intricate structures within the data and provide accurate predictions. **However**, despite its numerous advantages, SVR has certain limitations that need to be considered. One notable drawback is its computational complexity, especially when dealing with large datasets, and requires careful tuning of hyperparameters, which may pose challenges for users without extensive machine learning expertise.
+
+&emsp;&emsp;In this post, we'll deep-dive into the realm of optimization algorithm especially **_Stochastic Gradient Descent_** (**SGD**) as a way to mitigate these downsides, providing a practical solution to enhance the effectiveness of SVR, as far as make it more scalable to larger datasets, and more "processor-friendly".
+
+## How it works...
+
+&emsp;&emsp;If you've worked with machine learning at least once, you'll know what **_Support Vector Machine_** (**SVM**) is. It's a supervised machine learning algorithm which uses **labeled data** for classification, and regression tasks. The main idea of SVR is to find line&mdash;or a plane in higher dimensions&mdash;that best represents the trend in the data. SVR helps you find this line while minimizing the error between the actual data points and the line with the help of **margin of tolerance**.
+
+<Img
+    src="/blog/sgd-svr/svr.webp"
+    width={768}
+    height={494}
+    alt="Two dashed-lines as margin in SVR"
+/>
+
+Suppose a labeled dataset $$\textbf{x}_i = (x_{i1}, x_{i2}, \ldots, x_{id}) \in \mathbb{R}^d$$, and $$y_i \in \mathbb{R}$$ with $$i = 1, 2, \ldots, n$$. With the help of SVR, you can find the predicted data $$(f(\textbf{x}))$$ by solving the optimization problem&mdash;or objective function $(L)$&mdash;written as
+
+$$
+min~
+\begin{dcases}
+    ~\frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n (\alpha_i - \alpha_i^*)(\alpha_j - \alpha_j^*)\varphi(\textbf{x}_i)^T\varphi(\textbf{x}_j) - \sum_{i=1}^n y_i(\alpha_i - \alpha_i^*) + \varepsilon \sum_{i=1}^n (\alpha_i + \alpha_i^*).
+\end{dcases}
+$$
+
+Subject to constraint
+
+$$
+\sum_{i=1}^n (\alpha_i - \alpha_i^*) = 0, \quad \text{and} \quad 0 \leq \alpha_i, \alpha_i^* \leq C.
+$$
+
+So that we can achieve
+
+$$
+f(\textbf{x}) = \sum_{i=1}^n (\alpha_i - \alpha_i^*)K(\textbf{x}_i, \textbf{x}) + b.
+$$
+
+With $K(\textbf{x}_i, \textbf{x}) = \varphi(\textbf{x}_i)^T\varphi(\textbf{x})$ is some kernel function like **polynomial** or **_radial basis function_** (**RBF**). In equation above, we have _hyperparameter_ that need to be tuned such as: dual parameter $(\alpha)$, width of margin $(\varepsilon)$, and trade-off $(C)$. And now, this is where SGD come into play...
+
+&emsp;&emsp;SGD play a significant role in determining the dual parameter $(\alpha)$ SVR, by estimating the gradient of objective function $(L)$ using a smaller subset of data, making it computationally more efficient. By randomly selecting mini-batches of data for each iteration, SGD introduces randomness into the optimization process, which helps escape local minima and can lead to faster convergence. SGD can be written as
+
+$$
+\alpha_i^{(*)}(new) = \alpha_i^{(*)}(old) - \lambda \frac{\partial L}{\partial \alpha_i^{(*)}(old)}.
+$$
+
+With $\alpha_i^{(*)}$ represent both $\alpha$ and $\alpha^*$ for each $i$ data, and $\lambda$ as learning rate. Partial derivative of the objective function $L$ with respect to $\alpha$ $(\nabla_\alpha L)$ can be written as
+
+$$
+\begin{align*}
+    \frac{\partial L}{\partial \alpha_i} &=  \sum_{j=1}^n (\alpha_j - \alpha_j^*)K(\textbf{x}_j, \textbf{x}_i) - y_i + \varepsilon, \\
+    \frac{\partial L}{\partial \alpha_i^*} &= y_i - \sum_{j=1}^n (\alpha_j - \alpha_j^*)K(\textbf{x}_j, \textbf{x}_i) + \varepsilon.
+\end{align*}
+$$
+
+This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_{i=1}^n (\alpha_i - \alpha_i^*) \leq $$ degree of tolerance $(tol)$. After that, the optimized $\alpha$ can now be used to calculate the predictive values $(f(\textbf{x}))$.
+
+## The real deal.
+
+&emsp;&emsp;Lets begin the application of all those algorithm with some real data. The data used comes from **Badan Pusat Statistik** (**BPS**), namely **Indonesia's GDP growth rate data**<sup>[(1)](https://www.bps.go.id/id/statistics-table/2/MTA0IzI=/-seri-2010--laju-pertumbuhan-pdb-seri-2010--persen-.html)</sup> from Q2 2010 to Q2 2023, totaling 53 data. This data consist of 9 independent variables $(X_1, X_2,\ldots, X_9)$ and 1 dependent variable $(Y)$.
+
+<Gist
+    id="akhamr/43b3229d3b0dc9e1288f7b55569c7299"
+    alt="First 10 of Indonesia's GDP growth rate data"
+/>
+
+Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of **_Grid Search_** algorithm to find the optimal _hyperparameter_.
+
+> The entire process can be viewed [here](https://colab.research.google.com/drive/1OMbc5TfxSMBhcKCbN8kOfqX5vqquG75Q?usp=sharing).
+
+&emsp;&emsp;Based on some trial and error attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance (_tol_) with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is not categorized as **overfitting**.
+
+<Img
+    src="/blog/sgd-svr/viz.webp"
+    width={768}
+    height={494}
+    alt="Comparison of actual and predicted data in both stages."
+/>
+
+## Summary
+
+&emsp;&emsp;In conclusion, the integration of Stochastic Gradient Descent (SGD) with Support Vector Regression (SVR) offers a compelling solution to some of the most pressing challenges in machine learning. By harnessing SGD's efficient optimization techniques and SVR's robust regression capabilities, this collaboration addresses issues of scalability and computational complexity while maintaining high predictive accuracy. The dynamic nature of SGD allows SVR to adapt swiftly to the intricacies of large datasets, facilitating faster convergence and enhanced model performance.
 
 ---
 
-## Lorem Ipsum
+## References
 
-&emsp;&emsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem tellus, laoreet nec felis at, luctus tristique nunc. In varius vestibulum rutrum. Sed id ultrices sem. Vivamus mi ante, malesuada a magna non, feugiat vestibulum mauris. Mauris quis luctus sem. In commodo eget leo vestibulum vulputate. Nunc suscipit purus in purus blandit efficitur. Etiam at pellentesque leo, eu posuere enim. Aliquam viverra molestie ex, ut interdum urna pretium ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ullamcorper id lacus et malesuada. Cras consectetur ligula quis dignissim volutpat. Pellentesque vestibulum congue ex sed pellentesque. Praesent malesuada felis id velit vehicula, a pulvinar eros placerat.
-
-```bash
-# Ini Komen
-git clone https://github.com/akhamr/portfolio.git
-cd portfolio
-npm i
-npm run dev
-```
-
-```json title="data/dummy.json"
-{
-    "id": 1,
-    "title": "iPhone 9",
-    "description": "An apple mobile which is nothing like apple",
-    "price": 549,
-    "discountPercentage": 12.96,
-    "rating": 4.69,
-    "stock": 94,
-    "brand": "Apple",
-    "category": "smartphones",
-    "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-    "images": [
-        "https://cdn.dummyjson.com/product-images/1/1.jpg",
-        "https://cdn.dummyjson.com/product-images/1/2.jpg",
-        "https://cdn.dummyjson.com/product-images/1/3.jpg",
-        "https://cdn.dummyjson.com/product-images/1/4.jpg",
-        "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-    ]
-}
-```
-
-Open `lipsum` or [http://lipsum.com](http://lipsum.com) with your browser to see the result.
-
-## Lipsum
-
--   Praesent venenatis nunc nec ultricies suscipit.
--   Cras semper orci eget accumsan consectetur.
--   Curabitur accumsan nunc sed orci ornare ultrices.
--   Fusce eu ipsum aliquam nibh vestibulum imperdiet id id libero.
-
-<Gist id="akhamr/43b3229d3b0dc9e1288f7b55569c7299" alt="10 data pertama" />
+-   [A tutorial on support vector regression](https://link.springer.com/article/10.1023/B:STCO.0000035301.49549.88)
+-   [Kernel Based Algorithms for Mining Huge Data Sets](https://link.springer.com/book/10.1007/3-540-31689-2)
+-   [LIBSVM &mdash; A Library for Support Vector Machines](https://dl.acm.org/doi/10.1145/1961189.1961199)

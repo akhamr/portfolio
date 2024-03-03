@@ -18,7 +18,7 @@ interface QuoteProps {
 
 export function Gist({ id, alt }: { id: `${string}/${string}`; alt: string }) {
     return (
-        <div className="flex flex-col">
+        <div className="my-5 flex flex-col">
             <div className="h-[292px]">
                 <ReactEmbedGist
                     gist={id}
@@ -33,7 +33,7 @@ export function Gist({ id, alt }: { id: `${string}/${string}`; alt: string }) {
 
 export function Img({ alt, ...props }: ImageProps) {
     return (
-        <div className="flex flex-col items-center py-2">
+        <div className="my-5 flex flex-col items-center">
             <Image
                 alt={alt}
                 placeholder="blur"

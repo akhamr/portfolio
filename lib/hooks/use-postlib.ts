@@ -4,9 +4,11 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 import { compileMDX } from "next-mdx-remote/rsc";
 import codeTitle from "remark-code-title";
+import remarkMath from "remark-math";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "@mapbox/rehype-prism";
+import rehypeKatex from "rehype-katex";
 import { Pre, Gist, Img, Quote, Hr } from "@/components/mdx-components";
 const root = process.cwd();
 
@@ -25,11 +27,12 @@ export async function getPostBySlug(slug: string) {
         source: content,
         options: {
             mdxOptions: {
-                remarkPlugins: [codeTitle],
+                remarkPlugins: [codeTitle, remarkMath],
                 rehypePlugins: [
                     rehypePrism,
                     rehypeSlug,
                     [rehypeAutolinkHeadings, { behavior: "wrap" }],
+                    [rehypeKatex, { output: "html" }],
                 ],
             },
         },
@@ -47,7 +50,6 @@ export async function getPostBySlug(slug: string) {
             date: data.date,
             image: data.image,
             readingTime: readingTime(content),
-            ...data,
         },
     };
 }

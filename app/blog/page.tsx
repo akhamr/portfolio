@@ -32,7 +32,7 @@ export default async function Blog() {
                                 <Image
                                     src={frontMatter.image}
                                     alt={frontMatter.title}
-                                    className="rounded-t hover:opacity-90"
+                                    className="rounded-t"
                                     width="540"
                                     height="270"
                                     placeholder="blur"

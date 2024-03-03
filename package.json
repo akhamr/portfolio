@@ -22,6 +22,7 @@
         "eslint": "^8",
         "eslint-config-next": "14.1.0",
         "eslint-config-prettier": "^8.8.0",
+        "katex": "^0.16.9",
         "next": "14.1.0",
         "next-mdx-remote": "^4.4.1",
         "next-themes": "^0.2.1",
@@ -48,7 +49,9 @@
         "react-sketch-canvas": "^6.2.0",
         "reading-time": "^1.5.0",
         "rehype-autolink-headings": "^6.1.1",
+        "rehype-katex": "6.0.3",
         "rehype-slug": "^5.1.0",
-        "remark-code-title": "^0.2.5"
+        "remark-code-title": "^0.2.5",
+        "remark-math": "5.1.1"
     }
 }

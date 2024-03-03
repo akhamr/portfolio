@@ -234,3 +234,21 @@ div[data-remark-code-title] + div > pre {
 .gist .markdown-body table td {
     @apply pointer-events-none border-gray-300 bg-zinc-100 align-middle text-dark dark:border-gray-700 dark:bg-zinc-800 dark:text-light !important;
 }
+
+/* Math */
+
+.math-display {
+    @apply my-5 rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-left dark:border-gray-700/50 dark:bg-zinc-800;
+}
+
+.katex {
+    @apply text-base text-dark dark:text-light !important;
+}
+
+.katex-display {
+    @apply m-0 p-4 !important;
+}
+
+.katex-display .katex {
+    @apply overflow-y-hidden text-sm md:text-base !important;
+}
