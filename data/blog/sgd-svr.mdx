@@ -67,20 +67,27 @@ $$
 
 This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_{i=1}^n (\alpha_i - \alpha_i^*) \leq $$ degree of tolerance $(tol)$. After that, the optimized $\alpha$ can now be used to calculate the predictive values $(f(\textbf{x}))$.
 
+<Img
+    src="/blog/sgd-svr/flow.webp"
+    width={768}
+    height={494}
+    alt="Simple flowchart of SGD-SVR"
+/>
+
 ## The real deal.
 
-&emsp;&emsp;Lets begin the application of all those algorithm with some real data. The data used comes from **Badan Pusat Statistik** (**BPS**), namely **Indonesia's GDP growth rate data**<sup>[(1)](https://www.bps.go.id/id/statistics-table/2/MTA0IzI=/-seri-2010--laju-pertumbuhan-pdb-seri-2010--persen-.html)</sup> from Q2 2010 to Q2 2023, totaling 53 data. This data consist of 9 independent variables $(X_1, X_2,\ldots, X_9)$ and 1 dependent variable $(Y)$.
+&emsp;&emsp;Lets begin the application of all those algorithm with some real data. The data used comes from **Badan Pusat Statistik** (**BPS**), namely [Indonesia's GDP growth rate data](https://www.bps.go.id/id/statistics-table/2/MTA0IzI=/-seri-2010--laju-pertumbuhan-pdb-seri-2010--persen-.html) from Q2 2010 to Q2 2023, totaling 53 data. This data consist of 9 independent variables $(X_1, X_2,\ldots, X_9)$ and 1 dependent variable $(Y)$.
 
 <Gist
     id="akhamr/43b3229d3b0dc9e1288f7b55569c7299"
     alt="First 10 of Indonesia's GDP growth rate data"
 />
 
-Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of **_Grid Search_** algorithm to find the optimal _hyperparameter_.
+Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of [Grid Search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) algorithm to find the optimal _hyperparameter_.
 
 > The entire process can be viewed [here](https://colab.research.google.com/drive/1OMbc5TfxSMBhcKCbN8kOfqX5vqquG75Q?usp=sharing).
 
-&emsp;&emsp;Based on some trial and error attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance (_tol_) with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is not categorized as **overfitting**.
+&emsp;&emsp;Based on some _trial and error_ attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance (_tol_) with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is **NOT** categorized as overfitting.
 
 <Img
     src="/blog/sgd-svr/viz.webp"
@@ -91,7 +98,7 @@ Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the tra
 
 ## Summary
 
-&emsp;&emsp;In conclusion, the integration of Stochastic Gradient Descent (SGD) with Support Vector Regression (SVR) offers a compelling solution to some of the most pressing challenges in machine learning. By harnessing SGD's efficient optimization techniques and SVR's robust regression capabilities, this collaboration addresses issues of scalability and computational complexity while maintaining high predictive accuracy. The dynamic nature of SGD allows SVR to adapt swiftly to the intricacies of large datasets, facilitating faster convergence and enhanced model performance.
+&emsp;&emsp;In conclusion, SGD-SVR offers a compelling solution to some of the most pressing challenges in machine learning. By harnessing SGD's efficient optimization techniques and SVR's robust regression capabilities, this collaboration addresses issues of scalability and computational complexity while maintaining high predictive accuracy. The dynamic nature of SGD allows SVR to adapt swiftly to the intricacies of large datasets, facilitating faster convergence and enhanced model performance.
 
 ---
 
