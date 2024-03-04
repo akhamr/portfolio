@@ -1,6 +1,7 @@
 import "@/styles/global.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { doodle, sans, footer, della } from "@/styles/fonts";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -33,11 +34,12 @@ export default function RootLayout({
                 <Providers>
                     <Navbar />
                     <main className="mx-auto max-w-[85%] flex-1">
+                        <SpeedInsights />
                         {children}
+                        <Analytics />
                     </main>
                     <Footer />
                 </Providers>
-                <Analytics />
             </body>
         </html>
     );
