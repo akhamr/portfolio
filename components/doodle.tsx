@@ -1,8 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 
-// Stroke line-cap round bugged
-
 export function Doodle1() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 0 300 200">

@@ -17,8 +17,6 @@ export const metadata: Metadata = {
         "My personal blog and portfolio website built with passion and a lot of stress.",
 };
 
-// Motion page bugged 10.16.2
-
 export default function RootLayout({
     children,
 }: {

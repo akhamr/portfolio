@@ -1,9 +1,7 @@
 import Spotify from "@/components/spotify";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+import Blob from "@/components/blob";
 import Link from "next/link";
-
-const Blob = dynamic(() => import("@/components/blob"), { ssr: false });
 
 const socials = [
     {
