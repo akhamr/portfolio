@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <section id="about-content" className="mb-6 max-w-3xl">
-            <div className="mx-auto mt-2 h-80 w-80 md:h-96 md:w-96">
+            <div className="mx-auto mt-2 size-80 md:size-96">
                 <Blob />
             </div>
             <div className="prose max-w-full dark:prose-dark">
@@ -139,7 +139,7 @@ export default function About() {
                         <Link
                             target="_blank"
                             className="underline"
-                            href="https://drive.google.com/file/d/1j57WTKkaJFEucTQEhl7qb5Zh1zPcwsT9/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1j57WTKkaJFEucTQEhl7qb5ZH2zPcwsT9/view?usp=sharing"
                         >
                             here
                         </Link>

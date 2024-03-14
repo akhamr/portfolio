@@ -43,7 +43,7 @@ export default function TopTracks() {
                 : [...Array(5)].map((_, i) => (
                       <div
                           key={i}
-                          className="h-[100px] rounded-md border-2 border-dashed border-gray-200 dark:border-gray-700/50"
+                          className="h-[100px] rounded-md border-2 border-dashed border-gray-200 p-2 dark:border-gray-700/50"
                       >
                           <div className="flex animate-pulse items-center gap-3">
                               <strong>#{i + 1}</strong>

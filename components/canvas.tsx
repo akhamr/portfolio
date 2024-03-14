@@ -23,9 +23,9 @@ export default function Canvas() {
                 ref={canvasRef}
                 canvasColor="transparent"
                 width="100%"
-                height="100vh"
+                height="100%"
                 style={{
-                    position: "absolute",
+                    position: "fixed",
                     top: 0,
                     left: 0,
                     zIndex: 5,
@@ -33,27 +33,27 @@ export default function Canvas() {
                 strokeWidth={5}
                 strokeColor={color}
             />
-            <div className="fixed left-4 top-20 z-10 flex items-center rounded-full bg-zinc-100 p-2 dark:bg-zinc-800 md:left-[unset] md:right-4 md:top-[unset]">
+            <div className="absolute -left-4 top-4 z-10 rounded-full bg-zinc-100 p-2 dark:bg-zinc-800 md:left-[unset] md:right-4 md:top-[unset]">
                 <div className="flex flex-col space-y-2">
                     {colorList.map((data, key) => (
                         <button
                             onClick={() => setColor(data)}
-                            className="h-7 w-7 rounded-full"
+                            className="size-7 rounded-full"
                             key={key}
                             style={{ backgroundColor: data }}
                             aria-label="Change brush color"
                         >
                             {data === color && (
-                                <IconCheck className="mx-auto h-5 w-5" />
+                                <IconCheck className="mx-auto size-5" />
                             )}
                         </button>
                     ))}
                     <button
                         onClick={handleClear}
-                        className="h-7 w-7 rounded-full bg-zinc-200 dark:bg-zinc-700"
+                        className="size-7 rounded-full bg-zinc-200 dark:bg-zinc-700"
                         aria-label="Clear doodle"
                     >
-                        <IconTrash className="mx-auto h-5 w-4" />
+                        <IconTrash className="mx-auto size-4" />
                     </button>
                 </div>
             </div>

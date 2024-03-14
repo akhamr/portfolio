@@ -33,11 +33,9 @@ export default function RootLayout({
             <body className="flex h-dvh select-none flex-col">
                 <Providers>
                     <Navbar />
-                    <main className="mx-auto max-w-[85%] flex-1">
-                        <SpeedInsights />
-                        {children}
-                        <Analytics />
-                    </main>
+                    <SpeedInsights />
+                    {children}
+                    <Analytics />
                     <Footer />
                 </Providers>
             </body>

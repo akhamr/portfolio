@@ -9,6 +9,7 @@ export function Doodle1() {
             <motion.path
                 fill="none"
                 strokeWidth={5}
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
@@ -25,6 +26,7 @@ export function Doodle2() {
             <motion.path
                 fill="none"
                 strokeWidth={10}
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
