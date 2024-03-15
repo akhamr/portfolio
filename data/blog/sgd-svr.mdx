@@ -87,7 +87,7 @@ Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the tra
 
 > The entire process can be viewed [here](https://colab.research.google.com/drive/1OMbc5TfxSMBhcKCbN8kOfqX5vqquG75Q?usp=sharing).
 
-&emsp;&emsp;Based on some _trial and error_ attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance (_tol_) with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is **NOT** categorized as overfitting.
+&emsp;&emsp;Based on some _trial and error_ attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance $(tol)$ with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is **NOT** categorized as overfitting.
 
 <Img
     src="/blog/sgd-svr/viz.webp"
