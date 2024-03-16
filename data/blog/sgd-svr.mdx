@@ -85,7 +85,7 @@ This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_
 
 Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of [Grid Search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) algorithm to find the optimal _hyperparameter_.
 
-> The entire process can be viewed [here](https://colab.research.google.com/drive/1OMbc5TfxSMBhcKCbN8kOfqX5vqquG75Q?usp=sharing).
+> The entire process can be viewed [here](https://colab.research.google.com/gist/akhamr/45eca3e727e02af232a372671d360309/model.ipynb).
 
 &emsp;&emsp;Based on some _trial and error_ attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance $(tol)$ with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is **NOT** categorized as overfitting.
 
