@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 import { IconCopied, IconCopy } from "@/components/icons";
 import Image, { ImageProps } from "next/image";
+import { Props } from "react-embed-gist";
 const ReactEmbedGist = dynamic(() => import("react-embed-gist"), {
     ssr: false,
 });
@@ -14,16 +15,21 @@ interface QuoteProps {
     books?: string;
 }
 
+interface GistProps extends Props {
+    alt: string;
+}
+
 // Hanya untuk tabel dengan ukuran 10 baris dan 1 keterangan
 
-export function Gist({ id, alt }: { id: `${string}/${string}`; alt: string }) {
+export function Gist({ gist, alt, file }: GistProps) {
     return (
         <div className="my-5 flex flex-col">
             <div className="h-[292px]">
                 <ReactEmbedGist
-                    gist={id}
+                    gist={gist}
                     titleClass="hidden"
                     loadingClass="h-full animate-pulse rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-transparent dark:border-gray-800 dark:bg-zinc-800"
+                    file={file}
                 />
             </div>
             <p className="m-0 self-center pt-4 text-sm italic">{alt}</p>

@@ -79,8 +79,9 @@ This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_
 &emsp;&emsp;Lets begin the application of all those algorithm with some real data. The data used comes from **Badan Pusat Statistik** (**BPS**), namely [Indonesia's GDP growth rate data](https://www.bps.go.id/id/statistics-table/2/MTA0IzI=/-seri-2010--laju-pertumbuhan-pdb-seri-2010--persen-.html) from Q2 2010 to Q2 2023, totaling 53 data. This data consist of 9 independent variables $(X_1, X_2,\ldots, X_9)$ and 1 dependent variable $(Y)$.
 
 <Gist
-    id="akhamr/43b3229d3b0dc9e1288f7b55569c7299"
+    gist="akhamr/45eca3e727e02af232a372671d360309"
     alt="First 10 of Indonesia's GDP growth rate data"
+    file="data-pdb.csv"
 />
 
 Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of [Grid Search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) algorithm to find the optimal _hyperparameter_.
