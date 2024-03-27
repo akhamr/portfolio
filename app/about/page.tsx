@@ -9,20 +9,16 @@ const socials = [
         url: "mailto:hello@akhamr.me",
     },
     {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/akhamr/",
+    },
+    {
         name: "Github",
         url: "https://github.com/akhamr",
     },
     {
         name: "Instagram",
         url: "https://instagram.com/akhamr_",
-    },
-    {
-        name: "LinkedIn",
-        url: "https://linkedin.com/in/akhamr/",
-    },
-    {
-        name: "Spotify",
-        url: "https://open.spotify.com/user/21zvaib7nglwuveksfzrdvngi",
     },
 ];
 

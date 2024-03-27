@@ -92,8 +92,13 @@ body {
     @apply mb-5 mt-8;
 }
 
-.prose p {
+.prose p,
+.prose li {
     @apply text-justify;
+}
+
+.prose li::marker {
+    @apply text-dark dark:text-light;
 }
 
 .prose blockquote {
@@ -116,6 +121,14 @@ body {
 
 .prose code {
     @apply rounded border-gray-100 bg-zinc-100 px-1 py-0.5 text-dark dark:bg-zinc-800 dark:text-light;
+}
+
+.prose a:has(code) {
+    @apply no-underline;
+}
+
+.prose a > code {
+    @apply text-dark dark:text-light !important;
 }
 
 .prose pre > code {
