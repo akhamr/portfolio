@@ -17,9 +17,7 @@ export default async function Blog() {
     return (
         <section id="blog-content">
             <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">Blog</h1>
-            <p className="mt-2">
-                Some blabber and stuff i didn&apos;t mean to made.
-            </p>
+            <p className="mt-2">Some tech stuff and my life updates.</p>
             {filteredBlogPosts.length > 0 ? (
                 <div className="grid grid-cols-1 gap-6 py-4 md:grid-cols-2">
                     {filteredBlogPosts.map((frontMatter, i) => (
