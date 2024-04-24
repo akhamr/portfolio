@@ -18,7 +18,7 @@ const socials = [
     },
     {
         name: "Instagram",
-        url: "https://instagram.com/akhamr_",
+        url: "https://instagram.com/akhamrr",
     },
 ];
 
