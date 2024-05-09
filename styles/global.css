@@ -3,147 +3,145 @@
 @tailwind utilities;
 
 html {
-    scrollbar-gutter: stable both-edges;
-    scroll-behavior: smooth;
+  scrollbar-gutter: stable both-edges;
+  scroll-behavior: smooth;
 }
 
 body {
-    @apply text-dark subpixel-antialiased dark:bg-zinc-950 dark:text-light;
+  @apply text-dark dark:text-light subpixel-antialiased dark:bg-zinc-950;
 }
 
 ::selection {
-    color: black;
-    @apply bg-zinc-300 dark:bg-zinc-400;
+  color: black;
+  @apply bg-zinc-300 dark:bg-zinc-400;
 }
 
 *::-webkit-scrollbar {
-    height: 0px;
-    width: 5px;
+  height: 0px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background: rgba(80, 80, 80, 0.8);
-    border-radius: 10px;
+  background: rgba(80, 80, 80, 0.8);
+  border-radius: 10px;
 }
 
 .toggle {
-    --size: 18px;
+  --size: 18px;
 
-    appearance: none;
-    outline: none;
-    cursor: pointer;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
 
-    width: var(--size);
-    height: var(--size);
-    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
-    border-radius: 999px;
-    color: hsl(240, 100%, 95%);
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(240, 100%, 95%);
 
-    transition: all 500ms;
+  transition: all 500ms;
 }
 
 .toggle:checked {
-    --ray-size: calc(var(--size) * -0.4);
-    --offset-orthogonal: calc(var(--size) * 0.65);
-    --offset-diagonal: calc(var(--size) * 0.45);
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
 
-    transform: scale(0.75);
-    color: hsl(40, 100%, 50%);
-    box-shadow:
-        inset 0 0 0 var(--size),
-        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
-        var(--offset-orthogonal) 0 0 var(--ray-size),
-        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
-        0 var(--offset-orthogonal) 0 var(--ray-size),
-        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
-            var(--ray-size),
-        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
-        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0
-            var(--ray-size),
-        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
-            var(--ray-size);
+  transform: scale(0.75);
+  color: hsl(40, 100%, 50%);
+  box-shadow:
+    inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+      var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 }
 
 @layer base {
-    h1 {
-        @apply text-2xl font-bold md:text-3xl;
-    }
+  h1 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
 
-    h2 {
-        @apply text-lg font-bold md:text-2xl lg:text-3xl;
-    }
+  h2 {
+    @apply text-lg font-bold md:text-2xl lg:text-3xl;
+  }
 
-    h3 {
-        @apply text-lg font-bold md:text-xl lg:text-2xl;
-    }
+  h3 {
+    @apply text-lg font-bold md:text-xl lg:text-2xl;
+  }
 
-    h4 {
-        @apply text-lg font-bold lg:text-xl;
-    }
+  h4 {
+    @apply text-lg font-bold lg:text-xl;
+  }
 
-    h5 {
-        @apply text-base font-bold lg:text-lg;
-    }
+  h5 {
+    @apply text-base font-bold lg:text-lg;
+  }
 }
 
 /* Blog and About */
 
 .prose h2 {
-    @apply mb-5 mt-8;
+  @apply mb-5 mt-8;
 }
 
 .prose p,
 .prose li {
-    @apply text-justify;
+  @apply text-justify;
 }
 
 .prose li::marker {
-    @apply text-dark dark:text-light;
+  @apply text-dark dark:text-light;
 }
 
 .prose blockquote {
-    @apply border-dashed;
+  @apply border-dashed;
 }
 
 .prose img {
-    @apply m-0 !important;
+  @apply m-0 !important;
 }
 
 .prose blockquote > div {
-    @apply text-right;
+  @apply text-right;
 }
 
 /* Syntax Highlighter */
 
 .prose pre {
-    @apply border-2 border-dashed border-gray-200 bg-zinc-100 dark:border-gray-700/50  dark:bg-zinc-800;
+  @apply border-2 border-dashed border-gray-200 bg-zinc-100 dark:border-gray-700/50  dark:bg-zinc-800;
 }
 
 .prose code {
-    @apply break-words rounded border-gray-100 bg-zinc-100 px-1 py-0.5 text-dark dark:bg-zinc-800 dark:text-light;
+  @apply text-dark dark:text-light break-words rounded border-gray-100 bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800;
 }
 
 .prose a:has(code) {
-    @apply no-underline;
+  @apply no-underline;
 }
 
 .prose a > code {
-    @apply text-dark dark:text-light !important;
+  @apply text-dark dark:text-light !important;
 }
 
 .prose pre > code {
-    @apply p-0 text-xs md:text-sm;
+  @apply p-0 text-xs md:text-sm;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    @apply italic text-gray-400 dark:text-gray-500;
+  @apply italic text-gray-400 dark:text-gray-500;
 }
 
 .token.punctuation {
-    @apply text-gray-400 dark:text-gray-500;
+  @apply text-gray-400 dark:text-gray-500;
 }
 
 .token.property,
@@ -153,7 +151,7 @@ body {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    @apply text-green-600 dark:text-green-400;
+  @apply text-green-600 dark:text-green-400;
 }
 
 .token.selector,
@@ -162,7 +160,7 @@ body {
 .token.char,
 .token.builtin,
 .token.inserted {
-    @apply text-purple-600 dark:text-purple-400;
+  @apply text-purple-600 dark:text-purple-400;
 }
 
 .token.operator,
@@ -170,98 +168,98 @@ body {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    @apply text-yellow-600 dark:text-yellow-400;
+  @apply text-yellow-600 dark:text-yellow-400;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    @apply text-blue-600 dark:text-blue-400;
+  @apply text-blue-600 dark:text-blue-400;
 }
 
 .token.function,
 .token.class-name {
-    @apply text-red-600 dark:text-red-400;
+  @apply text-red-600 dark:text-red-400;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-    @apply text-yellow-600 dark:text-yellow-400;
+  @apply text-yellow-600 dark:text-yellow-400;
 }
 
 div[data-remark-code-title] {
-    @apply rounded-t border-2 border-b-0 border-dashed border-gray-200 bg-zinc-300/80 p-4 text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-zinc-700/80 dark:text-gray-200;
+  @apply rounded-t border-2 border-b-0 border-dashed border-gray-200 bg-zinc-300/80 p-4 text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-zinc-700/80 dark:text-gray-200;
 }
 
 div[data-remark-code-title] + div > pre {
-    @apply mt-0 rounded-t-none border-t-0;
+  @apply mt-0 rounded-t-none border-t-0;
 }
 
 /* Ripple Animation */
 
 .ripple path {
-    @apply fill-neutral-400 dark:fill-neutral-500;
+  @apply fill-neutral-400 dark:fill-neutral-500;
 }
 
 /* Gist */
 
 .gist-file {
-    @apply m-0 border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
+  @apply m-0 border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
 }
 
 .gist-data {
-    @apply border-0 !important;
+  @apply border-0 !important;
 }
 
 .gist-meta {
-    @apply bg-zinc-300/80 text-gray-600 dark:bg-zinc-700/95 dark:text-gray-300 !important;
+  @apply bg-zinc-300/80 text-gray-600 dark:bg-zinc-700/95 dark:text-gray-300 !important;
 }
 
 .gist-meta a {
-    @apply text-dark dark:text-light !important;
+  @apply text-dark dark:text-light !important;
 }
 
 .gist .file {
-    @apply m-0 overflow-hidden;
+  @apply m-0 overflow-hidden;
 }
 
 .blob-interaction-bar,
 .gist .markdown-body table tbody > *:nth-child(n + 11) {
-    @apply hidden;
+  @apply hidden;
 }
 
 .gist .markdown-body table {
-    @apply min-w-full;
+  @apply min-w-full;
 }
 
 .gist .markdown-body table thead,
 .gist .markdown-body table th {
-    @apply border-gray-300 bg-zinc-100 text-dark dark:border-gray-700 dark:bg-zinc-900/95 dark:text-light !important;
+  @apply text-dark dark:text-light border-gray-300 bg-zinc-100 dark:border-gray-700 dark:bg-zinc-900/95 !important;
 }
 
 .gist .markdown-body table td:first-child {
-    @apply bg-zinc-200/75 dark:bg-zinc-800/95 !important;
+  @apply bg-zinc-200/75 dark:bg-zinc-800/95 !important;
 }
 
 .gist .markdown-body table td {
-    @apply pointer-events-none border-gray-300 align-middle text-dark dark:border-gray-700 dark:bg-zinc-950 dark:text-light !important;
+  @apply text-dark dark:text-light pointer-events-none border-gray-300 align-middle dark:border-gray-700 dark:bg-zinc-950 !important;
 }
 
 /* Math */
 
 .math-display {
-    @apply my-5 rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-left dark:border-gray-700/50 dark:bg-zinc-800;
+  @apply my-5 rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-left dark:border-gray-700/50 dark:bg-zinc-800;
 }
 
 .katex {
-    @apply text-base text-dark dark:text-light !important;
+  @apply text-dark dark:text-light text-base !important;
 }
 
 .katex-display {
-    @apply m-0 p-4 !important;
+  @apply m-0 p-4 !important;
 }
 
 .katex-display .katex {
-    @apply overflow-y-hidden text-sm md:text-base !important;
+  @apply overflow-y-hidden text-sm md:text-base !important;
 }

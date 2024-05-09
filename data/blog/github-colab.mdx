@@ -6,10 +6,10 @@ description: "The only reason why it's called Colab. 😏"
 ---
 
 <Img
-    src="/blog/github-colab/cover.webp"
-    width={768}
-    height={403}
-    alt="Photo by Wing Poon on Towards AI"
+  src="/blog/github-colab/cover.webp"
+  width={768}
+  height={403}
+  alt="Photo by Wing Poon on Towards AI"
 />
 
 &emsp;&emsp;**Google Colab**, short for Google Colaboratory, is a free, cloud-based platform provided by Google that offers a Jupyter notebook environment with integrated support for **Python**. It's designed to facilitate research collaboration, particularly in the fields of machine learning, data analysis, and education. Usually, Colab use **Google Drive** integration to import and export files directly from your storage. This makes it easy to access datasets, scripts, and other resources stored in your Google Drive. **BUT, what if we use GitHub to store our project? And why is it superior to Google Drive?**
@@ -20,9 +20,9 @@ description: "The only reason why it's called Colab. 😏"
 
 &emsp;&emsp;**GitHub** is a web-based platform and service that provides hosting for software development projects using the **Git** version control system (VCS). It allows individuals and teams to collaborate on projects, track changes to code, and manage software development workflows efficiently. There's **3 key features** of GitHub, such as:
 
--   **Version Control**: GitHub is based on Git, a version control system that lets developers track changes to code over time, aiding collaboration, version tracking, and managing edits.
--   **Repositories**: Repositories on GitHub store project files and their version history. They can be public or private, allowing for collaborative or restricted access.
--   **Collaboration Tools**: GitHub offers tools like pull requests for proposing and reviewing changes, issues for tracking bugs and tasks, and project boards for organizing and prioritizing work, facilitating effective teamwork.
+- **Version Control**: GitHub is based on Git, a version control system that lets developers track changes to code over time, aiding collaboration, version tracking, and managing edits.
+- **Repositories**: Repositories on GitHub store project files and their version history. They can be public or private, allowing for collaborative or restricted access.
+- **Collaboration Tools**: GitHub offers tools like pull requests for proposing and reviewing changes, issues for tracking bugs and tasks, and project boards for organizing and prioritizing work, facilitating effective teamwork.
 
 With these 3 features, we can use GitHub as a tool to manage our data analysis projects, collaborate with others, and share our work as a portfolio.
 
@@ -34,20 +34,20 @@ With these 3 features, we can use GitHub as a tool to manage our data analysis p
 
 1. Go to [`github.com/new`](https://github.com/new) to make a new repository for your project and add some description to it,
 
-    <Img src="/blog/github-colab/1.webp" width={768} height={465} alt="" />
+   <Img src="/blog/github-colab/1.webp" width={768} height={465} alt="" />
 
 2. Add some file to your new repository like data (csv, images, or **literally anything** that can be processed with Python) by clicking `Add File`,
 
-    <Img src="/blog/github-colab/2.webp" width={768} height={390} alt="" />
+   <Img src="/blog/github-colab/2.webp" width={768} height={390} alt="" />
 
 3. Go to [`colab.research.google.com`](https://colab.research.google.com), click `New notebook` and now you will be redirected to Colab notebook,
 4. Click gear box icon &rarr; `GitHub` &rarr; `Authorize with GitHub` (dont forget to check access private repositories),
 
-    <Img src="/blog/github-colab/3.webp" width={768} height={321} alt="" />
+   <Img src="/blog/github-colab/3.webp" width={768} height={321} alt="" />
 
 5. Lastly, click `File` &rarr; `Save a copy in GitHub` and change the settings.
 
-    <Img src="/blog/github-colab/4.webp" width={768} height={321} alt="" />
+   <Img src="/blog/github-colab/4.webp" width={768} height={321} alt="" />
 
 > Keep in mind that notebooks in GitHub repositories serve as read-only files. It's better to finish the program first and then do step number 5. The full explanation can be seen [here](https://github.com/googlecolab/colabtools/issues/2518).
 
@@ -59,8 +59,10 @@ For some convenience in using Colab notebooks, there are 2 tips that can be used
 
 1. **Read your data inside the repository**: If you've already uploaded some data like csv for machine learning, or image for computer vision task in your repository, you can put them to good use by read them directly in Colab without the need to upload on Google Drive, by simply follow these step below,
 
-    - Access&mdash;or click&mdash;the data in your repository, copy the link address to the data that looks like this `github.com/{username}/{repository_name}/blob/main/{data}`,
-    - Paste the link to some function that can read it like Pandas `read_csv()` but add `?raw=true` at the end of it. _Voila!_
-        <Img src="/blog/github-colab/5.webp" width={768} height={321} alt="" />
+   - Access&mdash;or click&mdash;the data in your repository, copy the link address to the data that looks like this `github.com/{username}/{repository_name}/blob/main/{data}`,
+   - Paste the link to some function that can read it like Pandas `read_csv()` but add `?raw=true` at the end of it. _Voila!_
+     {" "}
+     {" "}
+     <Img src="/blog/github-colab/5.webp" width={768} height={321} alt="" />
 
 2. **Make your notebook editable by others**: Just like Google Docs, Colab notebook provides a shared link feature that can be used to add other people as editors, by simply click `Share` &rarr; change the settings to `Anyone with the link` and `Editor`. This feature really great for collaborative projects.

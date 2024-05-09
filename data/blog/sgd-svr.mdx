@@ -6,10 +6,10 @@ description: "A fascinating attempt to optimize our popular regression algorithm
 ---
 
 <Img
-    src="https://source.unsplash.com/3RQnQyyzA9c"
-    width={768}
-    height={576}
-    alt="Photo by Enayet Raheem on Unsplash"
+  src="https://source.unsplash.com/3RQnQyyzA9c"
+  width={768}
+  height={576}
+  alt="Photo by Enayet Raheem on Unsplash"
 />
 
 &emsp;&emsp;**_Support Vector Regression_** (**SVR**) is one of the most frequently used regression models in machine learning. SVR is highly regarded for its versatility in handling datasets of various sizes and shapes, encompassing both linear and non-linear relationships between variables. This adaptability is particularly beneficial in real-world scenarios where data can exhibit complex patterns that defy simple linear modeling. SVR's flexibility arises from its ability to utilize different kernel functions, enabling it to capture intricate structures within the data and provide accurate predictions. **However**, despite its numerous advantages, SVR has certain limitations that need to be considered. One notable drawback is its computational complexity, especially when dealing with large datasets, and requires careful tuning of hyperparameters, which may pose challenges for users without extensive machine learning expertise.
@@ -21,10 +21,10 @@ description: "A fascinating attempt to optimize our popular regression algorithm
 &emsp;&emsp;If you've worked with machine learning at least once, you'll know what **_Support Vector Machine_** (**SVM**) is. It's a supervised machine learning algorithm which uses **labeled data** for classification, and regression tasks. The main idea of SVR is to find line&mdash;or a plane in higher dimensions&mdash;that best represents the trend in the data. SVR helps you find this line while minimizing the error between the actual data points and the line with the help of **margin of tolerance**.
 
 <Img
-    src="/blog/sgd-svr/svr.webp"
-    width={768}
-    height={494}
-    alt="Two dashed-lines as margin in SVR"
+  src="/blog/sgd-svr/svr.webp"
+  width={768}
+  height={494}
+  alt="Two dashed-lines as margin in SVR"
 />
 
 Suppose a labeled dataset $$\textbf{x}_i = (x_{i1}, x_{i2}, \ldots, x_{id}) \in \mathbb{R}^d$$, and $$y_i \in \mathbb{R}$$ with $$i = 1, 2, \ldots, n$$. With the help of SVR, you can find the predicted data $$(f(\textbf{x}))$$ by solving the optimization problem&mdash;or objective function $(L)$&mdash;written as
@@ -68,10 +68,10 @@ $$
 This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_{i=1}^n (\alpha_i - \alpha_i^*) \leq $$ degree of tolerance $(tol)$. After that, the optimized $\alpha$ can now be used to calculate the predictive values $(f(\textbf{x}))$.
 
 <Img
-    src="/blog/sgd-svr/flow.webp"
-    width={768}
-    height={494}
-    alt="Simple flowchart of SGD-SVR"
+  src="/blog/sgd-svr/flow.webp"
+  width={768}
+  height={494}
+  alt="Simple flowchart of SGD-SVR"
 />
 
 ## The real deal.
@@ -79,9 +79,9 @@ This process is repeated until the stopping criteria is met, i.e. $$0 \leq \sum_
 &emsp;&emsp;Lets begin the application of all those algorithm with some real data. The data used comes from **Badan Pusat Statistik** (**BPS**), namely [Indonesia's GDP growth rate data](https://www.bps.go.id/id/statistics-table/2/MTA0IzI=/-seri-2010--laju-pertumbuhan-pdb-seri-2010--persen-.html) from Q2 2010 to Q2 2023, totaling 53 data. This data consist of 9 independent variables $(X_1, X_2,\ldots, X_9)$ and 1 dependent variable $(Y)$.
 
 <Gist
-    gist="akhamr/45eca3e727e02af232a372671d360309"
-    alt="First 10 of Indonesia's GDP growth rate data"
-    file="data-pdb.csv"
+  gist="akhamr/45eca3e727e02af232a372671d360309"
+  alt="First 10 of Indonesia's GDP growth rate data"
+  file="data-pdb.csv"
 />
 
 Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the training stage. Personally, I used **tensorflow** with library such as [Tensorflow Constrained Optimization](https://github.com/google-research/tensorflow_constrained_optimization) to help me solve the optimization problem of SVR. The training stage can be further improved with the help of [Grid Search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) algorithm to find the optimal _hyperparameter_.
@@ -91,10 +91,10 @@ Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the tra
 &emsp;&emsp;Based on some _trial and error_ attempt, I found the optimal _hyperparameter_ trade-off $(C)$, width of margin $(\varepsilon)$, learning rate $(\lambda)$, and degree of tolerance $(tol)$ with respective values of 3, 0.1, 0.02, and 0.001, with data split by 90\% as training data and 10\% as testing data. The training stage yields **mean squared error** (**MSE**) **0.2805** with a total of **360 iterations**, while the testing stage yields an **MSE 0.0325**. Hence, the application is **NOT** categorized as overfitting.
 
 <Img
-    src="/blog/sgd-svr/viz.webp"
-    width={768}
-    height={494}
-    alt="Comparison of actual and predicted data in both stages."
+  src="/blog/sgd-svr/viz.webp"
+  width={768}
+  height={494}
+  alt="Comparison of actual and predicted data in both stages."
 />
 
 ## Summary
@@ -105,6 +105,6 @@ Next, we can use tools like **tensorflow** / **scikit-learn** to sped up the tra
 
 ## References
 
--   [A tutorial on support vector regression](https://link.springer.com/article/10.1023/B:STCO.0000035301.49549.88)
--   [Kernel Based Algorithms for Mining Huge Data Sets](https://link.springer.com/book/10.1007/3-540-31689-2)
--   [LIBSVM &mdash; A Library for Support Vector Machines](https://dl.acm.org/doi/10.1145/1961189.1961199)
+- [A tutorial on support vector regression](https://link.springer.com/article/10.1023/B:STCO.0000035301.49549.88)
+- [Kernel Based Algorithms for Mining Huge Data Sets](https://link.springer.com/book/10.1007/3-540-31689-2)
+- [LIBSVM &mdash; A Library for Support Vector Machines](https://dl.acm.org/doi/10.1145/1961189.1961199)
