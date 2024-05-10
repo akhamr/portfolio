@@ -1,5 +1,7 @@
 import Canvas from "@/components/canvas";
 import { Doodle1, Doodle2 } from "@/components/doodle";
+import MeDark from "@/public/default/me-dark.svg";
+import MeLight from "@/public/default/me-light.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,45 +11,23 @@ export default function Home() {
       id="main-content"
       className="relative flex h-full cursor-pencil items-center justify-center pb-6 dark:cursor-pencil-dark md:w-screen md:pb-0 md:pr-2.5"
     >
-      <Canvas />
-      <div className="flex flex-col justify-center md:flex-row md:justify-between">
-        <div className="relative mb-6 hidden dark:block md:mb-0">
-          <Image
-            alt="doodle"
-            src="default/me-dark.svg"
-            priority
-            width={350}
-            height={350}
-            className="md:w-[400px]"
-          />
-          <div className="absolute inset-x-0 bottom-0 stroke-[#ffd55a]/60">
-            <Doodle1 />
-          </div>
+      {/* <Canvas /> */}
+      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
+        <div className="relative hidden w-[350px] place-items-center dark:grid md:w-[400px]">
+          <Image alt="doodle" src={MeDark} priority />
+          <Doodle1 className="absolute bottom-0 stroke-[#ffd55a]/60" />
         </div>
-        <div className="relative mb-6 dark:hidden md:mb-0">
-          <Image
-            alt="doodle"
-            src="default/me-light.svg"
-            priority
-            width={350}
-            height={350}
-            className="md:w-[400px]"
-          />
-          <div className="absolute inset-x-0 bottom-0 stroke-[#9b9b9b]/60">
-            <Doodle1 />
-          </div>
+        <div className="relative grid w-[350px] place-items-center dark:hidden md:w-[400px]">
+          <Image alt="doodle" src={MeLight} priority />
+          <Doodle1 className="absolute bottom-0 stroke-[#9b9b9b]/60" />
         </div>
         <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
           <h1 className="mt-1 font-doodle text-3xl md:text-4xl">
             It&apos;s me,
             <span className="relative">
               akha.
-              <div className="absolute -left-2.5 top-4 hidden w-[6.5rem] stroke-[#ffd55a]/60 dark:block md:top-5 md:w-[7.5rem]">
-                <Doodle2 />
-              </div>
-              <div className="absolute -left-2.5 top-4 w-[6.5rem] stroke-[#9b9b9b]/60 dark:hidden md:top-5 md:w-[7.5rem]">
-                <Doodle2 />
-              </div>
+              <Doodle2 className="absolute -bottom-2 -right-4 hidden w-24 stroke-[#ffd55a]/60 dark:block md:w-28" />
+              <Doodle2 className="absolute -bottom-2 -right-4 block w-24 stroke-[#9b9b9b]/60 dark:hidden md:w-28" />
             </span>
             &#129300;
           </h1>

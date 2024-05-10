@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="/public/preview.png" alt='preview'>
+</p>
+<p align="center">
+  Source code of my <a href='https://akhamr.me'>personal website™</a>. Made using next.js and tailwind-css.
+</p>
 
-## Getting Started
+## Running Locally
 
-First, run the development server:
+This application requires Node.js v16.14+.
 
 ```bash
+git clone https://github.com/akhamr/portfolio.git
+cd portfolio
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
-## Learn More
+## Credits
 
-To learn more about Next.js, take a look at the following resources:
+Thanks to my inspiration during building this project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [wisesa.dev](https://wisesa.dev/)
+- [leerob.io](https://leerob.io/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Licensed under [BSD-2-Clause License, Copyright :copyright: 2023 Khamid Arrazaq](./LICENSE)

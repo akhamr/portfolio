@@ -1,7 +1,7 @@
 export default function Blob() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-      <image clipPath="url(#shape)" href="default/mamam.webp"></image>
+      <image clipPath="url(#shape)" href="default/mamam.webp" />
       <clipPath id="shape">
         <path id="blob">
           <animate

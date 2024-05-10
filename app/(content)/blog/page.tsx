@@ -28,7 +28,7 @@ export default async function Blog() {
                 className="rounded"
                 href={`/blog/${frontMatter.slug}`}
               >
-                <div className="rounded-md border-2 hover:bg-secondary">
+                <div className="content">
                   <Image
                     src={frontMatter.image}
                     alt={frontMatter.title}

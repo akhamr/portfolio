@@ -87,6 +87,10 @@
   *::-webkit-scrollbar-thumb {
     @apply rounded-sm bg-neutral-400 dark:bg-neutral-700;
   }
+
+  .content {
+    @apply rounded-lg border-2 bg-accent hover:bg-secondary;
+  }
 }
 
 @layer base {
@@ -122,9 +126,9 @@
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: hsl(240, 100%, 95%);
+  color: hsl(0, 0, 95%);
 
-  transition: all 500ms;
+  transition: all 200ms;
 }
 
 .toggle:checked {
@@ -133,7 +137,7 @@
   --offset-diagonal: calc(var(--size) * 0.45);
 
   transform: scale(0.75);
-  color: hsl(40, 100%, 50%);
+  color: hsl(44.7, 100%, 67.6%);
   box-shadow:
     inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),

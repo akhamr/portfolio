@@ -22,7 +22,7 @@ export default async function Projects() {
         <div className="space-y-6 py-4">
           {filteredProject.map((project, i) => (
             <div
-              className="flex flex-col rounded-md border-2 md:flex-row"
+              className="flex flex-col rounded-lg border-2 bg-accent md:flex-row"
               key={i}
             >
               <Image
