@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
           <h1 className="mt-1 font-doodle text-3xl md:text-4xl">
             It&apos;s me,
-            <span className="relative">
+            <span className="relative mx-1.5">
               akha.
               <Doodle2 className="absolute -bottom-2 -right-4 hidden w-24 stroke-[#ffd55a]/60 dark:block md:w-28" />
               <Doodle2 className="absolute -bottom-2 -right-4 block w-24 stroke-[#9b9b9b]/60 dark:hidden md:w-28" />
