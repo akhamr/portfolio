@@ -11,7 +11,7 @@ export default function Home() {
       id="main-content"
       className="relative flex h-full cursor-pencil items-center justify-center pb-6 dark:cursor-pencil-dark md:w-screen md:pb-0 md:pr-2.5"
     >
-      {/* <Canvas /> */}
+      <Canvas />
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
         <div className="relative hidden w-[350px] place-items-center dark:grid md:w-[400px]">
           <Image alt="doodle" src={MeDark} priority />
