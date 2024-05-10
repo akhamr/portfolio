@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <section
       id="main-content"
-      className="cursor-pencil dark:cursor-pencil-dark relative flex h-full items-center justify-center pb-6 md:w-screen md:pb-0 md:pr-2.5"
+      className="relative flex h-full cursor-pencil items-center justify-center pb-6 dark:cursor-pencil-dark md:w-screen md:pb-0 md:pr-2.5"
     >
       <Canvas />
       <div className="flex flex-col justify-center md:flex-row md:justify-between">
@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center space-y-4 md:ml-4 md:items-start">
-          <h1 className="font-doodle mt-1 text-3xl md:text-4xl">
+          <h1 className="mt-1 font-doodle text-3xl md:text-4xl">
             It&apos;s me,
             <span className="relative">
               akha.

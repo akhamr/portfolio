@@ -33,7 +33,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         {frontmatter.title}
       </h1>
       <p className="my-4">{frontmatter.description}</p>
-      <div className="flex items-center text-sm">
+      <div className="flex items-center text-sm text-muted-foreground">
         <p>
           <Link href="/about" className="font-semibold">
             Akha
@@ -45,8 +45,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
           {`${frontmatter.readingTime.text} • ${frontmatter.readingTime.words} word(s)`}
         </p>
       </div>
-      <hr className="my-4 border-t-2 border-dashed border-gray-300 dark:border-gray-700" />
-      <div className="prose max-w-full dark:prose-dark">{body}</div>
+      <hr className="my-4 border-t-2 border-dashed" />
+      <div className="prose max-w-full dark:prose-invert">{body}</div>
     </section>
   );
 }

@@ -17,26 +17,15 @@ export const metadata: Metadata = {
     "My personal blog and portfolio website built with passion and a lot of stress.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Root({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          nunito.className,
-          della.variable,
-          doodle.variable,
-          "flex h-dvh select-none flex-col"
-        )}
-      >
+      <body className={cn(nunito.className, della.variable, doodle.variable)}>
         <Providers>
           <Navbar />
-          {/* <SpeedInsights /> */}
+          <SpeedInsights />
           {children}
-          {/* <Analytics /> */}
+          <Analytics />
           <Footer />
         </Providers>
       </body>

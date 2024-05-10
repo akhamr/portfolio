@@ -27,6 +27,7 @@ export async function getPostBySlug(slug: string) {
     source: content,
     options: {
       mdxOptions: {
+        // @ts-expect-error
         remarkPlugins: [codeTitle, remarkMath],
         rehypePlugins: [
           rehypePrism,

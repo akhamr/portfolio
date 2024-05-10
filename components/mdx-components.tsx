@@ -1,5 +1,6 @@
 "use client";
-import { IconCopied, IconCopy } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { IconCopied, IconCopy } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import Image, { ImageProps } from "next/image";
@@ -28,7 +29,7 @@ export function Gist({ gist, alt, file }: GistProps) {
         <ReactEmbedGist
           gist={gist}
           titleClass="hidden"
-          loadingClass="h-full animate-pulse rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-transparent dark:border-gray-800 dark:bg-zinc-800"
+          loadingClass="h-full animate-pulse rounded-md bg-accent text-transparent"
           file={file}
         />
       </div>
@@ -89,14 +90,14 @@ export function Pre({ children, className, ...props }: ComponentProps<"pre">) {
       <pre className={cn("max-h-64", className)} {...props}>
         {children}
       </pre>
-      <button
-        aria-label="Copy code"
-        type="button"
-        className="absolute bottom-2 right-2 rounded bg-gray-300 p-2 dark:bg-gray-700"
+      <Button
+        size="icon"
+        variant="secondary"
+        className="absolute bottom-3 right-3"
         onClick={onCopy}
       >
         {copied ? <IconCopied /> : <IconCopy />}
-      </button>
+      </Button>
     </div>
   );
 }

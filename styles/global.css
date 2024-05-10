@@ -2,28 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scrollbar-gutter: stable both-edges;
-  scroll-behavior: smooth;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 0 0% 100%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 80%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 90%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 93.1%;
+
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 90.6% 70.8%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 83.1%;
+  }
 }
 
-body {
-  @apply text-dark dark:text-light subpixel-antialiased dark:bg-zinc-950;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scrollbar-gutter: stable both-edges;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply flex h-dvh select-none flex-col bg-background text-foreground;
+  }
+
+  *::-webkit-scrollbar {
+    @apply h-0 w-1.5;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-sm bg-neutral-400 dark:bg-neutral-700;
+  }
 }
 
-::selection {
-  color: black;
-  @apply bg-zinc-300 dark:bg-zinc-400;
-}
+@layer base {
+  h1 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
 
-*::-webkit-scrollbar {
-  height: 0px;
-  width: 5px;
-}
+  h2 {
+    @apply text-lg font-bold md:text-2xl lg:text-3xl;
+  }
 
-*::-webkit-scrollbar-thumb {
-  background: rgba(80, 80, 80, 0.8);
-  border-radius: 10px;
+  h3 {
+    @apply text-lg font-bold md:text-xl lg:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold lg:text-xl;
+  }
+
+  h5 {
+    @apply text-base font-bold lg:text-lg;
+  }
 }
 
 .toggle {
@@ -62,41 +147,15 @@ body {
     var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 }
 
-@layer base {
-  h1 {
-    @apply text-2xl font-bold md:text-3xl;
-  }
-
-  h2 {
-    @apply text-lg font-bold md:text-2xl lg:text-3xl;
-  }
-
-  h3 {
-    @apply text-lg font-bold md:text-xl lg:text-2xl;
-  }
-
-  h4 {
-    @apply text-lg font-bold lg:text-xl;
-  }
-
-  h5 {
-    @apply text-base font-bold lg:text-lg;
-  }
-}
-
 /* Blog and About */
 
-.prose h2 {
+prose h2 {
   @apply mb-5 mt-8;
 }
 
 .prose p,
 .prose li {
   @apply text-justify;
-}
-
-.prose li::marker {
-  @apply text-dark dark:text-light;
 }
 
 .prose blockquote {
@@ -114,19 +173,15 @@ body {
 /* Syntax Highlighter */
 
 .prose pre {
-  @apply border-2 border-dashed border-gray-200 bg-zinc-100 dark:border-gray-700/50  dark:bg-zinc-800;
+  @apply border-2 border-dashed bg-accent p-4;
 }
 
 .prose code {
-  @apply text-dark dark:text-light break-words rounded border-gray-100 bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800;
+  @apply break-words rounded bg-accent px-1 py-0.5;
 }
 
 .prose a:has(code) {
   @apply no-underline;
-}
-
-.prose a > code {
-  @apply text-dark dark:text-light !important;
 }
 
 .prose pre > code {
@@ -189,7 +244,7 @@ body {
 }
 
 div[data-remark-code-title] {
-  @apply rounded-t border-2 border-b-0 border-dashed border-gray-200 bg-zinc-300/80 p-4 text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-zinc-700/80 dark:text-gray-200;
+  @apply rounded-t border-2 border-b-0 border-dashed bg-secondary px-4 py-3 text-sm font-bold;
 }
 
 div[data-remark-code-title] + div > pre {
@@ -199,13 +254,13 @@ div[data-remark-code-title] + div > pre {
 /* Ripple Animation */
 
 .ripple path {
-  @apply fill-neutral-400 dark:fill-neutral-500;
+  @apply fill-border;
 }
 
 /* Gist */
 
 .gist-file {
-  @apply m-0 border-2 border-dashed border-gray-200 dark:border-gray-700/50 !important;
+  @apply m-0 border-2 border-dashed border-border !important;
 }
 
 .gist-data {
@@ -213,11 +268,11 @@ div[data-remark-code-title] + div > pre {
 }
 
 .gist-meta {
-  @apply bg-zinc-300/80 text-gray-600 dark:bg-zinc-700/95 dark:text-gray-300 !important;
+  @apply bg-input text-muted-foreground !important;
 }
 
 .gist-meta a {
-  @apply text-dark dark:text-light !important;
+  @apply text-foreground !important;
 }
 
 .gist .file {
@@ -235,29 +290,25 @@ div[data-remark-code-title] + div > pre {
 
 .gist .markdown-body table thead,
 .gist .markdown-body table th {
-  @apply text-dark dark:text-light border-gray-300 bg-zinc-100 dark:border-gray-700 dark:bg-zinc-900/95 !important;
+  @apply border-border bg-neutral-50 text-foreground dark:bg-neutral-900/95 !important;
 }
 
 .gist .markdown-body table td:first-child {
-  @apply bg-zinc-200/75 dark:bg-zinc-800/95 !important;
+  @apply bg-accent !important;
 }
 
 .gist .markdown-body table td {
-  @apply text-dark dark:text-light pointer-events-none border-gray-300 align-middle dark:border-gray-700 dark:bg-zinc-950 !important;
+  @apply pointer-events-none border-border bg-muted align-middle text-secondary-foreground !important;
 }
 
 /* Math */
 
-.math-display {
-  @apply my-5 rounded-md border-2 border-dashed border-gray-200 bg-zinc-100 text-left dark:border-gray-700/50 dark:bg-zinc-800;
-}
-
 .katex {
-  @apply text-dark dark:text-light text-base !important;
+  @apply text-base !important;
 }
 
 .katex-display {
-  @apply m-0 p-4 !important;
+  @apply m-0 rounded-md border-2 border-dashed bg-accent p-4 !important;
 }
 
 .katex-display .katex {

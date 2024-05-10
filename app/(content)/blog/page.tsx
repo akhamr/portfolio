@@ -28,7 +28,7 @@ export default async function Blog() {
                 className="rounded"
                 href={`/blog/${frontMatter.slug}`}
               >
-                <div className="rounded-md border-2 border-dashed border-gray-200 hover:bg-zinc-300 dark:border-gray-800 dark:hover:bg-zinc-700">
+                <div className="rounded-md border-2 border-dashed hover:bg-secondary">
                   <Image
                     src={frontMatter.image}
                     alt={frontMatter.title}
@@ -42,7 +42,7 @@ export default async function Blog() {
                     <h4 className="line-clamp-1 leading-snug">
                       {frontMatter.title}
                     </h4>
-                    <div className="my-1 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                    <div className="my-1 text-xs text-muted-foreground md:text-sm">
                       {day(frontMatter.date).format("MMMM DD, YYYY")}
                       {` • ${frontMatter.readingTime.text}`}
                       {` • ${frontMatter.readingTime.words} word(s)`}

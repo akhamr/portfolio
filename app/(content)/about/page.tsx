@@ -33,7 +33,7 @@ export default function About() {
       <div className="mx-auto mt-2 size-80 md:size-96">
         <Blob />
       </div>
-      <div className="prose max-w-full dark:prose-dark">
+      <div className="prose max-w-full dark:prose-invert">
         <section>
           <h1 id="about" className="my-4">
             <Link href="#about">About</Link>

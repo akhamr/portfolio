@@ -1,4 +1,4 @@
-import { IconArrow, IconCode } from "@/components/icons";
+import { IconArrow, IconCode } from "@/components/ui/icons";
 import projects from "@/data/projects";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Some collection of my past works.",
 };
 
-export default async function Blog() {
+export default async function Projects() {
   const filteredProject = projects.sort(
     (a, b) => Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
   );
@@ -22,7 +22,7 @@ export default async function Blog() {
         <div className="space-y-6 py-4">
           {filteredProject.map((project, i) => (
             <div
-              className="flex flex-col rounded-md border-2 border-dashed border-gray-200 dark:border-gray-800 md:flex-row"
+              className="flex flex-col rounded-md border-2 border-dashed md:flex-row"
               key={i}
             >
               <Image
@@ -39,7 +39,7 @@ export default async function Blog() {
                   <h1 className={`${project.font} line-clamp-2`}>
                     {project.title}
                   </h1>
-                  <p className="py-2 text-xs text-gray-700 dark:text-gray-300 md:text-sm">
+                  <p className="py-2 text-xs text-muted-foreground md:text-sm">
                     Created at {day(project.createdAt).format("MMMM YYYY")}
                   </p>
                   <p className="line-clamp-2 text-sm md:text-base">
@@ -49,7 +49,7 @@ export default async function Blog() {
                     {project.technology?.map((tech, idx) => (
                       <div
                         className={`${
-                          tech.color || "bg-gray-300 dark:bg-gray-700"
+                          tech.color || "bg-secondary"
                         } rounded-sm px-1 py-0.5 text-[11px] font-semibold uppercase md:text-xs`}
                         key={idx}
                       >

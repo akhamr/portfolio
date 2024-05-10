@@ -1,96 +1,103 @@
 import type { Config } from "tailwindcss";
-import type { PluginUtils } from "tailwindcss/types/config";
 
-const config: Config = {
-  darkMode: ["class"],
+const config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{ts,tsx,mdx}",
     "./components/**/*.{ts,tsx,mdx}",
     "./data/**/*.{ts,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         doodle: ["var(--font-doodle)", "cursive"],
         della: ["var(--font-della)", "cursive"],
       },
       colors: {
-        dark: "#1c1917",
-        light: "#f5f5f5",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
-      typography: ({ theme }: PluginUtils) => ({
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      typography: {
         DEFAULT: {
           css: {
-            color: "#202020",
             "h1,h2,h3,h4,h5,h6": {
               a: {
-                fontWeight: "bold",
                 textDecoration: "none",
                 "&:hover": {
                   textDecoration: "underline",
                 },
               },
               scrollMarginTop: "84px",
-              "@media (min-width: 768px)": {
-                scrollMarginTop: "36px",
-              },
             },
             strong: { fontWeight: "bold" },
             a: { fontWeight: "bold" },
           },
         },
-        dark: {
-          css: {
-            color: theme("colors.gray.300"),
-            a: {
-              color: theme("colors.white"),
-              code: { color: theme("colors.blue.400") },
-            },
-            blockquote: {
-              borderLeftColor: theme("colors.gray.700"),
-              color: theme("colors.gray.300"),
-            },
-            "h1,h2,h3,h4,h5,h6": {
-              color: theme("colors.white"),
-            },
-            hr: { borderColor: theme("colors.gray.700") },
-            ol: {
-              li: {
-                "&:before": { color: theme("colors.gray.500") },
-              },
-            },
-            ul: {
-              li: {
-                "&:before": {
-                  backgroundColor: theme("colors.gray.500"),
-                },
-              },
-            },
-            strong: {
-              color: theme("colors.gray.300"),
-              fontWeight: "bold",
-            },
-            thead: {
-              color: theme("colors.gray.100"),
-              th: {
-                color: theme("colors.gray.100"),
-              },
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme("colors.gray.700"),
-              },
-            },
-          },
-        },
-      }),
+      },
       cursor: {
         pencil: "url(/default/pencil.svg) 0 24, auto",
         "pencil-dark": "url(/default/pencil-dark.svg) 0 24, auto",
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+} satisfies Config;
 
 export default config;
