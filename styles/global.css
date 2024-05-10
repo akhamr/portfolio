@@ -68,7 +68,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-dashed border-border;
   }
 
   html {
@@ -173,7 +173,7 @@ prose h2 {
 /* Syntax Highlighter */
 
 .prose pre {
-  @apply border-2 border-dashed bg-accent p-4;
+  @apply border-2 bg-accent p-4;
 }
 
 .prose code {
@@ -244,7 +244,7 @@ prose h2 {
 }
 
 div[data-remark-code-title] {
-  @apply rounded-t border-2 border-b-0 border-dashed bg-secondary px-4 py-3 text-sm font-bold;
+  @apply rounded-t border-2 border-b-0 bg-secondary px-4 py-3 text-sm font-bold;
 }
 
 div[data-remark-code-title] + div > pre {
@@ -260,7 +260,7 @@ div[data-remark-code-title] + div > pre {
 /* Gist */
 
 .gist-file {
-  @apply m-0 border-2 border-dashed border-border !important;
+  @apply m-0 border-2 border-border !important;
 }
 
 .gist-data {
@@ -308,7 +308,7 @@ div[data-remark-code-title] + div > pre {
 }
 
 .katex-display {
-  @apply m-0 rounded-md border-2 border-dashed bg-accent p-4 !important;
+  @apply m-0 rounded-md border-2 bg-accent p-4 !important;
 }
 
 .katex-display .katex {

@@ -19,7 +19,7 @@ export default function TopTracks() {
               href={track.songUrl || "#"}
               className="font-normal no-underline"
             >
-              <div className="flex h-[100px] items-center gap-3 rounded-xl border-2 border-dashed bg-accent px-3 py-2 hover:bg-secondary">
+              <div className="flex h-[100px] items-center gap-3 rounded-xl border-2 bg-accent px-3 py-2 hover:bg-secondary">
                 <strong>#{idx + 1}</strong>
                 <Image
                   className="rounded-md"
@@ -41,10 +41,10 @@ export default function TopTracks() {
         : [...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="h-[100px] rounded-xl border-2 border-dashed bg-accent p-2"
+              className="h-[100px] rounded-xl border-2 bg-accent p-2"
             >
               <div className="flex animate-pulse items-center gap-3">
-                <strong>#{i + 1}</strong>
+                <strong className="text-muted-foreground">#{i + 1}</strong>
                 <div className="h-[80px] w-[80px] rounded-md bg-secondary"></div>
                 <div className="flex flex-col justify-center gap-3">
                   <div className="h-6 w-40 rounded bg-secondary md:w-64"></div>

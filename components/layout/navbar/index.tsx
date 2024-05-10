@@ -20,7 +20,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b-2 border-dashed bg-background">
+    <nav className="sticky top-0 z-50 w-full border-b-2 bg-background">
       <div className="mx-auto flex max-w-[85%] items-center justify-between py-2">
         <Button asChild>
           <Link href="/" className="font-doodle text-xl font-semibold">

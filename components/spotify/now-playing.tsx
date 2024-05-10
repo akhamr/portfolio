@@ -17,7 +17,7 @@ export default function NowPlaying() {
       href={data?.isPlaying ? data?.songUrl : "#playlist"}
       className="font-normal no-underline"
     >
-      <div className="flex h-[100px] justify-between gap-3 rounded-xl border-2 border-dashed bg-accent p-2 hover:bg-secondary">
+      <div className="flex h-[100px] justify-between gap-3 rounded-xl border-2 bg-accent p-2 hover:bg-secondary">
         <div className="flex gap-3">
           <Image
             className="rounded-md"
@@ -43,7 +43,7 @@ export default function NowPlaying() {
       </div>
     </Link>
   ) : (
-    <div className="h-[100px] rounded-xl border-2 border-dashed bg-accent p-2">
+    <div className="h-[100px] rounded-xl border-2 bg-accent p-2">
       <div className="flex animate-pulse items-center gap-3">
         <div className="h-[80px] w-[80px] rounded-md bg-secondary"></div>
         <div className="flex flex-col justify-center gap-3">
