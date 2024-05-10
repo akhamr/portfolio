@@ -10,7 +10,7 @@ export default function TopTracks() {
   const { data, isLoading } = useSWR("/api/top-tracks", fetcher);
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-3.5">
       {!isLoading
         ? data?.map((track: any, idx: number) => (
             <Link
