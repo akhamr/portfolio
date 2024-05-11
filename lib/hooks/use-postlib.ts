@@ -1,5 +1,4 @@
 import { Gist, Hr, Img, Pre, Quote } from "@/components/mdx-components";
-import rehypePrism from "@mapbox/rehype-prism";
 import fs from "fs";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -7,6 +6,7 @@ import path from "path";
 import readingTime from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
+import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import codeTitle from "remark-code-title";
 import remarkMath from "remark-math";
