@@ -29,7 +29,7 @@
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 80%;
-    --input: 0 0% 89.8%;
+    --input: 0 0% 85%;
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
@@ -48,20 +48,20 @@
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 93.1%;
 
-    --muted: 0 0% 9%;
+    --muted: 0 0% 10%;
     --muted-foreground: 0 0% 75%;
 
-    --accent: 0 0% 10%;
+    --accent: 0 0% 15%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 90.6% 70.8%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 0 0% 30%;
+    --input: 0 0% 25%;
     --ring: 0 0% 83.1%;
   }
 }
@@ -89,7 +89,7 @@
   }
 
   .content {
-    @apply rounded-lg border-2 bg-accent hover:bg-secondary;
+    @apply rounded-lg border-2 bg-muted hover:bg-accent;
   }
 }
 
@@ -189,7 +189,7 @@ prose h2 {
 }
 
 .prose pre > code {
-  @apply p-0 text-xs md:text-sm;
+  @apply p-0 text-xs text-secondary-foreground md:text-sm;
 }
 
 .token.comment,
@@ -248,7 +248,7 @@ prose h2 {
 }
 
 div[data-remark-code-title] {
-  @apply rounded-t border-2 border-b-0 bg-secondary px-4 py-3 text-sm font-bold;
+  @apply rounded-t border-2 border-b-0 bg-input px-4 py-3 text-sm font-bold;
 }
 
 div[data-remark-code-title] + div > pre {
@@ -294,7 +294,7 @@ div[data-remark-code-title] + div > pre {
 
 .gist .markdown-body table thead,
 .gist .markdown-body table th {
-  @apply border-solid border-border bg-neutral-50 text-foreground dark:bg-neutral-900/95 !important;
+  @apply border-solid border-border bg-secondary text-secondary-foreground !important;
 }
 
 .gist .markdown-body table td:first-child {
@@ -306,7 +306,7 @@ div[data-remark-code-title] + div > pre {
 }
 
 .gist .markdown-body table td {
-  @apply pointer-events-none border-border bg-muted align-middle text-secondary-foreground !important;
+  @apply pointer-events-none border-border bg-muted align-middle text-foreground !important;
 }
 
 /* Math */

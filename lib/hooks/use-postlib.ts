@@ -23,15 +23,19 @@ export async function getPostBySlug(slug: string) {
   const source = fs.readFileSync(articleDir);
   const { content, data } = matter(source);
 
+  // TODO : fix ts-error
   const a = await compileMDX({
     source: content,
     options: {
       mdxOptions: {
+        // @ts-ignore
         remarkPlugins: [codeTitle, remarkMath],
         rehypePlugins: [
+          // @ts-ignore
           rehypePrism,
           rehypeSlug,
           [rehypeAutolinkHeadings, { behavior: "wrap" }],
+          // @ts-ignore
           [rehypeKatex, { output: "html" }],
         ],
       },
