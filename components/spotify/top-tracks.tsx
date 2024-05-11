@@ -41,7 +41,7 @@ export default function TopTracks() {
         : [...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="h-[100px] rounded-lg border-2 bg-accent px-3 py-2"
+              className="h-[100px] rounded-lg border-2 bg-muted px-3 py-2"
             >
               <div className="flex animate-pulse items-center gap-3">
                 <strong className="text-muted-foreground">#{i + 1}</strong>

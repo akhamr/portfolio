@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 
-const NO_COVER = "/default/no-cover.png";
-
 export default function NowPlaying() {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
   const { data, isLoading } = useSWR("/api/now-playing", fetcher);
@@ -51,7 +49,7 @@ export default function NowPlaying() {
       </div>
     </Link>
   ) : (
-    <div className="h-[100px] rounded-lg border-2 bg-accent p-2">
+    <div className="h-[100px] rounded-lg border-2 bg-muted p-2">
       <div className="flex animate-pulse items-center gap-3">
         <div className="h-[80px] w-[80px] rounded-md bg-secondary"></div>
         <div className="flex flex-col justify-center gap-3">
