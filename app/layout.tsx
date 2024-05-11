@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://akhamr.me"),
   title: {
     template: "%s · Akhamr!",
     default: "It's me, akha!",
