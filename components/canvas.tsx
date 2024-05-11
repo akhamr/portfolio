@@ -4,13 +4,13 @@ import { useCallback, useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
 const colorList = [
-  "rgba(255, 213, 90, 0.7)",
-  "rgba(90, 255, 213, 0.7)",
-  "rgba(213, 90, 255, 0.7)",
+  "rgba(255, 187, 0, 0.7)",
+  "rgba(0, 255, 187, 0.7)",
+  "rgba(187, 0, 255)",
 ];
 
 export default function Canvas() {
-  const [color, setColor] = useState("rgba(255, 213, 90, 0.7)");
+  const [color, setColor] = useState("rgba(255, 187, 0, 0.7)");
   const canvasRef = useRef(null);
   const handleClear = useCallback(() => {
     //@ts-ignore
