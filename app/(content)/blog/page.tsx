@@ -32,7 +32,7 @@ export default async function Blog() {
                   <Image
                     src={frontMatter.image}
                     alt={frontMatter.title}
-                    className="rounded-t"
+                    className="rounded-t-lg"
                     width="540"
                     height="270"
                     placeholder="blur"

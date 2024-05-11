@@ -26,7 +26,7 @@ export default async function Projects() {
               key={i}
             >
               <Image
-                className="rounded"
+                className="rounded-lg"
                 width="489"
                 height="256"
                 src={project.image}
