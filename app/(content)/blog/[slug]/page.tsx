@@ -13,10 +13,10 @@ export async function generateMetadata({
   const { frontmatter } = await getPostBySlug(params.slug);
 
   return {
-    title: `${frontmatter.title}`,
-    description: `${frontmatter.description}`,
+    title: frontmatter.title,
+    description: frontmatter.description,
     openGraph: {
-      images: [`${frontmatter.image}`],
+      images: frontmatter.image,
     },
   };
 }
@@ -25,10 +25,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { body, frontmatter } = await getPostBySlug(params.slug);
 
   return (
-    <section
-      id="post-content"
-      className="mx-auto mb-6 h-full max-w-3xl pt-4 md:pt-11"
-    >
+    <section className="mb-6 max-w-3xl pt-4 md:pt-11">
       <h1 className="mt-3 text-pretty text-4xl md:text-6xl">
         {frontmatter.title}
       </h1>

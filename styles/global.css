@@ -71,6 +71,14 @@
     @apply border-dashed border-border;
   }
 
+  *::-webkit-scrollbar {
+    @apply h-0 w-1.5;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-sm bg-neutral-400 dark:bg-neutral-700;
+  }
+
   html {
     scrollbar-gutter: stable both-edges;
     scroll-behavior: smooth;
@@ -78,14 +86,6 @@
 
   body {
     @apply flex h-dvh select-none flex-col bg-background text-foreground;
-  }
-
-  *::-webkit-scrollbar {
-    @apply h-0 w-1.5;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    @apply rounded-sm bg-neutral-400 dark:bg-neutral-700;
   }
 
   .content {

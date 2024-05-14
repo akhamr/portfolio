@@ -9,6 +9,8 @@ const colorList = [
   "rgba(187, 0, 255, 0.6)",
 ];
 
+// ! framer-motion fixed bug.
+
 export default function Canvas() {
   const [color, setColor] = useState("rgba(255, 187, 0, 0.6)");
   const canvasRef = useRef(null);
@@ -43,7 +45,7 @@ export default function Canvas() {
               style={{ backgroundColor: data }}
               aria-label="Change brush color"
             >
-              {data === color && <IconCheck className="mx-auto size-5" />}
+              {data === color && <IconCheck className="m-auto size-5" />}
             </button>
           ))}
           <button
@@ -51,7 +53,7 @@ export default function Canvas() {
             className="size-7 rounded-full bg-border"
             aria-label="Clear doodle"
           >
-            <IconTrash className="mx-auto size-4" />
+            <IconTrash className="m-auto size-4" />
           </button>
         </div>
       </div>

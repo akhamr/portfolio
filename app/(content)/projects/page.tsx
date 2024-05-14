@@ -1,5 +1,6 @@
 import { IconArrow, IconCode } from "@/components/ui/icons";
 import projects from "@/data/projects";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,14 +16,14 @@ export default async function Projects() {
     (a, b) => Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
   );
   return (
-    <section id="projects-content">
+    <section>
       <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">Projects</h1>
       <p className="mt-2">Some collection of my past works.</p>
-      {filteredProject.length > 0 ? (
+      {filteredProject.length ? (
         <div className="space-y-6 py-4">
           {filteredProject.map((project, i) => (
             <div
-              className="flex flex-col rounded-lg border-2 bg-muted md:flex-row"
+              className="flex w-full flex-col rounded-lg border-2 bg-muted lg:flex-row"
               key={i}
             >
               <Image
@@ -36,21 +37,18 @@ export default async function Projects() {
               />
               <div className="flex max-w-md flex-col justify-between p-4 md:p-6">
                 <div>
-                  <h1 className={`${project.font} line-clamp-2`}>
-                    {project.title}
-                  </h1>
+                  <h1 className={project.font}>{project.title}</h1>
                   <p className="py-2 text-xs text-muted-foreground md:text-sm">
                     Created at {day(project.createdAt).format("MMMM YYYY")}
                   </p>
-                  <p className="line-clamp-2 text-sm md:text-base">
-                    {project.description}
-                  </p>
+                  <p className="text-sm md:text-base">{project.description}</p>
                   <div className="flex space-x-2 pt-3">
                     {project.technology?.map((tech, idx) => (
                       <div
-                        className={`${
-                          tech.color || "bg-secondary"
-                        } rounded-sm px-1 py-0.5 text-[11px] font-semibold uppercase md:text-xs`}
+                        className={cn(
+                          tech.color || "bg-neutral-400",
+                          "rounded-sm px-1 py-0.5 text-[10px] font-bold uppercase text-neutral-100 hover:opacity-80 md:text-xs"
+                        )}
                         key={idx}
                       >
                         {tech.url ? (

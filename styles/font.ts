@@ -3,6 +3,7 @@ import {
   Gloria_Hallelujah,
   Mansalva,
   Nunito,
+  Ojuju,
 } from "next/font/google";
 
 export const nunito = Nunito({
@@ -28,4 +29,11 @@ export const della = Della_Respira({
   weight: "400",
   display: "swap",
   variable: "--font-della",
+});
+
+export const ojuju = Ojuju({
+  weight: "600",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ojuju",
 });

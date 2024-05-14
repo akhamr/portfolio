@@ -5,13 +5,9 @@ import MeLight from "@/public/default/me-light.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function Main() {
   return (
-    <section
-      id="main-content"
-      className="relative flex h-full cursor-pencil items-center justify-center pb-6 dark:cursor-pencil-dark md:w-screen md:pb-0 md:pr-2.5"
-    >
-      <Canvas />
+    <section className="relative flex h-full cursor-pencil items-center justify-center pb-6 dark:cursor-pencil-dark md:w-screen md:pb-0 md:pr-2.5">
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
         <div className="relative hidden w-[350px] place-items-center dark:grid md:w-[400px]">
           <Image alt="doodle" src={MeDark} priority />
@@ -36,14 +32,14 @@ export default function Home() {
             about data analytics, and web development.
           </p>
           <p className="text-md max-w-[500px] text-center md:text-left md:text-lg">
-            {"Checkout my "}
+            {"Peek my "}
             <Link
               className="relative z-10 font-semibold underline"
               href="/projects"
             >
               past works
             </Link>
-            {", or learn more "}
+            {", and learn more "}
             <Link
               href="/about"
               className="relative z-10 font-semibold underline"
@@ -54,6 +50,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <Canvas />
     </section>
   );
 }
