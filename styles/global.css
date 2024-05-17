@@ -82,6 +82,7 @@
   html {
     scrollbar-gutter: stable both-edges;
     scroll-behavior: smooth;
+    overflow-y: scroll;
   }
 
   body {

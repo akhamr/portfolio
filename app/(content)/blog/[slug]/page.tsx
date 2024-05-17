@@ -32,7 +32,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <p className="my-4">{frontmatter.description}</p>
       <div className="flex items-center text-sm text-muted-foreground">
         <p>
-          <Link href="/about" className="font-semibold">
+          <Link href="/about" className="font-bold text-foreground">
             Akha
           </Link>
           {" / "}
