@@ -16,11 +16,13 @@ export default async function Blog() {
   );
 
   return (
-    <section>
-      <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">Blog</h1>
-      <p className="mt-2">Some tech stuff and my life updates.</p>
+    <section className="lg:px-12">
+      <div className="space-y-2 md:space-y-4">
+        <h1 className="text-4xl md:text-6xl">Blog</h1>
+        <p>Some tech stuff and my life updates.</p>
+      </div>
       {filteredBlogPosts.length ? (
-        <div className="grid grid-cols-1 gap-6 py-4 md:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {filteredBlogPosts.map((frontMatter, i) => (
             <Link
               key={i}

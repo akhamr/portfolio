@@ -25,7 +25,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b-2 bg-background">
+    <nav className="fixed top-0 z-20 w-full border-b-2 bg-background">
       <div className="mx-auto flex max-w-[85%] items-center justify-between py-2">
         <Button asChild>
           <Link href="/" className="font-doodle text-xl font-semibold">

@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="mb-6 max-w-3xl">
-      <div className="mx-auto mt-2 size-80 md:size-96">
+    <section className="max-w-3xl">
+      <div className="mx-auto size-80 md:size-96">
         <Blob />
       </div>
       <div className="prose max-w-full dark:prose-invert">

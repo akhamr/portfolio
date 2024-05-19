@@ -17,10 +17,12 @@ export default async function Projects() {
   );
   return (
     <section>
-      <h1 className="mt-4 pt-3 text-4xl md:mt-11 md:text-6xl">Projects</h1>
-      <p className="mt-2">Some collection of my past works.</p>
+      <div className="space-y-2 md:space-y-4">
+        <h1 className="text-4xl md:text-6xl">Projects</h1>
+        <p>Some collection of my past works.</p>
+      </div>
       {filteredProject.length ? (
-        <div className="space-y-6 py-4">
+        <div className="mt-4 space-y-6">
           {filteredProject.map((project, i) => (
             <div
               className="flex w-full flex-col rounded-lg border-2 bg-muted lg:flex-row"
