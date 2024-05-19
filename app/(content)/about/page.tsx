@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="max-w-3xl">
+    <section className="max-w-screen-md md:px-12">
       <div className="mx-auto size-80 md:size-96">
         <Blob />
       </div>
