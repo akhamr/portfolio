@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./mobile-menu";
@@ -27,32 +28,36 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full">
       <div className="z-20 border-b-2 bg-background">
-        <div className="mx-auto flex max-w-[85%] items-center justify-between py-2">
-          <Button asChild>
-            <Link href="/" className="font-doodle text-xl font-semibold">
+        <div className="mx-auto flex max-w-[85%] items-center justify-between py-2 md:max-w-screen-lg md:px-12">
+          <div className="flex">
+            <Link
+              href="/"
+              className={cn(
+                buttonVariants(),
+                "font-doodle text-xl font-semibold"
+              )}
+            >
               Akhamr!
             </Link>
-          </Button>
-          <div className="flex">
-            <div className="hidden space-x-2 md:flex">
+            <div className="ml-4 hidden space-x-2 md:flex">
               {links.map((link, i) => (
-                <Button
+                <Link
                   key={i}
-                  className={
-                    pathname.startsWith(link.url) ? "bg-secondary" : ""
-                  }
-                  asChild
+                  className={cn(
+                    buttonVariants(),
+                    pathname.startsWith(link.url) ? "bg-secondary" : "",
+                    "px-3 py-2.5 font-bold"
+                  )}
+                  href={link.url}
                 >
-                  <Link href={link.url} className="px-3 py-2.5">
-                    {link.text}
-                  </Link>
-                </Button>
+                  {link.text}
+                </Link>
               ))}
             </div>
-            <div className="flex items-center space-x-3 pl-4 pr-2.5">
-              <ThemeToggler />
-              <MobileMenu />
-            </div>
+          </div>
+          <div className="flex items-center space-x-3 pr-2.5">
+            <ThemeToggler />
+            <MobileMenu />
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import TopTracks from "./top-tracks";
 
 export default function Spotify() {
   return (
-    <section>
+    <div>
       <h1 id="playlist">
         <Link href="#playlist">Playlist</Link>
       </h1>
@@ -15,6 +15,6 @@ export default function Spotify() {
         tracks on Spotify, updated daily.
       </p>
       <TopTracks />
-    </section>
+    </div>
   );
 }

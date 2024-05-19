@@ -29,12 +29,12 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="max-w-screen-md md:px-12">
+    <section className="-mt-6 max-w-screen-md md:px-12">
       <div className="mx-auto size-80 md:size-96">
         <Blob />
       </div>
-      <div className="prose max-w-full space-y-8 dark:prose-invert">
-        <section>
+      <div className="prose mt-4 space-y-8 dark:prose-invert">
+        <div>
           <h1 id="about">
             <Link href="#about">About</Link>
           </h1>
@@ -97,9 +97,9 @@ export default function About() {
             Outside of programming thingy, I love playing games and listening
             music.
           </p>
-        </section>
+        </div>
         <Spotify />
-        <section>
+        <div>
           <h1 id="contact">
             <Link href="#contact">Contact</Link>
           </h1>
@@ -130,7 +130,7 @@ export default function About() {
             </Link>
             . Anyway, thanks for visiting my profile &#128591;
           </p>
-        </section>
+        </div>
       </div>
     </section>
   );
