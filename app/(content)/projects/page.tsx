@@ -38,13 +38,15 @@ export default async function Projects() {
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
               />
               <div className="flex max-w-md flex-col justify-between p-4 md:p-6">
-                <div>
-                  <h1 className={project.font}>{project.title}</h1>
-                  <p className="py-2 text-xs text-muted-foreground md:text-sm">
-                    Created at {day(project.createdAt).format("MMMM YYYY")}
-                  </p>
+                <div className="space-y-3">
+                  <div>
+                    <h1 className={project.font}>{project.title}</h1>
+                    <p className="pt-2 text-xs text-muted-foreground md:text-sm">
+                      Created at {day(project.createdAt).format("MMMM YYYY")}
+                    </p>
+                  </div>
                   <p className="text-sm md:text-base">{project.description}</p>
-                  <div className="flex space-x-2 pt-3">
+                  <div className="flex space-x-2">
                     {project.technology?.map((tech, idx) => (
                       <div
                         className={cn(
@@ -64,30 +66,26 @@ export default async function Projects() {
                     ))}
                   </div>
                 </div>
-                <div className="mt-4 flex space-x-4 font-bold md:text-lg">
+                <div className="mt-6 flex space-x-4 font-bold md:text-lg">
                   {project.url && (
-                    <>
-                      <Link
-                        target="_blank"
-                        className="inline-flex items-center hover:underline"
-                        href={project.url}
-                      >
-                        <IconArrow className="md:size-5" />
-                        <p className="pl-2">Visit Project</p>
-                      </Link>
-                    </>
+                    <Link
+                      target="_blank"
+                      className="inline-flex items-center hover:underline"
+                      href={project.url}
+                    >
+                      <IconArrow className="md:size-5" />
+                      <p className="pl-2">Visit Project</p>
+                    </Link>
                   )}
                   {project.source && (
-                    <>
-                      <Link
-                        target="_blank"
-                        className="inline-flex items-center hover:underline"
-                        href={project.source}
-                      >
-                        <IconCode className="md:size-5" />
-                        <p className="pl-2">Source Code</p>
-                      </Link>
-                    </>
+                    <Link
+                      target="_blank"
+                      className="inline-flex items-center hover:underline"
+                      href={project.source}
+                    >
+                      <IconCode className="md:size-5" />
+                      <p className="pl-2">Source Code</p>
+                    </Link>
                   )}
                 </div>
               </div>

@@ -4,8 +4,8 @@ import TopTracks from "./top-tracks";
 
 export default function Spotify() {
   return (
-    <section className="py-4">
-      <h1 id="playlist" className="my-4">
+    <section>
+      <h1 id="playlist">
         <Link href="#playlist">Playlist</Link>
       </h1>
       <p> This is what I&apos;m currently listening on Spotify.</p>

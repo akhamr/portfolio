@@ -39,11 +39,11 @@ export default async function Blog() {
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNMqwcAAVEA58giG6IAAAAASUVORK5CYII="
                 />
-                <div className="rounded-b p-2">
+                <div className="space-y-1 p-2">
                   <h4 className="line-clamp-1 leading-snug">
                     {frontMatter.title}
                   </h4>
-                  <div className="my-1 text-xs text-muted-foreground md:text-sm">
+                  <div className="text-xs text-muted-foreground md:text-sm">
                     {day(frontMatter.date).format("MMMM DD, YYYY")}
                     {` • ${frontMatter.readingTime.text}`}
                     {` • ${frontMatter.readingTime.words} word(s)`}

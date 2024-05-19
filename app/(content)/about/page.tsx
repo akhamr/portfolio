@@ -33,9 +33,9 @@ export default function About() {
       <div className="mx-auto size-80 md:size-96">
         <Blob />
       </div>
-      <div className="prose max-w-full dark:prose-invert">
+      <div className="prose max-w-full space-y-8 dark:prose-invert">
         <section>
-          <h1 id="about" className="my-4">
+          <h1 id="about">
             <Link href="#about">About</Link>
           </h1>
           <p>
@@ -100,7 +100,7 @@ export default function About() {
         </section>
         <Spotify />
         <section>
-          <h1 id="contact" className="my-4">
+          <h1 id="contact">
             <Link href="#contact">Contact</Link>
           </h1>
           <p>
