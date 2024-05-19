@@ -28,18 +28,18 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full">
       <div className="z-20 border-b-2 bg-background">
-        <div className="mx-auto flex max-w-[85%] items-center justify-between py-2 md:max-w-screen-lg md:px-12">
+        <div className="mx-auto flex max-w-[85%] items-center justify-between py-2 md:max-w-screen-xl md:px-12">
+          <Link
+            href="/"
+            className={cn(
+              buttonVariants(),
+              "font-doodle text-xl font-semibold"
+            )}
+          >
+            Akhamr!
+          </Link>
           <div className="flex">
-            <Link
-              href="/"
-              className={cn(
-                buttonVariants(),
-                "font-doodle text-xl font-semibold"
-              )}
-            >
-              Akhamr!
-            </Link>
-            <div className="ml-4 hidden space-x-2 md:flex">
+            <div className="hidden space-x-2 md:flex">
               {links.map((link, i) => (
                 <Link
                   key={i}
@@ -54,10 +54,10 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-          </div>
-          <div className="flex items-center space-x-3 pr-2.5">
-            <ThemeToggler />
-            <MobileMenu />
+            <div className="ml-4 flex items-center space-x-3 pr-2.5">
+              <ThemeToggler />
+              <MobileMenu />
+            </div>
           </div>
         </div>
       </div>
