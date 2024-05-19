@@ -24,18 +24,14 @@ export default function Canvas() {
       <ReactSketchCanvas
         ref={canvasRef}
         canvasColor="transparent"
-        width="100%"
-        height="100%"
         style={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 5,
+          top: "58px",
         }}
         strokeWidth={5}
         strokeColor={color}
       />
-      <div className="absolute -left-4 top-4 z-10 rounded-full bg-accent p-2 md:left-[unset] md:right-4 md:top-[unset]">
+      <div className="absolute -left-4 top-14 z-10 rounded-full bg-accent p-2 md:left-[unset] md:right-4 md:top-[unset]">
         <div className="flex flex-col space-y-2">
           {colorList.map((data, key) => (
             <button
