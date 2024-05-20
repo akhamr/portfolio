@@ -25,7 +25,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { body, frontmatter } = await getPostBySlug(params.slug);
 
   return (
-    <section className="max-w-screen-md space-y-4 md:px-12">
+    <section className="max-w-screen-md space-y-4 md:mx-12">
       <h1 className="text-pretty text-4xl md:text-6xl">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
       <div className="flex items-center text-sm text-muted-foreground">

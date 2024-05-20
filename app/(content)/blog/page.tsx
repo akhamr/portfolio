@@ -17,7 +17,7 @@ export default async function Blog() {
   );
 
   return (
-    <section className="lg:px-12">
+    <section className="md:mx-12">
       <div className="space-y-2 md:space-y-4">
         <h1 className="text-4xl md:text-6xl">Blog</h1>
         <p>Some tech stuff and my life updates.</p>

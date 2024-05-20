@@ -17,7 +17,7 @@ export default async function Projects() {
     (a, b) => Number(new Date(b.createdAt)) - Number(new Date(a.createdAt))
   );
   return (
-    <section>
+    <section className="md:mx-12">
       <div className="space-y-2 md:space-y-4">
         <h1 className="text-4xl md:text-6xl">Projects</h1>
         <p>Some collection of my past works.</p>
