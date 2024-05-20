@@ -92,6 +92,11 @@
   .content {
     @apply rounded-lg border-2 bg-muted hover:bg-accent;
   }
+
+  #me {
+    clip-path: url(#shape);
+    @apply relative z-10;
+  }
 }
 
 @layer base {
