@@ -21,15 +21,17 @@
     "next-mdx-remote": "^4.4.1",
     "next-nprogress-bar": "^2.3.11",
     "next-themes": "^0.3.0",
+    "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
     "react-embed-gist": "^1.0.20",
     "react-sketch-canvas": "^6.2.0",
     "reading-time": "^1.5.0",
-    "sharp": "^0.33.3",
+    "sharp": "^0.33.4",
     "swr": "^2.2.5"
   },
   "devDependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",

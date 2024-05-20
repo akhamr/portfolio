@@ -299,7 +299,7 @@ div[data-remark-code-title] + div > pre {
 }
 
 .gist .markdown-body table td:first-child {
-  @apply bg-accent !important;
+  @apply bg-accent text-center !important;
 }
 
 .gist .markdown-body table tbody > * {
@@ -307,7 +307,7 @@ div[data-remark-code-title] + div > pre {
 }
 
 .gist .markdown-body table td {
-  @apply pointer-events-none border-border bg-muted align-middle text-foreground !important;
+  @apply pointer-events-none border-border bg-muted text-end align-middle text-foreground !important;
 }
 
 /* Math */

@@ -1,9 +1,9 @@
 import "katex/dist/katex.min.css";
 
 import { getFiles, getPostBySlug } from "@/lib/hooks/use-postlib";
+import dayjs from "dayjs";
 import type { Metadata } from "next";
 import Link from "next/link";
-const day = require("dayjs");
 
 export async function generateMetadata({
   params,
@@ -34,7 +34,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             Akha
           </Link>
           {" / "}
-          {day(frontmatter.date).format("MMM DD, YYYY")}
+          {dayjs(frontmatter.date).format("MMM DD, YYYY")}
         </p>
         <p className="ml-auto">
           {`${frontmatter.readingTime.text} • ${frontmatter.readingTime.words} word(s)`}

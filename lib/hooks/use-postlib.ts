@@ -1,7 +1,8 @@
-import { Gist, Hr, Img, Pre, Quote } from "@/components/mdx-components";
-import fs from "fs";
+import { Gist, Pre } from "@/components/code-block";
+import { Hr, Img, Quote } from "@/components/mdx-components";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
+import fs from "node:fs";
 import path from "path";
 import readingTime from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
