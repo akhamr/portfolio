@@ -312,14 +312,14 @@ div[data-remark-code-title] + div > pre {
 
 /* Math */
 
-.katex {
+.math-inline .katex {
   @apply text-base !important;
 }
 
-.katex-display {
+.math-display .katex-display {
   @apply m-0 rounded-md border-2 bg-accent p-4 !important;
 }
 
-.katex-display .katex {
+.math-display .katex-display .katex {
   @apply overflow-y-hidden text-sm md:text-base !important;
 }

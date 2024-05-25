@@ -27,6 +27,7 @@ export default function Canvas() {
         style={{
           position: "fixed",
           top: "58px",
+          zIndex: 10,
         }}
         strokeWidth={5}
         strokeColor={color}

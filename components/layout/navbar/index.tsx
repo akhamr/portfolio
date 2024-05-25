@@ -26,8 +26,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full">
-      <div className="z-20 border-b-2 bg-background">
+    <nav className="fixed top-0 z-10 w-full">
+      <div className="border-b-2 bg-background">
         <div className="mx-auto flex max-w-[85%] items-center justify-between py-2 md:max-w-screen-xl md:px-12">
           <Link
             href="/"

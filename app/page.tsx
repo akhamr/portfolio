@@ -34,7 +34,7 @@ export default function Main() {
           <p className="text-md max-w-[500px] text-center md:text-left md:text-lg">
             {"Peek my "}
             <Link
-              className="relative z-10 font-semibold underline"
+              className="relative z-20 font-semibold underline"
               href="/projects"
             >
               past works
@@ -42,7 +42,7 @@ export default function Main() {
             {", and learn more "}
             <Link
               href="/about"
-              className="relative z-10 font-semibold underline"
+              className="relative z-20 font-semibold underline"
             >
               about me
             </Link>
