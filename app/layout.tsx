@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   },
   description:
     "My personal blog and portfolio website built with passion and a lot of stress.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function Root({ children }: { children: React.ReactNode }) {
