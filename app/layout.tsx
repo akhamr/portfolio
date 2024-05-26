@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import { SocialProfileJsonLd } from "next-seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akhamr.me"),
@@ -29,6 +30,16 @@ export default function Root({ children }: { children: React.ReactNode }) {
           ojuju.variable
         )}
       >
+        <SocialProfileJsonLd
+          useAppDir={true}
+          type="Person"
+          name="Akha"
+          url={process.env.BASE_URL!}
+          sameAs={[
+            "https://linkedin.com/in/akhamr/",
+            "https://instagram.com/akhamrr",
+          ]}
+        />
         <SpeedInsights />
         <Providers>
           <Navbar />

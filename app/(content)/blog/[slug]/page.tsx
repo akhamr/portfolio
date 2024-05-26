@@ -3,6 +3,7 @@ import "katex/dist/katex.min.css";
 import { getFiles, getPostBySlug } from "@/lib/hooks/use-postlib";
 import dayjs from "dayjs";
 import type { Metadata } from "next";
+import { ArticleJsonLd } from "next-seo";
 import Link from "next/link";
 
 export async function generateMetadata({
@@ -26,6 +27,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <section className="max-w-screen-md space-y-4 md:mx-12">
+      <ArticleJsonLd
+        useAppDir={true}
+        authorName="Akha"
+        url={process.env.BASE_URL! + "/" + params.slug}
+        title={frontmatter.title}
+        description={frontmatter.description}
+        images={[frontmatter.image]}
+        datePublished={frontmatter.date}
+      />
       <h1 className="text-pretty text-4xl md:text-6xl">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
       <div className="flex items-center text-sm text-muted-foreground">
