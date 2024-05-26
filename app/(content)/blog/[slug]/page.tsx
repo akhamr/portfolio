@@ -30,7 +30,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <ArticleJsonLd
         useAppDir={true}
         authorName="Akha"
-        url={process.env.BASE_URL! + "/" + params.slug}
+        url={process.env.BASE_URL! + "/blog/" + params.slug}
         title={frontmatter.title}
         description={frontmatter.description}
         images={[frontmatter.image]}
