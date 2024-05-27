@@ -44,14 +44,14 @@ const framer = {
 
 const kv = {
   name: "KV",
-  color: "bg-indigo-600",
+  color: "bg-teal-600",
   url: "https://vercel.com/docs/storage/vercel-kv",
 };
 
 const ai = {
-  name: "openai",
-  color: "bg-teal-600",
-  url: "https://platform.openai.com/",
+  name: "gemini",
+  color: "bg-indigo-600",
+  url: "https://ai.google.dev/gemini-api",
 };
 
 const spt = {
@@ -99,24 +99,24 @@ const project: ProjectType[] = [
     title: "Bot-I.",
     image: "/projects/boti.webp",
     description:
-      "An AI-based chatbot built with Next.js, Vercel KV, and OpenAI API.",
+      "An AI-based chatbot built with Next.js, Vercel KV, and Gemini API.",
     createdAt: "2024-02-14",
     technology: [next, shadcn, mdx, auth, kv, ai],
     url: "https://boti.akhamr.me/",
     source: "https://github.com/akhamr/boti",
     font: "font-della",
   },
-  // {
-  //   title: "Lungsur",
-  //   image: "/projects/lungsur.webp",
-  //   description:
-  //     "Simple OLX-inspired commerce built with PostgreSQL, and Vercel Blob.",
-  //   createdAt: "2024-05-23",
-  //   technology: [next, auth, drizzle, postgre, blob],
-  //   url: "https://lungsur.akhamr.me/",
-  //   source: "https://github.com/akhamr/lungsur",
-  //   font: "font-ojuju uppercase",
-  // },
+  {
+    title: "Lungsur",
+    image: "/projects/lungsur.webp",
+    description:
+      "Simple OLX-inspired commerce built with PostgreSQL, and Vercel Blob.",
+    createdAt: "2024-05-23",
+    technology: [next, auth, drizzle, postgre, blob],
+    url: "https://lungsur.akhamr.me/",
+    source: "https://github.com/akhamr/lungsur",
+    font: "font-bimbo uppercase",
+  },
 ];
 
 export default project;

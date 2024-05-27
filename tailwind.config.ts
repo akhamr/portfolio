@@ -19,7 +19,7 @@ const config = {
       fontFamily: {
         doodle: ["var(--font-doodle)", "cursive"],
         della: ["var(--font-della)", "serif"],
-        ojuju: ["var(--font-ojuju)", "sans-serif"],
+        bimbo: ["var(--font-bimbo)", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",

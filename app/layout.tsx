@@ -2,7 +2,7 @@ import Footer from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
-import { della, doodle, nunito, ojuju } from "@/styles/font";
+import { bimbo, della, doodle, nunito } from "@/styles/font";
 import "@/styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -35,7 +35,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
           nunito.className,
           della.variable,
           doodle.variable,
-          ojuju.variable
+          bimbo.variable
         )}
       >
         <SocialProfileJsonLd

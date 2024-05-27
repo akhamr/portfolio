@@ -3,8 +3,8 @@ import {
   Gloria_Hallelujah,
   Mansalva,
   Nunito,
-  Ojuju,
 } from "next/font/google";
+import localFont from "next/font/local";
 
 export const nunito = Nunito({
   subsets: ["latin"],
@@ -31,9 +31,8 @@ export const della = Della_Respira({
   variable: "--font-della",
 });
 
-export const ojuju = Ojuju({
-  weight: "600",
-  subsets: ["latin"],
+export const bimbo = localFont({
+  src: "../styles/bimbo.woff2",
   display: "swap",
-  variable: "--font-ojuju",
+  variable: "--font-bimbo",
 });
