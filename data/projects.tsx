@@ -3,14 +3,14 @@ type ProjectType = {
   description: string;
   createdAt: string;
   image: string | any;
-  technology?: {
+  technology: {
     name: string;
+    url: string;
     color?: string;
-    url?: string;
   }[];
   source?: string;
   url?: string;
-  font: string;
+  font?: string;
 };
 
 const next = {
@@ -83,6 +83,36 @@ const blob = {
   url: "https://vercel.com/docs/storage/vercel-blob",
 };
 
+const nest = {
+  name: "nestjs",
+  color: "bg-orange-600",
+  url: "https://nestjs.com/",
+};
+
+const sendgrid = {
+  name: "sendgrid",
+  color: "bg-blue-600",
+  url: "https://www.twilio.com/docs/sendgrid/",
+};
+
+const xendit = {
+  name: "xendit",
+  color: "bg-purple-600",
+  url: "https://developers.xendit.co/",
+};
+
+const typeorm = {
+  name: "typeorm",
+  color: "bg-rose-600",
+  url: "https://typeorm.io/",
+};
+
+const swagger = {
+  name: "swagger",
+  color: "bg-cyan-600",
+  url: "https://swagger.io/",
+};
+
 const project: ProjectType[] = [
   {
     title: "Akhamr!",
@@ -106,16 +136,25 @@ const project: ProjectType[] = [
     source: "https://github.com/akhamr/boti",
     font: "font-della",
   },
+  // {
+  //   title: "Lungsur",
+  //   image: "/projects/lungsur.webp",
+  //   description:
+  //     "Simple OLX-inspired commerce built with PostgreSQL, and Vercel Blob.",
+  //   createdAt: "2024-05-23",
+  //   technology: [next, auth, drizzle, postgre, blob],
+  //   url: "https://lungsur.akhamr.me/",
+  //   source: "https://github.com/akhamr/lungsur",
+  //   font: "font-bimbo uppercase",
+  // },
   {
-    title: "Lungsur",
-    image: "/projects/lungsur.webp",
+    title: "MyIstiqlal",
+    image: "/projects/myistiqlal.webp",
     description:
-      "Simple OLX-inspired commerce built with PostgreSQL, and Vercel Blob.",
-    createdAt: "2024-05-23",
-    technology: [next, auth, drizzle, postgre, blob],
-    url: "https://lungsur.akhamr.me/",
-    source: "https://github.com/akhamr/lungsur",
-    font: "font-bimbo uppercase",
+      "API project for Istiqlal Mosque built with Nest.js, Xendit, and SendGrid.",
+    createdAt: "2024-06-03",
+    technology: [nest, typeorm, xendit, sendgrid, swagger],
+    url: "https://api.myistiqlal.com/",
   },
 ];
 

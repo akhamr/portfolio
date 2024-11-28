@@ -43,7 +43,9 @@ export default async function Projects() {
                 <div className="flex max-w-md flex-col justify-between p-4 md:p-6">
                   <div className="space-y-3">
                     <div>
-                      <h1 className={project.font}>{project.title}</h1>
+                      <h1 className={project.font ?? undefined}>
+                        {project.title}
+                      </h1>
                       <p className="pt-2 text-xs text-muted-foreground md:text-sm">
                         Created at{" "}
                         {dayjs(project.createdAt).format("MMMM YYYY")}
@@ -53,22 +55,18 @@ export default async function Projects() {
                       {project.description}
                     </p>
                     <div className="flex space-x-2">
-                      {project.technology?.map((tech, idx) => (
-                        <div
+                      {project.technology.map((tech, idx) => (
+                        <Link
                           className={cn(
                             tech.color || "bg-neutral-400",
                             "rounded-sm px-1 py-0.5 text-[10px] font-bold uppercase text-neutral-100 hover:opacity-80 md:text-xs"
                           )}
                           key={idx}
+                          target="_blank"
+                          href={tech.url}
                         >
-                          {tech.url ? (
-                            <Link target="_blank" href={tech.url}>
-                              {tech.name}
-                            </Link>
-                          ) : (
-                            tech.name
-                          )}
-                        </div>
+                          {tech.name}
+                        </Link>
                       ))}
                     </div>
                   </div>

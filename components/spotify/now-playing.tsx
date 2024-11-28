@@ -11,17 +11,17 @@ export default function NowPlaying() {
 
   return !isLoading ? (
     <Link
-      target={data?.isPlaying ? "_blank" : undefined}
-      href={data?.isPlaying ? data?.songUrl : "#playlist"}
+      target={data.isPlaying ? "_blank" : undefined}
+      href={data.isPlaying ? data.songUrl : "#playlist"}
       className="font-normal no-underline"
     >
       <div className="content flex h-[100px] justify-between space-x-3 p-2">
         <div className="flex space-x-3">
-          {data?.isPlaying ? (
+          {data.isPlaying ? (
             <Image
               className="rounded-md"
-              src={data?.albumImageUrl}
-              alt={data?.title}
+              src={data.albumImageUrl}
+              alt={data.title}
               height={80}
               width={80}
             />
@@ -33,11 +33,11 @@ export default function NowPlaying() {
             </div>
           )}
           <div className="flex flex-col justify-center space-y-1">
-            {data?.isPlaying ? (
+            {data.isPlaying ? (
               <>
-                <h5 className="line-clamp-1">{data?.title}</h5>
+                <h5 className="line-clamp-1">{data.title}</h5>
                 <p className="line-clamp-1 text-sm text-muted-foreground md:text-base">
-                  {data?.artist}
+                  {data.artist}
                 </p>
               </>
             ) : (
@@ -45,7 +45,7 @@ export default function NowPlaying() {
             )}
           </div>
         </div>
-        {data?.isPlaying && <Lottie animationData={ripple} />}
+        {data.isPlaying && <Lottie animationData={ripple} />}
       </div>
     </Link>
   ) : (

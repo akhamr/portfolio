@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 
-const NO_COVER = "/default/no-cover.png";
-
 export default function TopTracks() {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
   const { data, isLoading } = useSWR("/api/top-tracks", fetcher);
@@ -12,7 +10,7 @@ export default function TopTracks() {
   return (
     <div className="flex flex-col space-y-3.5">
       {!isLoading
-        ? data?.map((track: any, idx: number) => (
+        ? data.map((track: any, idx: number) => (
             <Link
               target="_blank"
               key={idx}
