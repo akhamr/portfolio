@@ -37,12 +37,12 @@ export default function About() {
             <Link href="#about">About</Link>
           </h1>
           <p>
-            Hello, my name is <b>Khamid Muhammad Arrazaq</b> (<b>Akha</b>), an
-            enthusiastic fresh graduate with a strong passion for{" "}
-            <i>data analytics</i> and <i>full-stack development</i>.
+            Hello, my name is <b>Khamid Muhammad Arrazaq</b> (<b>Akha</b>). I am
+            a highly motivated and enthusiastic junior developer with a strong
+            passion for <i>data analytics</i> and <i>full-stack development</i>.
           </p>
           <p>
-            I recently completed my studies in Mathematics at{" "}
+            In December 2023, I completed my studies in Mathematics at{" "}
             <Link
               target="_blank"
               className="underline"
@@ -51,20 +51,21 @@ export default function About() {
               Sebelas Maret University
             </Link>
             , where I gained a solid foundation in analytical and programming
-            abilities. Throughout my academic journey, I gained hands-on
-            experience in data manipulation, statistical analysis, and data
-            visualization using tools like <b>Python</b>, <b>SQL</b>, and{" "}
-            <b>Tableau</b>.
+            skills. Throughout my academic journey, I gained hands-on experience
+            in data manipulation, statistical analysis, and data visualization
+            using tools like <b>Python</b>, <b>SQL</b>, and <b>Tableau</b>.
           </p>
           <p>
             On the other hand, my love for technology and programming led me to
             delve into the world of full-stack development. I am skilled in
             front-end technologies such as <b>Next.js</b> and <b>TailwindCSS</b>
-            , as well as back-end technologies like <b>Laravel</b>.
+            , as well as back-end technologies like <b>Nest.js</b> and{" "}
+            <b>Laravel</b>.
           </p>
           <p>
             During my time as a student, I had the opportunity to join
-            internship and intensive bootcamp as part of Ministry of Education{" "}
+            internship and intensive bootcamp as part of Ministry of
+            Education&apos;s{" "}
             <Link
               target="_blank"
               className="underline"
