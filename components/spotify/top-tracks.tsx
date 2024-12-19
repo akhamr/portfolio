@@ -28,7 +28,7 @@ export default function TopTracks() {
                 />
                 <div className="flex flex-col justify-center space-y-1">
                   <h5 className="line-clamp-1">{track.title}</h5>
-                  <p className="line-clamp-1 text-sm text-muted-foreground md:text-base">
+                  <p className="line-clamp-1 !text-left text-sm text-muted-foreground md:text-base">
                     {track.artist}
                   </p>
                 </div>

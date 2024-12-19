@@ -36,7 +36,7 @@ export default function NowPlaying() {
             {data.isPlaying ? (
               <>
                 <h5 className="line-clamp-1">{data.title}</h5>
-                <p className="line-clamp-1 text-sm text-muted-foreground md:text-base">
+                <p className="line-clamp-1 !text-left text-sm text-muted-foreground md:text-base">
                   {data.artist}
                 </p>
               </>
