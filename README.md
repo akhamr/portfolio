@@ -16,7 +16,7 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env` file similar to [`.env.example`](https://github.com/akhamr/portfolio/blob/master/.env.example), and open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Tech Stack
 
