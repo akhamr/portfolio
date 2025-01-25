@@ -89,10 +89,10 @@ const nest = {
   url: "https://nestjs.com/",
 };
 
-const sendgrid = {
-  name: "sendgrid",
+const mailtrap = {
+  name: "mailtrap",
   color: "bg-blue-600",
-  url: "https://www.twilio.com/docs/sendgrid/",
+  url: "https://mailtrap.io/",
 };
 
 const xendit = {
@@ -151,9 +151,9 @@ const project: ProjectType[] = [
     title: "MyIstiqlal",
     image: "/projects/myistiqlal.webp",
     description:
-      "API project for Istiqlal Mosque built with Nest.js, Xendit, and SendGrid.",
+      "Cross-platform app for Istiqlal Mosque built with Next.js, Nest.js, and Flutter.",
     createdAt: "2024-06-03",
-    technology: [nest, typeorm, xendit, sendgrid, swagger],
+    technology: [nest, typeorm, xendit, mailtrap, swagger],
     url: "https://play.google.com/store/apps/details?id=com.istiqlal.myistiqlal",
   },
 ];
