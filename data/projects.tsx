@@ -154,7 +154,7 @@ const project: ProjectType[] = [
       "API project for Istiqlal Mosque built with Nest.js, Xendit, and SendGrid.",
     createdAt: "2024-06-03",
     technology: [nest, typeorm, xendit, sendgrid, swagger],
-    url: "https://api.myistiqlal.com/",
+    url: "https://play.google.com/store/apps/details?id=com.istiqlal.myistiqlal",
   },
 ];
 
