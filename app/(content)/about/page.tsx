@@ -6,7 +6,7 @@ import Link from "next/link";
 const socials = [
   {
     name: "Email",
-    url: "mailto:hello@akhamr.me",
+    url: "mailto:hello@akhamr.dev",
   },
   {
     name: "LinkedIn",

@@ -2,7 +2,7 @@
   <img src="/public/preview.png" alt='preview'>
 </p>
 <p align="center">
-  Source code of my <a href='https://akhamr.me'>personal website™</a>. Made using next.js and tailwind-css.
+  Source code of my <a href='https://akhamr.dev'>personal website™</a>. Made using next.js and tailwind-css.
 </p>
 
 ## Running Locally
