@@ -19,7 +19,7 @@
     {
       "id": "feat-003",
       "name": "Verification Coverage",
-      "description": "Add or confirm tests, type checks, linting, or manual verification for the active feature",
+      "description": "Add a 'build' script to package.json, verify cursor-pencil utilities work with Tailwind v4, and confirm all routes render correctly in dev mode",
       "dependencies": ["feat-002"],
       "status": "not-started",
       "evidence": ""
