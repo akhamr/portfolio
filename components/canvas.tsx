@@ -2,8 +2,8 @@
 import { IconCheck, IconTrash } from "@/components/ui/icons";
 import { useCallback, useRef, useState } from "react";
 import {
-    ReactSketchCanvas,
-    type ReactSketchCanvasRef,
+  ReactSketchCanvas,
+  type ReactSketchCanvasRef,
 } from "react-sketch-canvas";
 
 const colorList = [
@@ -32,7 +32,7 @@ export default function Canvas() {
         strokeWidth={5}
         strokeColor={color}
       />
-      <div className="absolute -left-4 top-0 z-20 rounded-full bg-accent p-2 md:left-[unset] md:right-6 md:top-[unset]">
+      <div className="absolute top-0 -left-4 z-20 rounded-full bg-accent p-2 md:top-[unset] md:right-6 md:left-[unset]">
         <div className="flex flex-col space-y-2">
           {colorList.map((data, key) => (
             <button

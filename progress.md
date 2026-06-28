@@ -3,7 +3,7 @@
 ## Current State
 
 **Last Updated:** 2026-06-28
-**Active Feature:** feat-002 — Runtime Error Fixes (completed)
+**Active Feature:** feat-003 — Verification Coverage (completed)
 
 ## Status
 
@@ -26,9 +26,8 @@
 
 ### What's Next
 
-1. Add `build` script to package.json (`"build": "next build"`) for convenience
-2. Consider re-implementing code block titles (remark-code-title was removed)
-3. Verify cursor-pencil custom utilities work with Tailwind v4
+- All planned features are complete
+- Code block titles re-implemented via custom `rehype-code-title` plugin
 
 ## Blockers / Risks
 
@@ -70,6 +69,5 @@
 
 ## Notes for Next Session
 
-- The `init.sh` script only runs `npm install`. Consider adding lint/typecheck/build to it.
-- The `prev` script runs `next build && next start` — port 3000 may be in use from previous runs.
-- `remark-code-title` was removed — if code block titles are needed, implement a custom rehype plugin.
+- All 3 planned features are complete. The project is fully migrated and verified.
+- Code block titles re-implemented: custom `rehype-code-title` plugin in `lib/rehype-code-title.ts`. Usage: ` ```js title="filename.js" ` in MDX.

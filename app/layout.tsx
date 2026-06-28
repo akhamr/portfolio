@@ -31,10 +31,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Akha",
   url: process.env.BASE_URL!,
-  sameAs: [
-    "https://linkedin.com/in/akhamr/",
-    "https://instagram.com/akhamrr",
-  ],
+  sameAs: ["https://linkedin.com/in/akhamr/", "https://instagram.com/akhamrr"],
 };
 
 export default function Root({ children }: { children: React.ReactNode }) {

@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="z-10 h-8 from-background dark:bg-gradient-to-b md:h-12" />
+      <div className="z-10 h-8 from-background md:h-12 dark:bg-gradient-to-b" />
     </nav>
   );
 }

@@ -24,7 +24,7 @@ export default function TopTracks() {
               href={track.songUrl}
               className="font-normal no-underline"
             >
-              <div className="content flex h-[100px] items-center gap-3 px-3 py-2">
+              <div className="content flex h-25 items-center gap-3 px-3 py-2">
                 <strong>#{idx + 1}</strong>
                 <Image
                   className="rounded-md"
@@ -35,7 +35,7 @@ export default function TopTracks() {
                 />
                 <div className="flex flex-col justify-center space-y-1">
                   <h5 className="line-clamp-1">{track.title}</h5>
-                  <p className="line-clamp-1 !text-left text-sm text-muted-foreground md:text-base">
+                  <p className="line-clamp-1 text-left! text-sm text-muted-foreground md:text-base">
                     {track.artist}
                   </p>
                 </div>
@@ -45,7 +45,7 @@ export default function TopTracks() {
         : [...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="h-[100px] rounded-lg border-2 bg-muted px-3 py-2"
+              className="h-25 rounded-lg border-2 bg-muted px-3 py-2"
             >
               <div className="flex animate-pulse items-center space-x-3">
                 <strong className="text-muted-foreground">#{i + 1}</strong>

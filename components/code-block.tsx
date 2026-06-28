@@ -2,38 +2,39 @@
 import { Button } from "@/components/ui/button";
 import { IconCopied, IconCopy } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
-import dynamic from "next/dynamic";
 import { ComponentProps, useEffect, useRef, useState } from "react";
-import { Props } from "react-embed-gist";
-const ReactEmbedGist = dynamic(() => import("react-embed-gist"), {
-  ssr: false,
-});
 
-interface GistProps extends Props {
+interface GistProps {
+  gist: string;
   alt: string;
+  file?: string;
 }
 
-// Hanya untuk tabel dengan ukuran 10 baris dan 1 keterangan
-
 export function Gist({ gist, alt, file }: GistProps) {
-  const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [username, gistId] = gist.split("/");
+  const scriptSrc = `https://gist.github.com/${username}/${gistId}.js${file ? `?file=${encodeURIComponent(file)}` : ""}`;
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    const container = containerRef.current;
+    if (!container) return;
+
+    const script = document.createElement("script");
+    script.src = scriptSrc;
+    script.async = true;
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, [scriptSrc]);
 
   return (
     <div className="my-5 flex flex-col">
-      <div className="h-[292px]">
-        {mounted && (
-          <ReactEmbedGist
-            gist={gist}
-            titleClass="hidden"
-            loadingClass="h-full animate-pulse rounded-md bg-accent text-transparent"
-            file={file}
-          />
-        )}
-      </div>
+      <div
+        ref={containerRef}
+        className="h-73 overflow-auto rounded-md border-2 border-dashed"
+      />
       <p className="m-0 self-center pt-4 text-sm italic">{alt}</p>
     </div>
   );
@@ -60,7 +61,7 @@ export function Pre({ children, className, ...props }: ComponentProps<"pre">) {
       <Button
         size="icon"
         variant="secondary"
-        className="absolute bottom-3 right-3"
+        className="absolute right-3 bottom-3"
         onClick={onCopy}
       >
         {copied ? <IconCopied /> : <IconCopy />}

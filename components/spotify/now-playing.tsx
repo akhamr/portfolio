@@ -15,7 +15,7 @@ export default function NowPlaying() {
       href={data.isPlaying ? data.songUrl : "#playlist"}
       className="font-normal no-underline"
     >
-      <div className="content flex h-[100px] justify-between space-x-3 p-2">
+      <div className="content flex h-25 justify-between space-x-3 p-2">
         <div className="flex space-x-3">
           {data.isPlaying ? (
             <Image
@@ -36,7 +36,7 @@ export default function NowPlaying() {
             {data.isPlaying ? (
               <>
                 <h5 className="line-clamp-1">{data.title}</h5>
-                <p className="line-clamp-1 !text-left text-sm text-muted-foreground md:text-base">
+                <p className="line-clamp-1 text-left! text-sm text-muted-foreground md:text-base">
                   {data.artist}
                 </p>
               </>
@@ -49,7 +49,7 @@ export default function NowPlaying() {
       </div>
     </Link>
   ) : (
-    <div className="h-[100px] rounded-lg border-2 bg-muted p-2">
+    <div className="h-25 rounded-lg border-2 bg-muted p-2">
       <div className="flex animate-pulse items-center space-x-3">
         <div className="size-20 rounded-md bg-secondary" />
         <div className="flex flex-col justify-center space-y-3">

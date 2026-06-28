@@ -5,11 +5,9 @@ import dayjs from "dayjs";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const params = await props.params;
   const { frontmatter } = await getPostBySlug(params.slug);
 
@@ -22,7 +20,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function Post(props: { params: Promise<{ slug: string }> }) {
+export default async function Post(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const { body, frontmatter } = await getPostBySlug(params.slug);
 
@@ -41,12 +41,12 @@ export default async function Post(props: { params: Promise<{ slug: string }> })
   };
 
   return (
-    <section className="max-w-screen-md space-y-4 md:mx-12">
+    <section className="max-w-3xl space-y-4 md:mx-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="text-pretty text-4xl md:text-6xl">{frontmatter.title}</h1>
+      <h1 className="text-4xl text-pretty md:text-6xl">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
       <div className="flex items-center text-sm text-muted-foreground">
         <p>

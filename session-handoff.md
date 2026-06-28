@@ -65,7 +65,5 @@
 
 ## Recommended Next Step
 
-- Add `build` script to package.json (`"build": "next build"`) for convenience
-- Consider re-implementing code block titles (remark-code-title was removed)
-- Verify cursor-pencil custom utilities work with Tailwind v4
-- Add verification coverage (tests, type checks) — feat-003 is not-started 
+- All planned features (feat-001, feat-002, feat-003) are complete
+- Code block titles re-implemented via custom `rehype-code-title` plugin 

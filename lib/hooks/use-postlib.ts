@@ -1,5 +1,6 @@
 import { Gist, Pre } from "@/components/code-block";
 import { Hr, Img, Quote } from "@/components/mdx-components";
+import rehypeCodeTitle from "@/lib/rehype-code-title";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "node:fs";
@@ -46,6 +47,7 @@ const remarkPlugins = [remarkMath] as unknown as PluggableList;
 const rehypePlugins = [
   rehypeKatex,
   rehypePrism,
+  rehypeCodeTitle,
   rehypeSlug,
   [rehypeAutolinkHeadings, { behavior: "wrap" }],
 ] as unknown as PluggableList;

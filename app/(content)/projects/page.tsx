@@ -27,11 +27,7 @@ interface ProjectType {
   font?: string;
 }
 
-async function ProjectCard({
-  project,
-}: {
-  project: ProjectType;
-}) {
+async function ProjectCard({ project }: { project: ProjectType }) {
   const base64 = await getImage(project.image);
   return (
     <div className="flex w-full flex-col rounded-lg border-2 bg-muted lg:flex-row">
@@ -58,7 +54,7 @@ async function ProjectCard({
               <Link
                 className={cn(
                   tech.color || "bg-neutral-400",
-                  "rounded-sm px-1 py-0.5 text-[10px] font-bold uppercase text-neutral-100 hover:opacity-80 md:text-xs"
+                  "rounded-sm px-1 py-0.5 text-[10px] font-bold text-neutral-100 uppercase hover:opacity-80 md:text-xs"
                 )}
                 key={idx}
                 target="_blank"
