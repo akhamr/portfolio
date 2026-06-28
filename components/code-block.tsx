@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { IconCopied, IconCopy } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
-import { ComponentProps, useRef, useState } from "react";
+import { ComponentProps, useEffect, useRef, useState } from "react";
 import { Props } from "react-embed-gist";
 const ReactEmbedGist = dynamic(() => import("react-embed-gist"), {
   ssr: false,
@@ -16,15 +16,23 @@ interface GistProps extends Props {
 // Hanya untuk tabel dengan ukuran 10 baris dan 1 keterangan
 
 export function Gist({ gist, alt, file }: GistProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="my-5 flex flex-col">
       <div className="h-[292px]">
-        <ReactEmbedGist
-          gist={gist}
-          titleClass="hidden"
-          loadingClass="h-full animate-pulse rounded-md bg-accent text-transparent"
-          file={file}
-        />
+        {mounted && (
+          <ReactEmbedGist
+            gist={gist}
+            titleClass="hidden"
+            loadingClass="h-full animate-pulse rounded-md bg-accent text-transparent"
+            file={file}
+          />
+        )}
       </div>
       <p className="m-0 self-center pt-4 text-sm italic">{alt}</p>
     </div>

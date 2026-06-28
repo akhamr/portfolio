@@ -1,7 +1,10 @@
 "use client";
 import { IconCheck, IconTrash } from "@/components/ui/icons";
 import { useCallback, useRef, useState } from "react";
-import { ReactSketchCanvas } from "react-sketch-canvas";
+import {
+    ReactSketchCanvas,
+    type ReactSketchCanvasRef,
+} from "react-sketch-canvas";
 
 const colorList = [
   "rgba(255, 187, 0, 0.6)",
@@ -9,14 +12,11 @@ const colorList = [
   "rgba(187, 0, 255, 0.6)",
 ];
 
-// ! framer-motion fixed bug.
-
 export default function Canvas() {
   const [color, setColor] = useState("rgba(255, 187, 0, 0.6)");
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const handleClear = useCallback(() => {
-    //@ts-ignore
-    canvasRef.current.clearCanvas();
+    canvasRef.current?.clearCanvas();
   }, []);
 
   return (

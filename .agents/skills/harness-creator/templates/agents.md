@@ -1,6 +1,6 @@
-# AGENTS.md
+# {{AGENT_FILE_NAME}}
 
-Project harness for reliable agent-assisted development in a typescript-react codebase.
+{{PROJECT_PURPOSE}}
 
 ## Startup Workflow
 
@@ -8,7 +8,7 @@ Before writing code:
 
 1. **Confirm working directory** with `pwd`
 2. **Read this file** completely
-3. **ALWAYS read docs before coding** (`node_modules/next/dist/docs/`)
+3. **Read project docs if present** (`docs/ARCHITECTURE.md`, `docs/PRODUCT.md`, README, or equivalent)
 4. **Run `./init.sh`** to verify environment is healthy
 5. **Read `feature_list.json`** to see current feature state
 6. **Review recent commits** with `git log --oneline -5`
@@ -53,11 +53,11 @@ Before ending a session:
 
 ```bash
 # Full verification (recommended)
-./init.sh
+{{PRIMARY_VERIFICATION_COMMAND}}
 ```
 
 Required checks:
-- `npm install`
+{{VERIFICATION_COMMANDS}}
 
 ## Escalation
 

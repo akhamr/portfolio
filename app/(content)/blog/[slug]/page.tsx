@@ -3,7 +3,6 @@ import "katex/dist/katex.min.css";
 import { getFiles, getPostBySlug } from "@/lib/hooks/use-postlib";
 import dayjs from "dayjs";
 import type { Metadata } from "next";
-import { ArticleJsonLd } from "next-seo";
 import Link from "next/link";
 
 export async function generateMetadata(
@@ -27,16 +26,25 @@ export default async function Post(props: { params: Promise<{ slug: string }> })
   const params = await props.params;
   const { body, frontmatter } = await getPostBySlug(params.slug);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    image: [frontmatter.image],
+    datePublished: frontmatter.date,
+    author: {
+      "@type": "Person",
+      name: "Akha",
+    },
+    url: process.env.BASE_URL! + "/blog/" + params.slug,
+  };
+
   return (
     <section className="max-w-screen-md space-y-4 md:mx-12">
-      <ArticleJsonLd
-        useAppDir={true}
-        authorName="Akha"
-        url={process.env.BASE_URL! + "/blog/" + params.slug}
-        title={frontmatter.title}
-        description={frontmatter.description}
-        images={[frontmatter.image]}
-        datePublished={frontmatter.date}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <h1 className="text-pretty text-4xl md:text-6xl">{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>

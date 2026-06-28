@@ -3,14 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 
+interface Track {
+  artist: string;
+  cover: string;
+  songUrl: string;
+  title: string;
+}
+
 export default function TopTracks() {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data, isLoading } = useSWR("/api/top-tracks", fetcher);
+  const { data, isLoading } = useSWR<Track[]>("/api/top-tracks", fetcher);
 
   return (
     <div className="flex flex-col space-y-3.5">
-      {!isLoading
-        ? data.map((track: any, idx: number) => (
+      {!isLoading && data
+        ? data.map((track, idx) => (
             <Link
               target="_blank"
               key={idx}

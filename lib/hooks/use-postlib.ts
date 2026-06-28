@@ -4,80 +4,34 @@ import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "node:fs";
 import path from "path";
+import type { ReactElement } from "react";
 import readingTime from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
-import codeTitle from "remark-code-title";
 import remarkMath from "remark-math";
-const root = process.cwd();
+import type { PluggableList } from "unified";
 
+const root = process.cwd();
 const articlesPath = path.join(root, "data/blog");
 
-export async function getFiles() {
+export async function getFiles(): Promise<string[]> {
   return fs.readdirSync(articlesPath);
 }
 
-export async function getPostBySlug(slug: string) {
-  const articleDir = path.join(articlesPath, `${slug}.mdx`);
-  const source = fs.readFileSync(articleDir);
-  const { content, data } = matter(source);
-
-  // TODO : fix ts-error
-  const a = await compileMDX({
-    source: content,
-    options: {
-      mdxOptions: {
-        // @ts-ignore
-        remarkPlugins: [codeTitle, remarkMath],
-        rehypePlugins: [
-          // @ts-ignore
-          rehypePrism,
-          rehypeSlug,
-          [rehypeAutolinkHeadings, { behavior: "wrap" }],
-          // @ts-ignore
-          [rehypeKatex, { output: "html" }],
-        ],
-      },
-    },
-    components: MdxComponent,
-  });
-
-  const body = a.content;
-
-  return {
-    body,
-    frontmatter: {
-      slug,
-      title: data.title,
-      description: data.description,
-      date: data.date,
-      image: data.image,
-      readingTime: readingTime(content),
-    },
-  };
+interface Frontmatter {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  readingTime: { text: string; words: number };
 }
 
-export async function getAllPost() {
-  const articles = fs.readdirSync(articlesPath);
-
-  return articles.reduce((allArticles: any[], articleSlug: string) => {
-    const source = fs.readFileSync(
-      path.join(articlesPath, articleSlug),
-      "utf-8"
-    );
-    const { data, content } = matter(source);
-
-    return [
-      {
-        ...data,
-        slug: articleSlug.replace(".mdx", ""),
-        readingTime: readingTime(content),
-      },
-      ...allArticles,
-    ];
-  }, []);
+interface PostResult {
+  body: ReactElement;
+  frontmatter: Frontmatter;
 }
 
 const MdxComponent = {
@@ -87,3 +41,74 @@ const MdxComponent = {
   Gist,
   Quote,
 };
+
+const remarkPlugins = [remarkMath] as unknown as PluggableList;
+const rehypePlugins = [
+  rehypeKatex,
+  rehypePrism,
+  rehypeSlug,
+  [rehypeAutolinkHeadings, { behavior: "wrap" }],
+] as unknown as PluggableList;
+
+export async function getPostBySlug(slug: string): Promise<PostResult> {
+  const articleDir = path.join(articlesPath, `${slug}.mdx`);
+  const source = fs.readFileSync(articleDir, "utf-8");
+  const { content, data } = matter(source);
+
+  const { content: body } = await compileMDX<Record<string, unknown>>({
+    source: content,
+    options: {
+      mdxOptions: {
+        remarkPlugins,
+        rehypePlugins,
+      },
+      parseFrontmatter: false,
+    },
+    components: MdxComponent,
+  });
+
+  return {
+    body,
+    frontmatter: {
+      slug,
+      title: data.title as string,
+      description: data.description as string,
+      date: data.date as string,
+      image: data.image as string,
+      readingTime: readingTime(content),
+    },
+  };
+}
+
+interface ArticleData {
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  slug: string;
+  readingTime: { text: string; words: number };
+}
+
+export async function getAllPost(): Promise<ArticleData[]> {
+  const articles = fs.readdirSync(articlesPath);
+
+  const allArticles: ArticleData[] = [];
+  for (const articleSlug of articles) {
+    const source = fs.readFileSync(
+      path.join(articlesPath, articleSlug),
+      "utf-8"
+    );
+    const { data, content } = matter(source);
+
+    allArticles.push({
+      title: data.title as string,
+      description: data.description as string,
+      date: data.date as string,
+      image: data.image as string,
+      slug: articleSlug.replace(".mdx", ""),
+      readingTime: readingTime(content),
+    });
+  }
+
+  return allArticles;
+}

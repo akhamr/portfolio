@@ -11,13 +11,17 @@ interface QuoteProps {
   books?: string;
 }
 
-export async function Img({ alt, src, ...props }: ImgProps) {
+export async function Img({ alt, src, width, height, ...props }: ImgProps) {
   const base64 = await getImage(src);
+  const w = typeof width === "string" ? Number(width) : width;
+  const h = typeof height === "string" ? Number(height) : height;
   return (
     <div className="my-5 flex flex-col items-center">
       <Image
         src={src}
         alt={alt}
+        width={w ?? 768}
+        height={h ?? 576}
         placeholder="blur"
         blurDataURL={base64}
         {...props}

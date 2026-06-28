@@ -7,7 +7,6 @@ import "@/styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { SocialProfileJsonLd } from "next-seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akhamr.dev"),
@@ -27,9 +26,26 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Akha",
+  url: process.env.BASE_URL!,
+  sameAs: [
+    "https://linkedin.com/in/akhamr/",
+    "https://instagram.com/akhamrr",
+  ],
+};
+
 export default function Root({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={cn(
           nunito.className,
@@ -38,16 +54,6 @@ export default function Root({ children }: { children: React.ReactNode }) {
           bimbo.variable
         )}
       >
-        <SocialProfileJsonLd
-          useAppDir={true}
-          type="Person"
-          name="Akha"
-          url={process.env.BASE_URL!}
-          sameAs={[
-            "https://linkedin.com/in/akhamr/",
-            "https://instagram.com/akhamrr",
-          ]}
-        />
         <SpeedInsights />
         <Providers>
           <Navbar />

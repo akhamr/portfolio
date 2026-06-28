@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Next.js 16 + React 19 + Tailwind v4 Migration",
+      "description": "Migrate project to Next.js 16, React 19, Tailwind v4, latest shadcn/ui, and fix all compatibility issues",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": "npx next build passes (19/19 pages), npx tsc --noEmit clean, npx eslint . clean, npm install clean"
+    },
+    {
+      "id": "feat-002",
+      "name": "Runtime Error Fixes",
+      "description": "Fix MDX Img component width/height issue and Gist SSR useState crash",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "Build passes, Img component coerces string dimensions to numbers with fallbacks, Gist uses mounted guard"
+    },
+    {
+      "id": "feat-003",
+      "name": "Verification Coverage",
+      "description": "Add or confirm tests, type checks, linting, or manual verification for the active feature",
+      "dependencies": ["feat-002"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}
