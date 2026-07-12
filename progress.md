@@ -2,8 +2,8 @@
 
 ## Current State
 
-**Last Updated:** 2026-06-28
-**Active Feature:** feat-003 — Verification Coverage (completed)
+**Last Updated:** 2026-06-29
+**Active Feature:** Session complete
 
 ## Status
 
@@ -26,8 +26,7 @@
 
 ### What's Next
 
-- All planned features are complete
-- Code block titles re-implemented via custom `rehype-code-title` plugin
+- All planned features are complete — no pending work
 
 ## Blockers / Risks
 
@@ -39,9 +38,9 @@
 - **Removed @plaiceholder/next**: Only added webpack externals for sharp, unnecessary with Turbopack. The base `plaiceholder` package still works for base64 generation.
 - **Coerced string dimensions in Img**: MDX passes `width="768"` as string; Next.js 16 requires numbers.
 
-## Files Modified This Session
+## Files Modified This Session (2026-06-28 → 2026-06-29)
 
-- `package.json` — Dependency upgrades, removed next-seo/remark-code-title/@plaiceholder/next
+- `package.json` — Dependency upgrades, removed next-seo/remark-code-title/@plaiceholder/next, removed react-embed-gist, added build script
 - `next.config.mjs` — Removed @plaiceholder/next wrapper
 - `postcss.config.mjs` — Changed to @tailwindcss/postcss
 - `tailwind.config.ts` — Deleted (v4 is CSS-first)
@@ -57,8 +56,10 @@
 - `app/(content)/projects/page.tsx` — Fixed async-in-map, extracted ProjectCard
 - `app/api/now-playing/route.ts` — Replaced any with interfaces
 - `app/api/top-tracks/route.ts` — Replaced any with interfaces
-- `lib/hooks/use-postlib.ts` — Fixed types, removed @ts-ignore, static plugin imports
+- `lib/hooks/use-postlib.ts` — Fixed types, removed @ts-ignore, static plugin imports, added rehypeCodeTitle
 - `data/blog/sgd-svr.mdx` — Fixed incomplete LaTeX expression
+- `lib/rehype-code-title.ts` — New custom rehype plugin for code block titles
+- `styles/global.css` — Added .code-title styling, converted KaTeX @apply to pure CSS
 
 ## Evidence of Completion
 
@@ -71,3 +72,6 @@
 
 - All 3 planned features are complete. The project is fully migrated and verified.
 - Code block titles re-implemented: custom `rehype-code-title` plugin in `lib/rehype-code-title.ts`. Usage: ` ```js title="filename.js" ` in MDX.
+- `react-embed-gist` replaced with vanilla GitHub gist script injection (iframe incompatible with GitHub's X-Frame-Options).
+- KaTeX styles converted from `@apply` to pure CSS for Tailwind v4 compatibility.
+- Pre-existing lint error in `code-block.tsx` (setState-in-effect) resolved via `useSyncExternalStore`.

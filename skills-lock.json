@@ -1,12 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "caveman": {
-      "source": "juliusbrussee/caveman",
-      "sourceType": "github",
-      "skillPath": "skills/caveman/SKILL.md",
-      "computedHash": "b0e7741886c0c32270cedc1a2fc21c2879d90964d3ce00f24952de7064613404"
-    },
     "harness-creator": {
       "source": "walkinglabs/learn-harness-engineering",
       "sourceType": "github",
@@ -30,6 +24,12 @@
       "sourceType": "github",
       "skillPath": "skills/next-dev-loop/SKILL.md",
       "computedHash": "bf091ffdc39b883115d961b509dc221cc46acdd941f7a0f40fe5fd7f778b0617"
+    },
+    "ponytail": {
+      "source": "dietrichgebert/ponytail",
+      "sourceType": "github",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "computedHash": "491ccdc2c13a29cebabbac6bbe37f39e2e21ddff890c0b3fcf83b53b05dcc5c8"
     },
     "shadcn": {
       "source": "shadcn/ui",

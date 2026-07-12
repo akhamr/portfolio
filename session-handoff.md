@@ -63,7 +63,15 @@
 3. Review this handoff.
 4. Run `./init.sh` or the documented verification command before editing.
 
+## Completed in Final Session
+
+- [x] Added `build` script to package.json
+- [x] Re-implemented code block titles via custom `rehype-code-title` plugin
+- [x] Fixed `react-embed-gist` dual-React crash (replaced with vanilla script injection)
+- [x] Resolved `setState-in-effect` lint error via `useSyncExternalStore`
+- [x] Converted KaTeX `@apply` rules to pure CSS for Tailwind v4 compatibility
+- [x] Removed unused `react-embed-gist` dependency
+
 ## Recommended Next Step
 
-- All planned features (feat-001, feat-002, feat-003) are complete
-- Code block titles re-implemented via custom `rehype-code-title` plugin 
+- No pending work. All features complete and verified. 
